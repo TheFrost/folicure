@@ -1,0 +1,250 @@
+.ia-Header
+  position fixed
+  overflow hidden
+  z-index 9000
+
+  width 100%
+  height 59px
+
+  text-align center
+
+  background-color #fff
+
+  transition all .75s easing( "in-out-circ" )
+
+  +above(768px)
+    size 150px 100%
+
+  &.js-activeMenu
+    height 100%
+
+  &Head
+    relative false
+    z-index 1000
+
+    padding 0.5em 0
+
+    background-color #fff
+
+    +above(768px)
+      padding 2em 0
+
+  &Action
+    absolute 50% false false 1em
+
+    size 30px false
+
+    transform translate(0, -50%)
+
+    +above(768px)
+      display none
+
+    &__line
+      display block
+      height 3px
+
+      background-color c__gray
+
+      transition all .25s easing( "out-back" )
+
+      &:nth-child(2)
+        margin 0.5em 0
+
+    &.js-closeAction
+      .ia-HeaderAction__line
+        &:nth-child(1)
+          relative 10px false false false
+
+          transform rotate(45deg)
+        &:nth-child(2)
+          opacity 0
+        &:nth-child(3)
+          relative false false 12px false
+
+          transform rotate(-45deg)
+
+  &Logo
+    display inline-block
+
+    transition all 0.33s easing( "out-cubic" )
+
+    &:hover
+      background-color c__gray--alpha
+
+    &__text
+      margin 0
+      size 100px 39px
+
+      background url('../images/fig-logo.png') no-repeat center center
+      background-size 100px
+
+      hide-text()
+      retina-query('fig-logo', 100px, 39px)
+
+      +above(1025px)
+        size 136px 54px
+
+        retina-query('fig-logo', 136px, 54px)
+
+
+  &Menu
+    overflow scroll
+
+    background-color c__gray--alpha
+
+    +above(768px)
+      overflow auto
+
+    &Link
+      relative false false
+
+      display block
+      padding 0.8em
+
+      +above(768px)
+        padding 1em 0.5em
+
+      &:hover
+        background-color c__gray--beta
+
+        .ia-HeaderMenuLink__fig
+          transform scale(1.3)
+
+        .ia-HeaderMenuLink__txt
+          transform translateY(50%)
+
+      &__fig
+        display inline-block
+        margin 0
+        size 20px 20px
+
+        background-size auto 20px
+
+        transition all .33s easing( "out-back" )
+
+        &--product
+          background url('../images/icon-product.svg') no-repeat center center
+        &--eye
+          background url('../images/icon-eye.svg') no-repeat center center
+        &--hair
+          background url('../images/icon-hair.svg') no-repeat center center
+        &--money
+          background url('../images/icon-price.svg') no-repeat center center
+
+      &__txt
+        display block
+
+        font-family NexaBold
+        font-size 12px
+        text-transform uppercase
+
+        color c__gray
+
+        transition all .33s easing( "out-back" )
+
+        +above(768px)
+          margin 0.5em 0 0.3em
+
+      &__hr
+        absolute false false -2px 50%
+        z-index 100
+
+        display inline-block
+        margin 0
+        margin-left -25px
+        size 50px 4px
+
+        background-color c__red
+        border none
+
+
+  &Footer
+    absolute false false 0 0
+    z-index 200
+
+    width 100%
+    padding 1em
+    box-sizing border-box
+
+    background-color #fff
+
+    clearfix()
+
+    &Social
+      &__link
+        display inline-block
+        size 25px
+
+        background-size auto 25px
+
+        transition all 0.33s easing( "out-cubic" )
+
+        &:hover
+          transform scale(1.1)
+
+        &--facebook
+          margin-right 1em
+
+          background url('../images/icon-facebook.svg') no-repeat center center
+
+        &--twitter
+          background url('../images/icon-twitter.svg') no-repeat center center
+
+    &__policity
+      float left
+
+      display block
+      margin 1em 0
+
+      font-family f__sans
+      font-size 10px
+      text-transform uppercase
+
+      color c__gray
+
+      transition all 0.33s easing( "out-cubic" )
+
+      +above(768px)
+        float none
+
+        font-size 12px
+
+      &:hover
+        background-color c__gray--alpha
+
+    &__logo
+      display none
+      size false 30px
+
+      background url('../images/fig-unilever.svg') no-repeat center center
+      background-size auto 30px
+
+      +above(768px)
+        display block
+
+    &__hr
+      display none
+      margin 0.1em 0 0.7em
+      size 20px 2px
+
+      background-color c__blue
+      border none
+
+      +above(768px)
+        display inline-block
+
+    &__copyright
+      float right
+
+      display block
+      margin 1.4em 0
+
+      font-family f__sans
+      font-size 8px
+
+      color c__gray
+
+      +above(768px)
+        float none
+
+        font-size 10px

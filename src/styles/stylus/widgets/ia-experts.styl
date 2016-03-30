@@ -1,0 +1,149 @@
+.ia-Experts
+  clerfix()
+  fixed false 0 0 false
+  z-index 200
+  width 100%
+  background-color c__gray--alpha
+  text-align center
+  transform translateY(100%)
+  transition transform 0.75s easing( "in-out-cubic" )
+  &:hover
+    .ia-Experts__header
+      background-color darken(c__red, 10%)
+
+  +above(768px)
+    width calc(100% \- 150px)
+
+  &.js-activeWidget
+    transform translateY(0) !important
+    .ia-Experts__cta
+      &:after
+        transform rotate(180deg)
+    .ia-ExpertsAvatar
+      transform translateY(0)
+
+  &__header
+    position relative
+    margin-top -43px
+    width 100%
+    background-color c__red
+    cursor pointer
+    transition all 0.33s easing( "in-out-back" )
+  &__cta
+    display block
+    line-height 43px
+    font-weight 300
+    font-size 14px
+    text-transform uppercase
+    color white
+    &:after
+      content '\f106'
+      display inline-block
+      margin-left 8px
+      font normal normal normal 14px/1 FontAwesome
+      font-size 16px
+      text-rendering auto
+      transition transform 0.33s easing( "in-out-back" )
+  &__body
+    clearfix()
+    width 100%
+    max-width 1024px
+    margin 0 auto
+    padding 0 16px 16px
+    +above(1024px)
+      padding 0 16px
+  &Avatar
+    display none
+    position relative
+    margin-top -16px
+    transform translateY(50%)
+    transition transform 0.75s easing( "in-out-cubic" )
+    +above(1024px)
+      col(1/4)
+      display block
+    img
+      max-width 180px
+      margin 0 auto
+  &Form
+    clearfix()
+    +above(1024px)
+      col(3/4)
+    &__inputs
+      clearfix()
+      +above(1024px)
+        col(3/4)
+      &:nth-child(2)
+        margin 0
+        +above(1025px)
+          col(2/4)
+      &:nth-child(3)
+        stack()
+        +above(1025px)
+          col(1/4)
+    &__submit
+      +above(1024px)
+        col(1/4)
+      &__button
+        position relative
+        margin-top 16px
+        width 60px
+        height 60px
+        font-size 20px
+        line-height 50%
+        text-align center
+        background-color c__blue
+        border none
+        border-radius 50%
+        color white
+        cursor pointer
+        transition all 0.33s ease-in-out
+        &:hover
+          background-color lighten(c__blue, 10%)
+        +above(1024px)
+          margin-top 80px
+    &__copy
+      margin 16px 0
+    &__group
+      display inline-block
+      &--name
+        margin-right 8px
+      &--name,
+      &--email
+        float left
+        width calc(50% \- 4px)
+        +below(480px)
+          width 100% !important
+      &--email
+        +below(480px)
+          margin-top 8px
+      &--question
+        margin-top 8px
+        width 100%
+      &--agree
+        margin-top 16px
+        .ia-ExpertsForm__input
+          width auto
+        .ia-ExpertsForm__input__copy
+          font-size 12px
+          a
+            text-decoration underline
+            color c__gray--gama
+            transition all 0.33s ease-in-out
+            &:hover
+              color c__blue
+        #agree-error
+          float right
+          width 100%
+    &__input
+      width 100%
+      padding 8px
+      font-size 12px
+      font-style italic
+      font-weight 300
+      color c__gray--gama
+      border 1px solid c__gray--gama
+      &.error
+        border-color c__red
+    label.error
+      font-size 12px
+      color c__red

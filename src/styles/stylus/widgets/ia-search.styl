@@ -1,0 +1,62 @@
+.ia-Search
+  fixed 0 0 false false
+  z-index 1000
+  width 100%
+  background-color c__gray--alpha
+  line-height 35px
+  transform translateY(-100%)
+  transition all 0.75s easing( 'in-out-cubic' )
+  +above(768px)
+    transform none
+    width auto
+  &.js-searchActive
+    transform translateY(59px)
+    +above(768px)
+      transform none
+      .ia-Search__input
+        width 400px
+        padding-left 0
+        padding-right 35px
+        transform translateX(0)
+  &__mobile
+    absolute 50% 0 false false
+    width 50px
+    height 50px
+    line-height 50px
+    text-align center
+    transform translateY(-50%)
+    color c__gray
+    +above(768px)
+      display none
+  &__form
+    relative false
+    height 40px
+    padding 0 8px
+  &__input
+    relative false
+    width 100%
+    padding 4px 0 4px 0
+    font-style italic
+    font-size 12px
+    background none
+    border none
+    border-bottom 1px solid c__gray--gama
+    color c__gray--gama
+    transition all 0.75s easing( 'in-out-cubic' )
+    +above(768px)
+      width 24px
+      padding 4px 0 4px 50%
+      transform translateX(135%)
+  &__submit
+    absolute 50% 0 false false
+    display none
+    width 40px
+    text-align center
+    font-size 16px
+    color c__gray--gama
+    border none
+    background c__gray--alpha
+    cursor pointer
+    transform translateY(-58%)
+    +above(768px)
+      display block

@@ -1,0 +1,151 @@
+/* IA Brick */
+.ia-Brick
+  background-color black
+  opacity 0
+
+  clearfix()
+
+  &--normal
+    height auto
+
+    +above(1024px)
+      height 45%
+
+  &--tall
+    height auto
+
+    +above(1024px)
+      height 55%
+
+  &Link
+    relative false false
+
+    height 480px
+
+    display block
+
+    overflow hidden
+
+    &:hover
+      .ia-BrickFig
+        opacity 0.5
+        transform scale(1.01)
+      .ia-BrickCaption
+        padding 2em 3em
+      .ia-BrickIcon
+        opacity 1
+
+    +above(1024px)
+      height 100%
+
+    &--control
+      &:hover
+        .ia-BrickBottle
+          left 32px
+      .ia-BrickFig
+        background url('../images/feed-bg-control.jpg') no-repeat top center
+        background-size cover
+      .ia-BrickBottle
+        left 16px
+        bottom 0
+
+
+    &--article
+      .ia-BrickFig
+        background url('../images/feed-bg-article.jpg') no-repeat top center
+        background-size cover
+
+    &--test
+      .ia-BrickFig
+        background url('../images/feed-bg-test.jpg') no-repeat center center
+        background-size cover
+
+    &--something
+      .ia-BrickFig
+        background url('https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97976&w=800&h=976') no-repeat center center
+        background-size cover
+
+    &--extra
+      &:hover
+        .ia-BrickBottle
+          right 32px
+      .ia-BrickFig
+        background url('../images/feed-bg-extra.jpg') no-repeat top center
+        background-size cover
+      .ia-BrickBottle
+        right 16px
+        bottom 0
+
+
+  &Icon
+    absolute 50% 50%
+
+    size 50px
+
+    opacity 0
+    transform translate(-50%, -50%)
+    transition all 0.33s easing( "out-cubic" )
+
+  &Fig
+    relative false false
+
+    display block
+    height 100%
+
+    overflow hidden
+    transition all 0.33s easing( "in-out-quad" )
+
+  &Bottle
+    absolute false false
+    transition all 0.33s easing( "in-out-back" )
+    width 100px
+
+    +above(1367px)
+      width auto
+
+  &Caption
+    padding 1em 3em
+
+    text-align center
+
+    background-color rgba(black, 0.8)
+
+    transition all 0.33s easing( "in-out-quad" )
+
+    &--bottom
+      absolute false 0.5em 0.5em 0.5em
+
+    &--top
+      absolute 0.5em 0.5em false 0.5em
+
+    &__title
+      margin 0
+
+      font-family NexaBold
+      font-size 1.25em
+      text-transform uppercase
+
+      color white
+
+      .ia-Reg
+        font-size 0.5em
+
+    &__hr
+      display inline-block
+
+      size 20px 4px
+
+      border none
+
+      background-color c__blue
+
+    &__txt
+      margin 0
+
+      font-family f__sans
+
+      color c__gray
+
+  &Column
+    +above(480px)
+      span(1/2)
