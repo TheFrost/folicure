@@ -32,7 +32,7 @@
         _toggleSearch(evt);
 
         Experts.validateActive();
-        Menu.validateActive(evt);
+        Menu.validateActive();
       });
 
       _window.resize(function () {
@@ -49,7 +49,11 @@
     }
 
     function _toggleSearch (evt) {
-      evt.preventDefault();
+
+      if (evt != undefined) {
+        evt.preventDefault();
+      }
+
       _widget.toggleClass('js-searchActive');
     }
 

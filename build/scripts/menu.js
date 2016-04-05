@@ -36,7 +36,9 @@
     }
 
     function _toggleAction(evt) {
-      evt.preventDefault();
+      if (evt != undefined) {
+        evt.preventDefault();
+      }
 
       _trigger.toggleClass('js-closeAction');
       _menu.toggleClass('js-activeMenu');
@@ -63,9 +65,9 @@
       _bindEvents();
     }
 
-    function validateActive (evt) {
+    function validateActive () {
       if (_menu.hasClass('js-activeMenu')) {
-        _toggleAction(evt);
+        _toggleAction();
       }
     }
 
