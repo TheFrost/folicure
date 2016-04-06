@@ -1,0 +1,25 @@
+.ia-Product
+  clearfix()
+  display inline-block !important
+  +above(1024px)
+    absolute 50% false false 0
+    transform translateY(-50%)
+  &__column
+    col(1/2)
+
+  // Owl Carousel Settings
+  .owl-nav
+    absolute 50% 0 false false
+    transform translateY(-50%)
+  .owl-next,
+  .owl-prev
+    width 40px
+    height 40px
+    line-height 40px
+    text-align center
+    background-color c__gray
+    color white
+    &:hover
+      background-color darken(c__gray, 10%)
+
+      
