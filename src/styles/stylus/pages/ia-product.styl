@@ -1,17 +1,75 @@
 .ia-Product
   clearfix()
   text-align center
-  +above(1024px)
+  +above(768px)
     absolute 50% false false 0
     transform translateY(-50%)
   &__column
-    col(1/2)
+    +above(768px)
+      col(1/2)
   &__item
     clearfix()
     display inline-block
+    padding 32px
     width 100%
     max-width 800px
-
+    &.active
+      color red
+  &__fig
+    display inline-block
+    max-width 300px
+    margin-bottom 32px
+  &__header
+    &:after
+      content ''
+      display inline-block
+      width 50px
+      height 8px
+      margin 32px 0
+      background-color c__extra
+  &__category,
+  &__type
+    margin 0
+    padding-top 6px
+    font-size 48px
+    line-height 1
+    letter-spacing 6px
+    text-transform uppercase
+  &__category
+    margin-bottom 16px
+    font-family NexaLight
+    background-color c__extra
+    color white
+    &--large
+      font-size 40px
+  &__type
+    font-family NexaBold
+    color c__extra
+    &--large
+      font-size 28px
+  &__text
+    margin-top 0
+    margin-bottom 32px
+    font-size 18px
+    color c__black
+    +above(768px)
+      text-align left
+    &--note
+      color c__gray--gama
+  &__share
+    display inline-block
+    width 50px
+    margin-top 64px
+    border 1px solid c__black
+    transform rotate(45deg)
+    transition all 0.33s easing( 'in-out-cubic' )
+    &:hover
+      transform rotate(90deg)
+      img
+        transform rotate(-90deg)
+    img
+      transition all 0.33s easing( 'in-out-cubic' )
+      transform rotate(-45deg)
 
   // Color Settings
 
@@ -30,3 +88,19 @@
     color white
     &:hover
       background-color darken(c__gray, 10%)
+
+
+
+.ia-Thumbs
+  fixed false false 43px false
+  width 100%
+  background-color c__gray
+  &__item
+    position relative
+    min-height 200px
+    text-align center
+  &__media
+    absolute 50% 0 false 50%
+    display inline-block
+    width 20% !important
+    transform translate(-50%, -50%)
