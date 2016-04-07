@@ -346,7 +346,7 @@
 .ia-Product:after {
   clear: both;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .ia-Product {
     position: absolute;
     top: 50%;
@@ -356,28 +356,31 @@
     transform: translateY(-50%);
   }
 }
-.ia-Product__column {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 48.5%;
-  margin-left: 0%;
-  margin-right: 3%;
-}
-.ia-Product__column:before,
-.ia-Product__column:after {
-  content: '';
-  display: table;
-}
-.ia-Product__column:after {
-  clear: both;
-}
-.ia-Product__column:last-child {
-  margin-right: 0%;
+@media only screen and (min-width: 768px) {
+  .ia-Product__column {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .ia-Product__column:before,
+  .ia-Product__column:after {
+    content: '';
+    display: table;
+  }
+  .ia-Product__column:after {
+    clear: both;
+  }
+  .ia-Product__column:last-child {
+    margin-right: 0%;
+  }
 }
 .ia-Product__item {
   display: inline-block;
+  padding: 32px;
   width: 100%;
   max-width: 800px;
 }
@@ -388,6 +391,87 @@
 }
 .ia-Product__item:after {
   clear: both;
+}
+.ia-Product__item.active {
+  color: #f00;
+}
+.ia-Product__fig {
+  display: inline-block;
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+.ia-Product__header:after {
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 8px;
+  margin: 32px 0;
+  background-color: #c76200;
+}
+.ia-Product__category,
+.ia-Product__type {
+  margin: 0;
+  padding-top: 6px;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.ia-Product__category {
+  margin-bottom: 16px;
+  font-family: NexaLight;
+  background-color: #c76200;
+  color: #fff;
+}
+.ia-Product__category--large {
+  font-size: 40px;
+}
+.ia-Product__type {
+  font-family: NexaBold;
+  color: #c76200;
+}
+.ia-Product__type--large {
+  font-size: 28px;
+}
+.ia-Product__text {
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-size: 18px;
+  color: #252525;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Product__text {
+    text-align: left;
+  }
+}
+.ia-Product__text--note {
+  color: #818181;
+}
+.ia-Product__share {
+  display: inline-block;
+  width: 50px;
+  margin-top: 64px;
+  border: 1px solid #252525;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Product__share:hover {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.ia-Product__share:hover img {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.ia-Product__share img {
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .ia-Product .owl-nav {
   position: fixed;
@@ -409,6 +493,28 @@
 .ia-Product .owl-next:hover,
 .ia-Product .owl-prev:hover {
   background-color: #4d4d4d;
+}
+.ia-Thumbs {
+  position: fixed;
+  bottom: 43px;
+  width: 100%;
+  background-color: #555;
+}
+.ia-Thumbs__item {
+  position: relative;
+  min-height: 200px;
+  text-align: center;
+}
+.ia-Thumbs__media {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 50%;
+  display: inline-block;
+  width: 20% !important;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .ia-Content {
   position: relative;
@@ -436,7 +542,7 @@
   background: url("../images/bg-body-product.png") no-repeat top center #eaeaea;
   background-attachment: fixed;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .ia-Content--product {
     min-height: 768px;
     height: calc(100% - 43px);
@@ -587,7 +693,7 @@
 }
 @media only screen and (min-width: 1367px) {
   .ia-BrickBottle {
-    width: auto;
+    width: 150px;
   }
 }
 .ia-BrickCaption {
