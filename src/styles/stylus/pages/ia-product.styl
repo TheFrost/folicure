@@ -1,15 +1,24 @@
 .ia-Product
   clearfix()
-  display inline-block !important
+  text-align center
   +above(1024px)
     absolute 50% false false 0
     transform translateY(-50%)
   &__column
     col(1/2)
+  &__item
+    clearfix()
+    display inline-block
+    width 100%
+    max-width 800px
+
+
+  // Color Settings
+
 
   // Owl Carousel Settings
   .owl-nav
-    absolute 50% 0 false false
+    fixed 50% 0 false false
     transform translateY(-50%)
   .owl-next,
   .owl-prev
@@ -21,5 +30,3 @@
     color white
     &:hover
       background-color darken(c__gray, 10%)
-
-      
