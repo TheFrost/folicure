@@ -13,12 +13,11 @@
     padding 32px
     width 100%
     max-width 800px
-    &.active
-      color red
   &__fig
     display inline-block
-    max-width 300px
     margin-bottom 32px
+  &__desc
+    padding 16px 40px 16px 16px
   &__header
     &:after
       content ''
@@ -31,22 +30,28 @@
   &__type
     margin 0
     padding-top 6px
-    font-size 48px
+    font-size 28px
     line-height 1
     letter-spacing 6px
     text-transform uppercase
+    +above(991px)
+      font-size 48px
   &__category
-    margin-bottom 16px
+    margin-bottom 8
     font-family NexaLight
     background-color c__extra
     color white
     &--large
-      font-size 40px
+      font-size 20px
+      +above(991px)
+        font-size 32px
   &__type
     font-family NexaBold
     color c__extra
     &--large
-      font-size 28px
+      font-size 12px
+      +above(991px)
+        font-size 20px
   &__text
     margin-top 0
     margin-bottom 32px
@@ -92,13 +97,17 @@
 
 
 .ia-Thumbs
+  display none !important
   fixed false false 43px false
   width 100%
   background-color c__gray
   &__item
     position relative
     min-height 200px
+    padding 32px
     text-align center
+    &.active
+      color red
   &__media
     absolute 50% 0 false 50%
     display inline-block

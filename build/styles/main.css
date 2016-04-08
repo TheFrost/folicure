@@ -392,13 +392,12 @@
 .ia-Product__item:after {
   clear: both;
 }
-.ia-Product__item.active {
-  color: #f00;
-}
 .ia-Product__fig {
   display: inline-block;
-  max-width: 300px;
   margin-bottom: 32px;
+}
+.ia-Product__desc {
+  padding: 16px 40px 16px 16px;
 }
 .ia-Product__header:after {
   content: '';
@@ -412,26 +411,42 @@
 .ia-Product__type {
   margin: 0;
   padding-top: 6px;
-  font-size: 48px;
+  font-size: 28px;
   line-height: 1;
   letter-spacing: 6px;
   text-transform: uppercase;
 }
+@media only screen and (min-width: 991px) {
+  .ia-Product__category,
+  .ia-Product__type {
+    font-size: 48px;
+  }
+}
 .ia-Product__category {
-  margin-bottom: 16px;
+  margin-bottom: 8;
   font-family: NexaLight;
   background-color: #c76200;
   color: #fff;
 }
 .ia-Product__category--large {
-  font-size: 40px;
+  font-size: 20px;
+}
+@media only screen and (min-width: 991px) {
+  .ia-Product__category--large {
+    font-size: 32px;
+  }
 }
 .ia-Product__type {
   font-family: NexaBold;
   color: #c76200;
 }
 .ia-Product__type--large {
-  font-size: 28px;
+  font-size: 12px;
+}
+@media only screen and (min-width: 991px) {
+  .ia-Product__type--large {
+    font-size: 20px;
+  }
 }
 .ia-Product__text {
   margin-top: 0;
@@ -495,6 +510,7 @@
   background-color: #4d4d4d;
 }
 .ia-Thumbs {
+  display: none !important;
   position: fixed;
   bottom: 43px;
   width: 100%;
@@ -503,7 +519,11 @@
 .ia-Thumbs__item {
   position: relative;
   min-height: 200px;
+  padding: 32px;
   text-align: center;
+}
+.ia-Thumbs__item.active {
+  color: #f00;
 }
 .ia-Thumbs__media {
   position: absolute;
@@ -539,12 +559,14 @@
   }
 }
 .ia-Content--product {
-  background: url("../images/bg-body-product.png") no-repeat top center #eaeaea;
   background-attachment: fixed;
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 45%,#fff1c7 55%);
+  background-color: rgba(255,255,255,0.1);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 45%,#fff1c7 55%);
 }
 @media only screen and (min-width: 768px) {
   .ia-Content--product {
-    min-height: 768px;
+    min-height: 600px;
     height: calc(100% - 43px);
   }
 }

@@ -8,8 +8,9 @@
     items : 1,
     nav : true,
     navText : ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-    autoHeight : true
-  });
+    autoHeight : true,
+    smartSpeed : 750
+   });
 
   var productItems = products.find('.owl-item');
 
@@ -19,8 +20,16 @@
     nav : true
   });
 
+  // contador
+  var container = $('.ia-Experts__cta');
+
+
 
   products.on('changed.owl.carousel', function (evt) {
+
+    // contador
+    var copy = (evt.item.index + 1) +' de ' + productItems.length;
+    console.log(copy);
 
     var items = thumbs.find('.owl-item');
     var actives = thumbs.find('.owl-item.active');
@@ -31,9 +40,8 @@
       thumbs.trigger('prev.owl.carousel');
     }
 
-
-    thumbs.find('.owl-item').removeClass('item-active');
-    thumbs.find('.owl-item').eq(evt.item.index).addClass('item-active');
+    thumbs.find('.ia-Thumbs__item').removeClass('active');
+    thumbs.find('.owl-item').eq(evt.item.index).find('.ia-Thumbs__item').addClass('active');
   });
 
 
