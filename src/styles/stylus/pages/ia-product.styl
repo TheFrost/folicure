@@ -1,8 +1,10 @@
 .ia-Product
   clearfix()
+  position relative
   text-align center
   +above(768px)
     absolute 50% false false 0
+    width 100%
     transform translateY(-50%)
   &__column
     +above(768px)
@@ -62,7 +64,8 @@
     &--note
       color c__gray--gama
   &__share
-    display inline-block
+    /*display inline-block*/
+    display none
     width 50px
     margin-top 64px
     border 1px solid c__black
@@ -80,19 +83,43 @@
 
 
   // Owl Carousel Settings
-  .owl-nav
-    fixed 50% 0 false false
-    transform translateY(-50%)
-  .owl-next,
-  .owl-prev
-    width 40px
-    height 40px
-    line-height 40px
-    text-align center
-    background-color c__gray
-    color white
-    &:hover
-      background-color darken(c__gray, 10%)
+  &__nav
+    fixed false 0 43px false
+    z-index 100
+    width 100%
+    +above(768px)
+      fixed false 0 50% false
+      width auto
+      transform translateY(50%)
+    &__next,
+    &__prev,
+    &__info
+      display block
+      height 40px
+      line-height 40px
+      text-align center
+      background-color c__gray
+      color #fff1c7
+      +above(768px)
+        float none !important
+        width 40px !important
+    &__info
+      span(2/4)
+    &__count,
+    &__total
+      font-size 14px
+      color white
+    &__next,
+    &__prev
+      span(1/4)
+      &:hover
+        background-color darken(c__gray, 10%)
+    &__prev
+      border-right 1px solid c__gray--gama
+    &__next
+      border-left 1px solid c__gray--gama
+
+
 
 
 
