@@ -1,25 +1,48 @@
+/*Product Card*/
 .ia-Product
-  clearfix()
   position relative
   text-align center
+  height 100%
+  background url('../images/bg-body-product.png') no-repeat top center c__gray--teta
+  background-size 100%
+  background-attachment fixed
   +above(768px)
-    absolute 50% false false 0
-    width 100%
-    transform translateY(-50%)
+    background-size auto
+  &__inner
+    clearfix()
+    height 100%
+    background-attachment fixed
+  &__carousel
+    position relative
+    +above(768px)
+      absolute 50% false false 0
+      width 100%
+      transform translateY(-50%)
   &__column
     +above(768px)
-      col(1/2)
+      span(1/2)
   &__item
     clearfix()
     display inline-block
     padding 32px
     width 100%
-    max-width 800px
+    max-width 900px
   &__fig
-    display inline-block
     margin-bottom 32px
+    img
+      max-width 100%
+    &--d
+      display none
+      +above(768px)
+        display inline-block
+    &--m
+      display inline-block
+      +above(768px)
+        display none
   &__desc
-    padding 16px 40px 16px 16px
+    padding 16px
+    +above(768px)
+      padding-top 108px
   &__header
     &:after
       content ''
@@ -27,7 +50,6 @@
       width 50px
       height 8px
       margin 32px 0
-      background-color c__extra
   &__category,
   &__type
     margin 0
@@ -41,7 +63,6 @@
   &__category
     margin-bottom 8
     font-family NexaLight
-    background-color c__extra
     color white
     &--large
       font-size 20px
@@ -49,7 +70,6 @@
         font-size 32px
   &__type
     font-family NexaBold
-    color c__extra
     &--large
       font-size 12px
       +above(991px)
@@ -78,11 +98,6 @@
     img
       transition all 0.33s easing( 'in-out-cubic' )
       transform rotate(-45deg)
-
-  // Color Settings
-
-
-  // Owl Carousel Settings
   &__nav
     fixed false 0 43px false
     z-index 100
@@ -99,7 +114,6 @@
       line-height 40px
       text-align center
       background-color c__gray
-      color #fff1c7
       +above(768px)
         float none !important
         width 40px !important
@@ -114,6 +128,9 @@
       span(1/4)
       &:hover
         background-color darken(c__gray, 10%)
+
+      &.js-disabled
+        opacity 0.8
     &__prev
       border-right 1px solid c__gray--gama
     &__next
@@ -121,22 +138,84 @@
 
 
 
-
-
+/*Thumbs Control*/
 .ia-Thumbs
-  display none !important
   fixed false false 43px false
+  z-index 100
+  display none
   width 100%
-  background-color c__gray
+  max-height 200px
+  transform translateY(100%)
+  transition all 0.75s easing( 'in-out-cubic' )
+  +above(768px)
+    display block
+  +above(991px)
+    width calc(100% \- 150px)
+
+  &.js-thumbs-active
+    transform translateY(0)
+  &__header
+    display inline-block
+    absolute false false false 50%
+    margin-top -35px
+    transform translateX(-50%)
+  &__trigger
+    position relative
+    display block
+    padding 8px 48px 8px 32px
+    font-size 14px
+    font-weight 300
+    text-transform uppercase
+    color white
+    background-color c__gray
+    &:hover
+      background-color darken(c__gray, 10%)
+    &:after
+      content ''
+      display block
+      absolute 50% 23px false false
+      z-index 100
+      size 8px 25px
+      transform translateY(-50%)
+  &__body
+    clearfix()
+    background-color c__gray
+    border 1px solid darken(c__gray, 10%)
   &__item
     position relative
+    float left
     min-height 200px
-    padding 32px
+    padding 20px
     text-align center
-    &.active
-      color red
+    cursor pointer
+    border-left 1px solid darken(c__gray, 10%)
+    &:hover
+      background-color darken(c__gray, 10%)
+    &:nth-child(1)
+      border none
   &__media
-    absolute 50% 0 false 50%
     display inline-block
-    width 20% !important
-    transform translate(-50%, -50%)
+    max-height 120px
+    max-width 100%
+  &__caption
+    absolute false 16px 16px
+    font-family NexaBold
+    font-size 10px
+    text-transform uppercase
+    letter-spacing 1px
+    color white
+    +above(1199px)
+      font-size 14px
+
+
+
+/*Colors control*/
+.ia-Product
+  &--extra
+    set-color-theme(c__extra--alpha, false, c__extra--alpha, c__extra, extra)
+  &--hidratante
+    set-color-theme(c__hidratante, 0.32, c__hidratante--alpha, c__hidratante, hidratante)
+  &--original
+    set-color-theme(c__original, 0.32, c__original--alpha, c__original, original)
+  &--control
+    set-color-theme(c__control, 0.32, false, c__control, false)
