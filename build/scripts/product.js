@@ -6,8 +6,7 @@
 
   var products = jq('#product-slider').owlCarousel({
     items : 1,
-    nav : true,
-    navText : ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    nav : false,
     autoHeight : true,
     smartSpeed : 750
    });
@@ -20,16 +19,28 @@
     nav : true
   });
 
-  // contador
-  var container = $('.ia-Experts__cta');
+  var productsNav = $('#product-nav');
+  var prev = productsNav.find('.ia-Product__nav__prev');
+  var next = productsNav.find('.ia-Product__nav__next');
+  var count = productsNav.find('.ia-Product__nav__count');
+  var total = productsNav.find('.ia-Product__nav__total');
 
+  next.on('click', function () {
+    products.trigger('next.owl.carousel');
+    $('body').animate({scrollTop:0}, '500');
+  });
+
+  prev.on('click', function () {
+    products.trigger('prev.owl.carousel');
+    $('body').animate({scrollTop:0}, '500');
+  });
 
 
   products.on('changed.owl.carousel', function (evt) {
 
     // contador
-    var copy = (evt.item.index + 1) +' de ' + productItems.length;
-    console.log(copy);
+    count.text(evt.item.index + 1);
+    total.text(productItems.length);
 
     var items = thumbs.find('.owl-item');
     var actives = thumbs.find('.owl-item.active');
