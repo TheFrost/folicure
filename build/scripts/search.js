@@ -36,6 +36,7 @@
       });
 
       _window.resize(function () {
+
         _trigger = Utils.isMobile()
                     ? jq('#m-search-trigger')
                     : jq('#search-trigger');
@@ -43,8 +44,6 @@
         if (!Utils.isMobile()) {
           _input.keyup(_detectActivity);
         }
-
-        _trigger.on('click', _toggleSearch);
       });
     }
 
@@ -57,11 +56,9 @@
     }
 
     function _detectActivity () {
-      if (_input.val().length > 0) {
-        _trigger.attr('type', 'submit');
-      } else {
-        _trigger.attr('type', 'button');
-      }
+      var action = _input.val().length > 0 ? 'submit' : 'button';
+
+      _trigger.attr('type', action);
     }
 
 

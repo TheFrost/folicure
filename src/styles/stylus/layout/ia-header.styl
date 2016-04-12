@@ -171,6 +171,9 @@
     clearfix()
 
     &Social
+      margin 8px 0
+      +above(991px)
+        margin 0
       &__link
         display inline-block
         size 25px
@@ -219,8 +222,23 @@
       background url('../images/fig-unilever.svg') no-repeat center center
       background-size auto 30px
 
-      +above(991px)
+      +above(370px)
+        absolute false false 16px 50%
         display block
+        width 30px
+        transform translateX(-50%)
+
+      +above(991px)
+        position relative
+        bottom 0
+        left 0
+        transform none
+        width 100%
+
+      &--m
+        display block
+        +above(370px)
+          display none
 
     &__hr
       display none

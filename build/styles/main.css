@@ -259,6 +259,14 @@
 .ia-HeaderFooter:after {
   clear: both;
 }
+.ia-HeaderFooterSocial {
+  margin: 8px 0;
+}
+@media only screen and (min-width: 991px) {
+  .ia-HeaderFooterSocial {
+    margin: 0;
+  }
+}
 .ia-HeaderFooterSocial__link {
   display: inline-block;
   width: 25px;
@@ -303,9 +311,35 @@
   background: url("../images/fig-unilever.svg") no-repeat center center;
   background-size: auto 30px;
 }
+@media only screen and (min-width: 370px) {
+  .ia-HeaderFooter__logo {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    display: block;
+    width: 30px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 @media only screen and (min-width: 991px) {
   .ia-HeaderFooter__logo {
-    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 100%;
+  }
+}
+.ia-HeaderFooter__logo--m {
+  display: block;
+}
+@media only screen and (min-width: 370px) {
+  .ia-HeaderFooter__logo--m {
+    display: none;
   }
 }
 .ia-HeaderFooter__hr {
@@ -649,7 +683,7 @@
   display: inline-block;
   position: absolute;
   left: 50%;
-  margin-top: -35px;
+  margin-top: -43px;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -657,7 +691,7 @@
 .ia-Thumbs__trigger {
   position: relative;
   display: block;
-  padding: 8px 48px 8px 32px;
+  padding: 12px 48px 12px 32px;
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
@@ -668,14 +702,13 @@
   background-color: #4d4d4d;
 }
 .ia-Thumbs__trigger:after {
-  content: '';
   display: block;
   position: absolute;
   top: 50%;
   right: 23px;
   z-index: 100;
-  width: 8px;
-  height: 25px;
+  width: 13px;
+  height: 33px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -758,8 +791,7 @@
   background-color: #c76200;
 }
 .ia-Product--extra .ia-Thumbs__trigger:after {
-  background: url("../images/icon-bottle--extra.svg");
-  background-size: cover;
+  content: url("../images/icon-bottle--extra.svg");
 }
 .ia-Product--hidratante .ia-Product__inner {
   background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(22,129,210,0.32) 130%);
@@ -791,8 +823,7 @@
   background-color: #1681d2;
 }
 .ia-Product--hidratante .ia-Thumbs__trigger:after {
-  background: url("../images/icon-bottle--hidratante.svg");
-  background-size: cover;
+  content: url("../images/icon-bottle--hidratante.svg");
 }
 .ia-Product--original .ia-Product__inner {
   background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(0,72,144,0.32) 130%);
@@ -824,8 +855,7 @@
   background-color: #004890;
 }
 .ia-Product--original .ia-Thumbs__trigger:after {
-  background: url("../images/icon-bottle--original.svg");
-  background-size: cover;
+  content: url("../images/icon-bottle--original.svg");
 }
 .ia-Product--control .ia-Product__inner {
   background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(5,148,160,0.32) 130%);
@@ -857,13 +887,11 @@
   background-color: #0594a0;
 }
 .ia-Product--control .ia-Thumbs__trigger:after {
-  background: url("../images/icon-bottle--false.svg");
-  background-size: cover;
+  content: url("../images/icon-bottle--false.svg");
 }
 .ia-Content {
   position: relative;
   padding-top: 59px;
-  margin-bottom: 43px;
   min-height: 0;
 }
 @media only screen and (min-width: 991px) {
@@ -874,12 +902,13 @@
   }
 }
 .ia-Content--frontpage {
+  padding-bottom: 43px;
   background-color: #000;
 }
 @media only screen and (min-width: 1024px) {
   .ia-Content--frontpage {
     min-height: 1200px;
-    height: calc(100% - 43px);
+    height: 100%;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1130,7 +1159,7 @@
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
-    width: auto;
+    width: 40px;
   }
 }
 .ia-Search.js-searchActive {
@@ -1143,9 +1172,9 @@
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+    width: 400px;
   }
   .ia-Search.js-searchActive .ia-Search__input {
-    width: 400px;
     padding-left: 0;
     padding-right: 35px;
     -webkit-transform: translateX(0);
@@ -1190,11 +1219,11 @@
 }
 @media only screen and (min-width: 991px) {
   .ia-Search__input {
-    width: 24px;
+    width: 400px;
     padding: 4px 0 4px 50%;
-    -webkit-transform: translateX(135%);
-    -ms-transform: translateX(135%);
-    transform: translateX(135%);
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
   }
 }
 .ia-Search__submit {
@@ -1460,6 +1489,9 @@
   .ia-ExpertsForm__inputs:nth-child(3):last-child {
     margin-right: 0%;
   }
+}
+.ia-ExpertsForm__note {
+  font-size: 12px;
 }
 @media only screen and (min-width: 1024px) {
   .ia-ExpertsForm__submit {
