@@ -28,7 +28,9 @@
     width 100%
     max-width 900px
   &__fig
-    margin-bottom 32px
+    margin-bottom 64px
+    +above(768px)
+      margin-bottom 32px
     img
       max-width 100%
     &--d
@@ -133,8 +135,14 @@
         opacity 0.8
     &__prev
       border-right 1px solid c__gray--gama
+      +above(768px)
+        border-right none
+        border-bottom 1px solid c__gray--gama
     &__next
       border-left 1px solid c__gray--gama
+      +above(768px)
+        border-left none
+        border-top 1px solid c__gray--gama
 
 
 

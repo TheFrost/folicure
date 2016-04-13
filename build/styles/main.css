@@ -442,7 +442,12 @@
   clear: both;
 }
 .ia-Product__fig {
-  margin-bottom: 32px;
+  margin-bottom: 64px;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Product__fig {
+    margin-bottom: 32px;
+  }
 }
 .ia-Product__fig img {
   max-width: 100%;
@@ -649,8 +654,20 @@
 .ia-Product__nav__prev {
   border-right: 1px solid #818181;
 }
+@media only screen and (min-width: 768px) {
+  .ia-Product__nav__prev {
+    border-right: none;
+    border-bottom: 1px solid #818181;
+  }
+}
 .ia-Product__nav__next {
   border-left: 1px solid #818181;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Product__nav__next {
+    border-left: none;
+    border-top: 1px solid #818181;
+  }
 }
 .ia-Thumbs {
   position: fixed;
@@ -787,7 +804,7 @@
 .ia-Product--extra .ia-Product__nav__info {
   color: #fff1c7;
 }
-.ia-Product--extra .ia-Thumbs__item.active {
+.ia-Product--extra .ia-Thumbs__item.js-active-thumb {
   background-color: #c76200;
 }
 .ia-Product--extra .ia-Thumbs__trigger:after {
@@ -819,7 +836,7 @@
 .ia-Product--hidratante .ia-Product__nav__info {
   color: #4caef8;
 }
-.ia-Product--hidratante .ia-Thumbs__item.active {
+.ia-Product--hidratante .ia-Thumbs__item.js-active-thumb {
   background-color: #1681d2;
 }
 .ia-Product--hidratante .ia-Thumbs__trigger:after {
@@ -851,7 +868,7 @@
 .ia-Product--original .ia-Product__nav__info {
   color: #236ab1;
 }
-.ia-Product--original .ia-Thumbs__item.active {
+.ia-Product--original .ia-Thumbs__item.js-active-thumb {
   background-color: #004890;
 }
 .ia-Product--original .ia-Thumbs__trigger:after {
@@ -883,7 +900,7 @@
 .ia-Product--control .ia-Product__nav__info {
   color: false;
 }
-.ia-Product--control .ia-Thumbs__item.active {
+.ia-Product--control .ia-Thumbs__item.js-active-thumb {
   background-color: #0594a0;
 }
 .ia-Product--control .ia-Thumbs__trigger:after {
@@ -892,7 +909,17 @@
 .ia-Content {
   position: relative;
   padding-top: 59px;
+  padding-bottom: 43px;
   min-height: 0;
+  background-color: #000;
+}
+.ia-Content:before,
+.ia-Content:after {
+  content: " ";
+  display: table;
+}
+.ia-Content:after {
+  clear: both;
 }
 @media only screen and (min-width: 991px) {
   .ia-Content {
@@ -901,12 +928,14 @@
     width: calc(100% - 150px);
   }
 }
-.ia-Content--frontpage {
-  padding-bottom: 43px;
-  background-color: #000;
-}
 @media only screen and (min-width: 1024px) {
   .ia-Content--frontpage {
+    min-height: 1200px;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .ia-Content--product-grid {
     min-height: 1200px;
     height: 100%;
   }
@@ -914,8 +943,35 @@
 @media only screen and (min-width: 768px) {
   .ia-Content--product {
     min-height: 600px;
-    height: calc(100% - 43px);
+    height: 100%;
   }
+}
+.ia-Content--blog .ia-ContentHeader {
+  background: url("../images/bg-blog-header.jpg") no-repeat center center;
+  background-size: cover;
+}
+.ia-ContentHeader {
+  padding: 32px 16px;
+  text-align: center;
+}
+.ia-ContentHeader__title {
+  margin: 0;
+  font-family: Nexabold;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ia-ContentHeader__title:after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #fff;
+}
+.ia-ContentHeader__txt {
+  display: block;
+  color: #818181;
 }
 .ia-Column {
   position: relative;
@@ -938,6 +994,11 @@
   }
   .ia-Column:after {
     clear: both;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .ia-Content--product-grid .ia-Column {
+    height: calc(100% - 149px);
   }
 }
 .ia-Brick {
@@ -1124,6 +1185,33 @@
     clear: both;
   }
 }
+.ia-Content--blog .ia-Brick--normal {
+  height: 521px;
+}
+.ia-Content--blog .ia-Brick--tall {
+  height: 637px;
+}
+@media only screen and (max-width: 480px) {
+  .ia-Content--blog .ia-Brick--normal,
+  .ia-Content--blog .ia-Brick--tall {
+    height: 480px;
+  }
+}
+.ia-Content--blog .ia-BrickLink {
+  height: 100%;
+}
+.ia-Content--blog .ia-BrickFig {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ia-Content--blog .ia-BrickCaption__txt {
+  font-family: NexaBold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
 .ia-Overlay {
   position: fixed;
   top: 0;
@@ -1153,6 +1241,7 @@
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
   transition: all 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
 }
 @media only screen and (min-width: 991px) {
   .ia-Search {
@@ -1313,6 +1402,8 @@
   transition: transform 0.33s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.33s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .ia-Experts__body {
+  position: relative;
+  z-index: 100;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
@@ -1332,8 +1423,8 @@
   }
 }
 .ia-ExpertsAvatar {
-  display: none;
   position: relative;
+  display: none;
   margin-top: -16px;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);

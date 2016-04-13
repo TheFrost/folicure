@@ -13,7 +13,7 @@
     return {
 
       isMobile : function () {
-        return jq(window).innerWidth() < 768;
+        return jq(window).innerWidth() <= 768;
       },
 
       prefix : function () {

@@ -4,77 +4,161 @@
 
   var jq = $.noConflict();
 
-  var products = jq('#product-slider').owlCarousel({
-    items : 1,
-    nav : false,
-    autoHeight : true,
-    smartSpeed : 750
-   });
+  var Product = (function () {
 
-  var productItems = products.find('.owl-item');
-
-  var thumbs = $('#products-thumbs');
-  var thumbsItems = thumbs.find('.ia-Thumbs__item');
-
-  thumbsItems.each(function (index, value) {
-    $(value).css({
-      'width' : (100 / thumbsItems.length) + '%'
-    });
-  })
-
-  var productsNav = $('#product-nav');
-  var prev = productsNav.find('.ia-Product__nav__prev');
-  var next = productsNav.find('.ia-Product__nav__next');
-  var count = productsNav.find('.ia-Product__nav__count');
-  var total = productsNav.find('.ia-Product__nav__total');
-
-  next.on('click', function (evt) {
-    evt.preventDefault();
-    products.trigger('next.owl.carousel');
-    $('html, body').animate({scrollTop:0}, '500');
-  });
-
-  prev.on('click', function (evt) {
-    evt.preventDefault();
-    products.trigger('prev.owl.carousel');
-    $('html, body').animate({scrollTop:0}, '500');
-  });
+    /*Private vars*/
+    var _base,
+        _window,
+        _products,
+        _productNav,
+        _productNext,
+        _productPrev,
+        _currentSlide,
+        _totalSlides,
+        _thumbs,
+        _thumbsItems,
+        _thumbsTriger;
 
 
-  products.on('changed.owl.carousel', function (evt) {
-
-    // contador
-    count.text(evt.item.index + 1);
-    total.text(productItems.length);
-
-    thumbs.find('.ia-Thumbs__item').removeClass('active');
-    thumbs.find('.ia-Thumbs__item').eq(evt.item.index).addClass('active');
-
-    // disable controls
-    if (evt.item.index === productItems.length - 1) {
-      next.addClass('js-disabled');
-    } else {
-      next.removeClass('js-disabled');
+    /*Private Methods*/
+    var _cache = function (carousel, nav, thumbs) {
+      _base = jq('html, body');
+      _window = jq(window);
+      _products = carousel;
+      _productNav = nav;
+      _productNext = _productNav.find('.ia-Product__nav__next');
+      _productPrev = _productNav.find('.ia-Product__nav__prev');
+      _currentSlide = _productNav.find('.ia-Product__nav__count');
+      _totalSlides = _productNav.find('.ia-Product__nav__total');
+      _thumbs = thumbs;
+      _thumbsItems = _thumbs.find('.ia-Thumbs__item');
+      _thumbsTriger = _thumbs.find('.ia-Thumbs__trigger');
     }
 
-    if (evt.item.index === 0) {
-      prev.addClass('js-disabled');
-    } else {
-      prev.removeClass('js-disabled');
+    var _bindEvents = function () {
+      _products.on('change.owl.carousel', function () {
+        if (Utils.isMobile()) {
+          _animationBase();
+        }
+      });
+
+      _products.on('changed.owl.carousel', function (evt) {
+        var currentIndex = evt.item.index;
+
+        _meterAction(currentIndex);
+        _currentThumb(currentIndex);
+        _limitNav(currentIndex);
+      });
+
+      _window.on('resize', function () {
+        _products.trigger('refresh.owl.carousel');
+      });
+
+      _productNext.on('click', function (evt) {
+        evt.preventDefault();
+        _actionNext();
+      });
+
+      _productPrev.on('click', function (evt) {
+        evt.preventDefault();
+        _actionPrev();
+      });
+
+      _thumbsTriger.on('click', function (evt) {
+        evt.preventDefault();
+        _toggleThumbs();
+      })
+
+      _thumbsItems.on('click', function (evt) {
+        evt.preventDefault();
+        _goToSlide(this);
+      })
     }
 
-  });
+    var _initSlider = function () {
+      _products.owlCarousel({
+        autoHeight : true,
+        items : 1,
+        nav : false,
+        smartSpeed : 750
+      });
+    }
+
+    var _initThumbs = function () {
+      _thumbsItems.each(function (index, value) {
+        jq(value).css({
+          'width' : (100 / _thumbsItems.length) + '%'
+        });
+      });
+    }
+
+    var _animationBase = function () {
+      _base.animate({scrollTop:0}, '500');
+    }
+
+    var _actionNext = function () {
+      _products.trigger('next.owl.carousel');
+    }
+
+    var _actionPrev = function () {
+      _products.trigger('prev.owl.carousel');
+    }
+
+    var _toggleThumbs = function () {
+      _thumbs.toggleClass('js-thumbs-active');
+    }
+
+    var _goToSlide = function (el) {
+      var index = _thumbsItems.index(el);
+      _products.trigger('to.owl.carousel', [index]);
+    }
+
+    var _meterAction = function (currentIndex) {
+      _currentSlide.text(currentIndex + 1);
+      _totalSlides.text(_thumbsItems.length);
+    }
+
+    var _currentThumb = function (currentIndex) {
+      _thumbsItems.removeClass('js-active-thumb');
+      _thumbsItems.eq(currentIndex).addClass('js-active-thumb');
+    }
+
+    var _limitNav = function (currentIndex) {
+      if (currentIndex === _thumbsItems.length - 1) {
+        _productNext.addClass('js-disabled');
+      } else {
+        _productNext.removeClass('js-disabled');
+      }
+      if (currentIndex === 0) {
+        _productPrev.addClass('js-disabled');
+      } else {
+        _productPrev.removeClass('js-disabled');
+      }
+    }
 
 
-  thumbs.find('.ia-Thumbs__item').on('click', function (evt) {
-    var index = thumbs.find('.ia-Thumbs__item').index(this);
+    /*Public Methods*/
+    var init = function (carousel, nav, thumbs) {
+      _cache(carousel, nav, thumbs);
+      _initSlider();
+      _initThumbs();
+      _bindEvents();
+    }
 
-    products.trigger('to.owl.carousel', [index]);
-  });
+    var validateActive = function () {
+      if (_products != undefined && _thumbs.hasClass('js-thumbs-active')) {
+        _toggleThumbs();
+      }
+    }
 
-  thumbs.find('.ia-Thumbs__trigger').on('click', function (evt) {
-    evt.preventDefault();
-    thumbs.toggleClass('js-thumbs-active');
-  });
+    /*Revealing*/
+    return {
+      init : init,
+      validateActive : validateActive
+    }
+
+  })();
+
+  window.Product = Product;
 
 })(jQuery || window.jQuery, window, document);

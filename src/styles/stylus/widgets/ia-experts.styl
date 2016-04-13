@@ -46,6 +46,8 @@
       transition transform 0.33s easing( "in-out-back" )
   &__body
     clearfix()
+    position relative
+    z-index 100
     width 100%
     max-width 1024px
     margin 0 auto
@@ -53,8 +55,8 @@
     +above(1024px)
       padding 0 16px
   &Avatar
-    display none
     position relative
+    display none
     margin-top -16px
     transform translateY(50%)
     transition transform 0.75s easing( "in-out-cubic" )

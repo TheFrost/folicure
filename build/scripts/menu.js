@@ -15,7 +15,7 @@
         _footer;
 
     /*Private Methods*/
-    function _cache(trigger, el, container) {
+    var _cache = function (trigger, el, container) {
       _body = jq(container);
       _trigger = jq(trigger);
       _menu = jq(el);
@@ -24,18 +24,19 @@
       _footer = _menu.find('#menu-footer');
     }
 
-    function _bindEvents() {
+    var _bindEvents = function () {
       _trigger.on('click', function (evt) {
         _toggleAction(evt);
 
         Search.validateActive();
         Experts.validateActive();
+        Product.validateActive();
       });
 
       jq(window).resize(_calcHeight);
     }
 
-    function _toggleAction(evt) {
+    var _toggleAction = function (evt) {
       if (evt != undefined) {
         evt.preventDefault();
       }
@@ -46,7 +47,7 @@
       _calcHeight();
     }
 
-    function _calcHeight() {
+    var _calcHeight = function () {
       var listHeight = _list.height(),
           safeHeight = jq(window).height() - (_head.outerHeight() + _footer.outerHeight());
 
@@ -60,12 +61,12 @@
     }
 
     /*Public Methods*/
-    function init(trigger, el, container) {
+    var init = function (trigger, el, container) {
       _cache(trigger, el, container);
       _bindEvents();
     }
 
-    function validateActive () {
+    var validateActive = function () {
       if (_menu.hasClass('js-activeMenu')) {
         _toggleAction();
       }

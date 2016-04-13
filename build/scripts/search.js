@@ -14,8 +14,8 @@
 
 
     /*Private Methods*/
-    function _cache (el) {
-      _window = jq(window)
+    var _cache = function (el) {
+      _window = jq(window);
       _widget = jq(el);
       _input = _widget.find('#search-input');
       _trigger = Utils.isMobile()
@@ -23,16 +23,16 @@
                   : jq('#search-trigger');
     }
 
-    function _bindEvents () {
+    var _bindEvents = function () {
       if (!Utils.isMobile()) {
         _input.keyup(_detectActivity);
       }
 
       _trigger.on('click', function (evt) {
-        _toggleSearch(evt);
-
-        Experts.validateActive();
-        Menu.validateActive();
+        if (evt != undefined) {
+          evt.preventDefault();
+        }
+        _onClick();
       });
 
       _window.resize(function () {
@@ -41,21 +41,34 @@
                     ? jq('#m-search-trigger')
                     : jq('#search-trigger');
 
+        _trigger.off();
+
+        _trigger.on('click', function (evt) {
+          if (evt != undefined) {
+            evt.preventDefault();
+          }
+          _onClick();
+        });
+
         if (!Utils.isMobile()) {
           _input.keyup(_detectActivity);
         }
       });
     }
 
-    function _toggleSearch (evt) {
-      if (evt != undefined) {
-        evt.preventDefault();
-      }
+    var _onClick = function () {
+      _toggleSearch();
 
+      Experts.validateActive();
+      Menu.validateActive();
+      Product.validateActive();
+    }
+
+    var _toggleSearch = function () {
       _widget.toggleClass('js-searchActive');
     }
 
-    function _detectActivity () {
+    var _detectActivity = function () {
       var action = _input.val().length > 0 ? 'submit' : 'button';
 
       _trigger.attr('type', action);
@@ -63,12 +76,12 @@
 
 
     /*Public Methods*/
-    function init (el) {
+    var init = function (el) {
       _cache(el);
       _bindEvents();
     }
 
-    function validateActive () {
+    var validateActive = function () {
       if (_widget.hasClass('js-searchActive')) {
         _toggleSearch();
       }

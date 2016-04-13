@@ -15,26 +15,32 @@
         _trigger,
         _overlay,
         _body,
-        _submit;
+        _submit,
+        _form;
 
     /*Private Methods*/
-    function _cache (el) {
+    var _cache = function (el) {
       _window = jq(window);
       _header = jq('.ia-Header');
       _widget = jq(el);
       _widgetBody = _widget.find('.ia-Experts__body');
       _widgetHeader = _widget.find('.ia-Experts__header');
-      _trigger = _widget.find('#trigger-experts');
-      _overlay = jq('.ia-Overlay');
+      _trigger = jq('#trigger-experts');
+      _overlay = jq('#content-overlay');
       _body = jq('body');
+      _form = jq('#experts-form');
       _submit = _widget.find('.ia-ExpertsForm__submit');
     }
 
-    function _bindEvents () {
+    var _bindEvents = function () {
       _trigger.on('click', function (evt) {
         _showHide();
 
         Search.validateActive();
+        Product.validateActive();
+      });
+      _overlay.on('click', function () {
+        _showHide();
       });
       _submit.on('click', function () {
         setTimeout(function () {
@@ -46,7 +52,7 @@
       });
     }
 
-    function _showHide () {
+    var _showHide = function () {
       _widget.toggleClass('js-activeWidget');
       _body.toggleClass('js-noscroll');
       if (_overlay.hasClass('js-visible')) {
@@ -62,7 +68,7 @@
       }
     }
 
-    function _validateSize () {
+    var _validateSize = function () {
       var _safeHeight = _window.height() - _header.height() - _widgetHeader.height();
 
       if (Utils.isMobile()) {
@@ -77,16 +83,40 @@
       }
     }
 
+    var _validateForm = function () {
+      _form.validate({
+        rules: {
+          name : 'required',
+          email : {
+            required : true,
+            email : true
+          },
+          question : 'required',
+          agree : 'required'
+        },
+        messages : {
+          name : 'Información necesaria',
+          email : {
+            required : 'Información necesaria',
+            email : 'Formato email@ejemplo.com necesario'
+          },
+          question : 'Información necesaria',
+          agree : 'Debe estar de acuerdo'
+        }
+      });
+    }
+
     /*Public Methods*/
-    function init (el) {
+    var init = function (el) {
       setTimeout(function () {
         _cache(el);
         _bindEvents();
         _validateSize();
+        _validateForm();
       }, 500);
     }
 
-    function validateActive () {
+    var validateActive = function () {
       if (_widget.hasClass('js-activeWidget')) {
         _showHide();
       }

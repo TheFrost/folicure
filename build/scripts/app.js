@@ -24,30 +24,18 @@
   Experts.init('#experts');
 
 
-  // Experts Form Validation
-  jq('#experts-form').validate({
-    rules: {
-      name : 'required',
-      email : {
-        required : true,
-        email : true
-      },
-      question : 'required',
-      agree : 'required'
-    },
-    messages : {
-      name : 'Información necesaria',
-      email : {
-        required : 'Información necesaria',
-        email : 'Formato email@ejemplo.com necesario'
-      },
-      question : 'Información necesaria',
-      agree : 'Debe estar de acuerdo'
-    }
-  });
-
-
   // Search Widget init
   Search.init('#search');
+
+
+  // Product init
+  var carousel = jq('#product-slider');
+
+  if (carousel.length) {
+    var nav = jq('#product-nav'),
+        thumbs = jq('#products-thumbs');
+
+    Product.init(carousel, nav, thumbs);
+  }
 
 })(jQuery || window.jQuery, window, document);

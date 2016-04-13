@@ -1,8 +1,10 @@
 .ia-Content
+  clearfix()
   relative false false
-
   padding-top 59px
+  padding-bottom 43px
   min-height 0
+  background-color black
 
   +above(991px)
     float right
@@ -11,9 +13,11 @@
     width calc(100% \- 150px)
 
   &--frontpage
-    padding-bottom 43px
-    background-color black
+    +above(1024px)
+      min-height 1200px
+      height 100%
 
+  &--product-grid
     +above(1024px)
       min-height 1200px
       height 100%
@@ -21,4 +25,30 @@
   &--product
     +above(768px)
       min-height 600px
-      height calc(100% \- 43px)
+      height 100%
+
+  &--blog
+    .ia-ContentHeader
+      background url('../images/bg-blog-header.jpg') no-repeat center center
+      background-size cover
+
+  &Header
+    padding 32px 16px
+    text-align center
+    &__title
+      margin 0
+      font-family Nexabold
+      font-size 22px
+      text-transform uppercase
+      color white
+      &:after
+        content ''
+        display block
+        width 32px
+        height 4px
+        margin 16px auto
+        background-color #fff
+
+    &__txt
+      display block
+      color c__gray--gama
