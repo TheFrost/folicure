@@ -1,4 +1,4 @@
-/*Mixins*/
+/*Global Mixins*/
 retina-query(n, w, h)
   @media
   (-webkit-min-device-pixel-ratio: 2),
@@ -16,34 +16,6 @@ background-linear-gradient(startPoint, startColor, startInterval, endColor, endI
 	background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
 	background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
 
-set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
-  if !opacity-value
-    opacity-value = 1
-
-  .ia-Product
-    &__inner
-      background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
-      +above(768px)
-        background-linear-gradient(180deg, rgba(white,0.1), 45%, rgba(gradient,opacity-value), 55%)
-    &__header
-      &:after
-        background-color header-thumbs
-    &__category
-      background-color header-thumbs
-    &__type
-      color header-thumbs
-    &__nav
-      &__next,
-      &__prev,
-      &__info
-        color nav
-  .ia-Thumbs
-    &__item
-      &.js-active-thumb
-        background-color header-thumbs
-    &__trigger
-      &:after
-        content url('../images/icon-bottle--'icon-modifier'.svg')
 
 
 /*Utilities*/

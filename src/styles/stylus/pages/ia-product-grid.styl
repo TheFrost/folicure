@@ -1,0 +1,64 @@
+/*Local Mixin*/
+set-color-theme-grid(base, gradient, opacity-value)
+  if !opacity-value
+    opacity-value = 1
+
+  .ia-BrickProduct
+    background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
+    +above(768px)
+      background-linear-gradient(180deg, rgba(white,0.1), 70%, rgba(gradient,opacity-value), 80%)
+
+  .ia-Product
+    &__header
+      &:after
+        background-color base
+    &__category
+      background-color base
+    &__type
+      color base
+
+
+
+/*column settings product grid view*/
+.ia-Content
+  &--product-grid
+    .ia-Column
+      +above(1024px)
+        height calc(100% \- 149px)
+
+
+/*Product grid*/
+.ia-Brick
+  &Link
+    &:hover
+      .ia-BrickFig
+        opacity 1 !important
+  &Product
+    absolute 0 0 0 0
+    display block
+    height 100%
+    &__inner
+      clearfix()
+      absolute 50% false false 50%
+      transform translate(-50%, -50%)
+      text-align center
+      display block
+      width 100%
+      padding 0 32px 0 64px
+    .ia-BrickColumn
+      height 100%
+    .ia-Product
+      &__header
+        &:after
+          margin-bottom 0
+
+
+  /*Color settings*/
+  &--original
+    set-color-theme-grid(c__original, c__original, 0.32)
+  &--extra
+    set-color-theme-grid(c__extra, c__extra--alpha, false)
+  &--hidratante
+    set-color-theme-grid(c__hidratante, c__hidratante, 0.32)
+  &--control
+    set-color-theme-grid(c__control, c__control, 0.32)

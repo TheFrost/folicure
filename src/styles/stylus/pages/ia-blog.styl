@@ -1,0 +1,25 @@
+/*brick settings in blog view*/
+.ia-Content
+  &--blog
+    .ia-Brick
+      &--normal
+        height 521px
+      &--tall
+        height 637px
+      &--normal,
+      &--tall
+        +below(480px)
+          height 480px
+      &Link
+        height 100%
+      &Fig
+        background-position center center
+        background-repeat no-repeat
+        background-size cover
+      &Caption
+        &__txt
+          font-family NexaBold
+          font-size 14px
+          letter-spacing 1px
+          text-transform uppercase
+          color white

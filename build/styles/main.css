@@ -906,6 +906,163 @@
 .ia-Product--control .ia-Thumbs__trigger:after {
   content: url("../images/icon-bottle--false.svg");
 }
+@media only screen and (min-width: 1024px) {
+  .ia-Content--product-grid .ia-Column {
+    height: calc(100% - 149px);
+  }
+}
+.ia-BrickLink:hover .ia-BrickFig {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
+.ia-BrickProduct {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+.ia-BrickProduct__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 0 32px 0 64px;
+}
+.ia-BrickProduct__inner:before,
+.ia-BrickProduct__inner:after {
+  content: " ";
+  display: table;
+}
+.ia-BrickProduct__inner:after {
+  clear: both;
+}
+.ia-BrickProduct .ia-BrickColumn {
+  height: 100%;
+}
+.ia-BrickProduct .ia-Product__header:after {
+  margin-bottom: 0;
+}
+.ia-Brick--original .ia-BrickProduct {
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(0,72,144,0.32) 130%);
+  background-color: rgba(255,255,255,0.1);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(0,72,144,0.32) 130%);
+}
+@media only screen and (min-width: 768px) {
+  .ia-Brick--original .ia-BrickProduct {
+    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 70%,rgba(0,72,144,0.32) 80%);
+    background-color: rgba(255,255,255,0.1);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 70%,rgba(0,72,144,0.32) 80%);
+  }
+}
+.ia-Brick--original .ia-Product__header:after {
+  background-color: #004890;
+}
+.ia-Brick--original .ia-Product__category {
+  background-color: #004890;
+}
+.ia-Brick--original .ia-Product__type {
+  color: #004890;
+}
+.ia-Brick--extra .ia-BrickProduct {
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,#fff1c7 130%);
+  background-color: rgba(255,255,255,0.1);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,#fff1c7 130%);
+}
+@media only screen and (min-width: 768px) {
+  .ia-Brick--extra .ia-BrickProduct {
+    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 70%,#fff1c7 80%);
+    background-color: rgba(255,255,255,0.1);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 70%,#fff1c7 80%);
+  }
+}
+.ia-Brick--extra .ia-Product__header:after {
+  background-color: #c76200;
+}
+.ia-Brick--extra .ia-Product__category {
+  background-color: #c76200;
+}
+.ia-Brick--extra .ia-Product__type {
+  color: #c76200;
+}
+.ia-Brick--hidratante .ia-BrickProduct {
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(22,129,210,0.32) 130%);
+  background-color: rgba(255,255,255,0.1);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(22,129,210,0.32) 130%);
+}
+@media only screen and (min-width: 768px) {
+  .ia-Brick--hidratante .ia-BrickProduct {
+    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 70%,rgba(22,129,210,0.32) 80%);
+    background-color: rgba(255,255,255,0.1);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 70%,rgba(22,129,210,0.32) 80%);
+  }
+}
+.ia-Brick--hidratante .ia-Product__header:after {
+  background-color: #1681d2;
+}
+.ia-Brick--hidratante .ia-Product__category {
+  background-color: #1681d2;
+}
+.ia-Brick--hidratante .ia-Product__type {
+  color: #1681d2;
+}
+.ia-Brick--control .ia-BrickProduct {
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(5,148,160,0.32) 130%);
+  background-color: rgba(255,255,255,0.1);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(5,148,160,0.32) 130%);
+}
+@media only screen and (min-width: 768px) {
+  .ia-Brick--control .ia-BrickProduct {
+    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 70%,rgba(5,148,160,0.32) 80%);
+    background-color: rgba(255,255,255,0.1);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 70%,rgba(5,148,160,0.32) 80%);
+  }
+}
+.ia-Brick--control .ia-Product__header:after {
+  background-color: #0594a0;
+}
+.ia-Brick--control .ia-Product__category {
+  background-color: #0594a0;
+}
+.ia-Brick--control .ia-Product__type {
+  color: #0594a0;
+}
+.ia-Content--blog .ia-Brick--normal {
+  height: 521px;
+}
+.ia-Content--blog .ia-Brick--tall {
+  height: 637px;
+}
+@media only screen and (max-width: 480px) {
+  .ia-Content--blog .ia-Brick--normal,
+  .ia-Content--blog .ia-Brick--tall {
+    height: 480px;
+  }
+}
+.ia-Content--blog .ia-BrickLink {
+  height: 100%;
+}
+.ia-Content--blog .ia-BrickFig {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ia-Content--blog .ia-BrickCaption__txt {
+  font-family: NexaBold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
 .ia-Content {
   position: relative;
   padding-top: 59px;
@@ -939,6 +1096,10 @@
     min-height: 1200px;
     height: 100%;
   }
+}
+.ia-Content--product-grid .ia-ContentHeader {
+  background: url("../images/bg-product-header.jpg") no-repeat center center;
+  background-size: cover;
 }
 @media only screen and (min-width: 768px) {
   .ia-Content--product {
@@ -996,11 +1157,6 @@
     clear: both;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .ia-Content--product-grid .ia-Column {
-    height: calc(100% - 149px);
-  }
-}
 .ia-Brick {
   background-color: #000;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1048,12 +1204,6 @@
 .ia-BrickLink:hover .ia-BrickCaption {
   padding: 2em 3em;
 }
-.ia-BrickLink:hover .ia-BrickIcon {
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
-  opacity: 1;
-}
 @media only screen and (min-width: 1024px) {
   .ia-BrickLink {
     height: 100%;
@@ -1063,31 +1213,26 @@
   left: 32px;
 }
 .ia-BrickLink--control .ia-BrickFig {
-  background: url("../images/feed-bg-control.jpg") no-repeat top center;
-  background-size: cover;
+  background: url("../images/feed-bg-control.jpg");
 }
 .ia-BrickLink--control .ia-BrickBottle {
   left: 16px;
   bottom: 0;
 }
 .ia-BrickLink--article .ia-BrickFig {
-  background: url("../images/feed-bg-article.jpg") no-repeat top center;
-  background-size: cover;
+  background: url("../images/feed-bg-article.jpg");
 }
 .ia-BrickLink--test .ia-BrickFig {
-  background: url("../images/feed-bg-test.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("../images/feed-bg-test.jpg");
 }
 .ia-BrickLink--something .ia-BrickFig {
-  background: url("https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97976&w=800&h=976") no-repeat center center;
-  background-size: cover;
+  background: url("https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97976&w=800&h=976");
 }
 .ia-BrickLink--extra:hover .ia-BrickBottle {
   right: 32px;
 }
 .ia-BrickLink--extra .ia-BrickFig {
-  background: url("../images/feed-bg-extra.jpg") no-repeat top center;
-  background-size: cover;
+  background: url("../images/feed-bg-extra.jpg");
 }
 .ia-BrickLink--extra .ia-BrickBottle {
   right: 16px;
@@ -1113,6 +1258,9 @@
   position: relative;
   display: block;
   height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   overflow: hidden;
   transition: all 0.33s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -1184,33 +1332,6 @@
   .ia-BrickColumn:after {
     clear: both;
   }
-}
-.ia-Content--blog .ia-Brick--normal {
-  height: 521px;
-}
-.ia-Content--blog .ia-Brick--tall {
-  height: 637px;
-}
-@media only screen and (max-width: 480px) {
-  .ia-Content--blog .ia-Brick--normal,
-  .ia-Content--blog .ia-Brick--tall {
-    height: 480px;
-  }
-}
-.ia-Content--blog .ia-BrickLink {
-  height: 100%;
-}
-.ia-Content--blog .ia-BrickFig {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.ia-Content--blog .ia-BrickCaption__txt {
-  font-family: NexaBold;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #fff;
 }
 .ia-Overlay {
   position: fixed;

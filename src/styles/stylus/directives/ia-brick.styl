@@ -32,8 +32,6 @@
         transform scale(1.01)
       .ia-BrickCaption
         padding 2em 3em
-      .ia-BrickIcon
-        opacity 1
 
     +above(1024px)
       height 100%
@@ -43,8 +41,7 @@
         .ia-BrickBottle
           left 32px
       .ia-BrickFig
-        background url('../images/feed-bg-control.jpg') no-repeat top center
-        background-size cover
+        background url('../images/feed-bg-control.jpg')
       .ia-BrickBottle
         left 16px
         bottom 0
@@ -52,26 +49,22 @@
 
     &--article
       .ia-BrickFig
-        background url('../images/feed-bg-article.jpg') no-repeat top center
-        background-size cover
+        background url('../images/feed-bg-article.jpg')
 
     &--test
       .ia-BrickFig
-        background url('../images/feed-bg-test.jpg') no-repeat center center
-        background-size cover
+        background url('../images/feed-bg-test.jpg')
 
     &--something
       .ia-BrickFig
-        background url('https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97976&w=800&h=976') no-repeat center center
-        background-size cover
+        background url('https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97976&w=800&h=976')
 
     &--extra
       &:hover
         .ia-BrickBottle
           right 32px
       .ia-BrickFig
-        background url('../images/feed-bg-extra.jpg') no-repeat top center
-        background-size cover
+        background url('../images/feed-bg-extra.jpg')
       .ia-BrickBottle
         right 16px
         bottom 0
@@ -91,6 +84,10 @@
 
     display block
     height 100%
+
+    background-repeat no-repeat
+    background-position center center
+    background-size cover
 
     overflow hidden
     transition all 0.33s easing( "in-out-quad" )
@@ -149,30 +146,3 @@
   &Column
     +above(480px)
       span(1/2)
-
-
-/*brick settings in blog view*/
-.ia-Content
-  &--blog
-    .ia-Brick
-      &--normal
-        height 521px
-      &--tall
-        height 637px
-      &--normal,
-      &--tall
-        +below(480px)
-          height 480px
-      &Link
-        height 100%
-      &Fig
-        background-position center center
-        background-repeat no-repeat
-        background-size cover
-      &Caption
-        &__txt
-          font-family NexaBold
-          font-size 14px
-          letter-spacing 1px
-          text-transform uppercase
-          color white
