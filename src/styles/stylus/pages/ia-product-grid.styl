@@ -3,10 +3,12 @@ set-color-theme-grid(base, gradient, opacity-value)
   if !opacity-value
     opacity-value = 1
 
+  background-color gradient
+
   .ia-BrickProduct
     background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
     +above(768px)
-      background-linear-gradient(180deg, rgba(white,0.1), 70%, rgba(gradient,opacity-value), 80%)
+      background-linear-gradient(180deg, rgba(white,0.1), 60%, rgba(gradient,opacity-value), 80%)
 
   .ia-Product
     &__header
@@ -24,41 +26,96 @@ set-color-theme-grid(base, gradient, opacity-value)
   &--product-grid
     .ia-Column
       +above(1024px)
+        span(1/2)
         height calc(100% \- 149px)
+      &:nth-child(2)
+        .ia-Brick
+          +above(1024px)
+            &:nth-child(1)
+              border-right 2px solid white
+              border-bottom 2px solid white
+            &:nth-child(2)
+              border-top 2px solid white
+              border-right 2px solid white
+      &:nth-child(3)
+        .ia-Brick
+          +above(1024px)
+            &:nth-child(1)
+              border-bottom 2px solid white
+              border-left 2px solid white
+            &:nth-child(2)
+              border-top 2px solid white
+              border-left 2px solid white
 
 
 /*Product grid*/
-.ia-Brick
-  &Link
-    &:hover
-      .ia-BrickFig
-        opacity 1 !important
-  &Product
-    absolute 0 0 0 0
-    display block
-    height 100%
-    &__inner
-      clearfix()
-      absolute 50% false false 50%
-      transform translate(-50%, -50%)
-      text-align center
-      display block
-      width 100%
-      padding 0 32px 0 64px
-    .ia-BrickColumn
-      height 100%
-    .ia-Product
-      &__header
-        &:after
-          margin-bottom 0
+.ia-Content
+  &--product-grid
+    .ia-Brick
+      &Product
+        absolute 0
+        display block
+        text-align center
+        padding 32px
+        .ia-Product
+          &__header,
+          &__fig
+            +above(1024px)
+              position absolute
+          &__header
+            display inline-block
+            margin-bottom 32px
+            top 50%
+            &:after
+              margin-bottom 0
+            +above(1024px)
+              margin-bottom 0
+          &__fig
+            display block
+            margin 0 auto
+            bottom 0
+            width 200px
+            +above(1024px)
+              width 280px
+            &--d
+              display none
+              +above(1024px)
+                display block
+            &--m
+              display block
+              +above(1024px)
+                display none
 
+      /*Position settings*/
+      &--b-t
+        .ia-BrickProduct
+          .ia-Product
+            &__header
+              right 28%
+              +above(1280px)
+                right 45%
+            &__fig
+              left 40%
+              +above(1100px)
+                left 45%
+      &--t-b
+        .ia-BrickProduct
+          .ia-Product
+            &__header
+              left 28%
+              +above(1280px)
+                left 45%
+            &__fig
+              right 40%
+              +above(1100px)
+                right 55%
 
-  /*Color settings*/
-  &--original
-    set-color-theme-grid(c__original, c__original, 0.32)
-  &--extra
-    set-color-theme-grid(c__extra, c__extra--alpha, false)
-  &--hidratante
-    set-color-theme-grid(c__hidratante, c__hidratante, 0.32)
-  &--control
-    set-color-theme-grid(c__control, c__control, 0.32)
+      /*Color settings*/
+      &--original
+        set-color-theme-grid(c__original, c__original, 0.32)
+      &--extra
+        set-color-theme-grid(c__extra, c__extra--alpha, false)
+      &--hidratante
+        set-color-theme-grid(c__hidratante, c__hidratante, 0.32)
+      &--control
+        set-color-theme-grid(c__control, c__control, 0.32)
