@@ -48,6 +48,8 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     +above(768px)
       absolute 50% false false 0
       width 100%
+      height 100%
+      overflow: hidden;
       transform translateY(-50%)
   &__column
     +above(768px)
@@ -58,6 +60,10 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     padding 32px
     width 100%
     max-width 900px
+    +above(768px)
+      padding 96px
+    +above(1400px)
+      padding 32px
   &__fig
     margin-bottom 64px
     +above(768px)
