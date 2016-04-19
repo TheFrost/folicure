@@ -975,6 +975,18 @@
     margin-bottom: 0;
   }
 }
+@media only screen and (min-width: 991px) {
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__category,
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__type {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__category,
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__type {
+    font-size: 32px;
+  }
+}
 .ia-Content--product-grid .ia-BrickProduct .ia-Product__fig {
   display: block;
   margin: 0 auto;
@@ -982,6 +994,11 @@
   width: 200px;
 }
 @media only screen and (min-width: 1024px) {
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__fig {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 1366px) {
   .ia-Content--product-grid .ia-BrickProduct .ia-Product__fig {
     width: 280px;
   }
@@ -1002,35 +1019,35 @@
     display: none;
   }
 }
-.ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__header {
-  right: 28%;
-}
-@media only screen and (min-width: 1280px) {
-  .ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__header {
-    right: 45%;
-  }
-}
-.ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__fig {
-  left: 40%;
-}
-@media only screen and (min-width: 1100px) {
-  .ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__fig {
-    left: 45%;
-  }
-}
 .ia-Content--product-grid .ia-Brick--t-b .ia-BrickProduct .ia-Product__header {
-  left: 28%;
+  right: 35%;
 }
 @media only screen and (min-width: 1280px) {
   .ia-Content--product-grid .ia-Brick--t-b .ia-BrickProduct .ia-Product__header {
-    left: 45%;
+    right: 45%;
   }
 }
 .ia-Content--product-grid .ia-Brick--t-b .ia-BrickProduct .ia-Product__fig {
-  right: 40%;
+  left: 47%;
 }
 @media only screen and (min-width: 1100px) {
   .ia-Content--product-grid .ia-Brick--t-b .ia-BrickProduct .ia-Product__fig {
+    left: 50%;
+  }
+}
+.ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__header {
+  left: 45%;
+}
+@media only screen and (min-width: 1280px) {
+  .ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__header {
+    left: 45%;
+  }
+}
+.ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__fig {
+  right: 50%;
+}
+@media only screen and (min-width: 1100px) {
+  .ia-Content--product-grid .ia-Brick--b-t .ia-BrickProduct .ia-Product__fig {
     right: 55%;
   }
 }

@@ -70,12 +70,20 @@ set-color-theme-grid(base, gradient, opacity-value)
               margin-bottom 0
             +above(1024px)
               margin-bottom 0
+          &__category,
+          &__type
+            +above(991px)
+              font-size 28px
+            +above(1366px)
+              font-size 32px
           &__fig
             display block
             margin 0 auto
             bottom 0
             width 200px
             +above(1024px)
+              width 250px
+            +above(1366px)
               width 280px
             &--d
               display none
@@ -87,26 +95,26 @@ set-color-theme-grid(base, gradient, opacity-value)
                 display none
 
       /*Position settings*/
-      &--b-t
-        .ia-BrickProduct
-          .ia-Product
-            &__header
-              right 28%
-              +above(1280px)
-                right 45%
-            &__fig
-              left 40%
-              +above(1100px)
-                left 45%
       &--t-b
         .ia-BrickProduct
           .ia-Product
             &__header
-              left 28%
+              right 35%
+              +above(1280px)
+                right 45%
+            &__fig
+              left 47%
+              +above(1100px)
+                left 50%
+      &--b-t
+        .ia-BrickProduct
+          .ia-Product
+            &__header
+              left 45%
               +above(1280px)
                 left 45%
             &__fig
-              right 40%
+              right 50%
               +above(1100px)
                 right 55%
 
