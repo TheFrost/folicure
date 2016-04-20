@@ -101,7 +101,7 @@
             email : 'Formato email@ejemplo.com necesario'
           },
           question : 'Información necesaria',
-          agree : 'Debe estar de acuerdo'
+          agree : 'Para continuar, es necesario aceptar las Políticas de Privacidad.'
         }
       });
     }

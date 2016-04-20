@@ -14,6 +14,9 @@
 
   <!-- Componets -->
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles/main.css">
@@ -81,99 +84,116 @@
         <a href="#" class="ia-HeaderFooterSocial__link ia-HeaderFooterSocial__link--facebook"></a>
         <!-- <a href="#" class="ia-HeaderFooterSocial__link ia-HeaderFooterSocial__link--twitter"></a> -->
       </div>
-      <figure class="ia-HeaderFooter__logo ia-HeaderFooter__logo--m"></figure>
       <a href="#" class="ia-HeaderFooter__policity">Política de privacidad</a>
       <hr class="ia-HeaderFooter__hr">
       <figure class="ia-HeaderFooter__logo"></figure>
-      <span class="ia-HeaderFooter__copyright">&copy;2016 Unilever Derechos Reservados</span>
+      <span class="ia-HeaderFooter__copyright">&copy2016 Unilever Derechos Reservados</span>
     </footer>
   </header>
   <!-- // Header -->
 
   <!-- Main -->
-  <main class="ia-Content ia-Content--product-grid">
-    <header class="ia-ContentHeader">
-      <h1 class="ia-ContentHeader__title">Productos</h1>
-      <span class="ia-ContentHeader__txt">Conoce nuestros productos</span>
-    </header>
-    <aside class="ia-Column">
+  <main class="ia-Content ia-Content--product">
+    <div class="ia-Product ia-Product--hidratante" style="background-image:url(images/bg-detail-hidratante.png); background-size: cover;">
+      <a href="product-grid.html" class="ia-Product__return">Volver</a>
+      <div class="ia-Product__inner">
+        <div class="ia-Product__carousel owl-carousel" id="product-slider">
+          <article class="ia-Product__item">
+            <div class="ia-Product__column">
+              <div class="ia-Product__desc">
+                <header class="ia-Product__header">
+                  <h1 class="ia-Product__category ia-Product__category--large">Hidratante</h1>
+                  <h2 class="ia-Product__type">Shampoo</h2>
+                </header>
+                <p class="ia-Product__text">Olvídate de la resequedad y ten un cabello más brillante y suave con menos caída.*</p>
+                <p class="ia-Product__text ia-Product__text--note">*Caída debido al quiebre.</p>
+              </div>
+            </div>
+            <div class="ia-Product__column">
+              <figure class="ia-Product__fig ia-Product__fig--d">
+                <img src="images/single-hidratante-shampoo.png" alt="">
+              </figure>
+              <figure class="ia-Product__fig ia-Product__fig--m">
+                <img src="images/single-hidratante-shampoo-m.png" alt="">
+              </figure>
+            </div>
+          </article>
+          <article class="ia-Product__item">
+            <div class="ia-Product__column">
+              <div class="ia-Product__desc">
+                <header class="ia-Product__header">
+                  <h1 class="ia-Product__category">Hidratante</h1>
+                  <h2 class="ia-Product__type ia-Product__type--large">Acondicionador</h2>
+                </header>
+                <p class="ia-Product__text">Cabello fuerte**, suave, dócil y brillante.</p>
+                <p class="ia-Product__text ia-Product__text--note">** Mayor resistencia al quiebre vs shampoo sin ingredientes acondicionadores.</p>
+              </div>
+            </div>
+            <div class="ia-Product__column">
+              <figure class="ia-Product__fig ia-Product__fig--d">
+                <img src="images/single-hidratante-acondicionador.png" alt="">
+              </figure>
+              <figure class="ia-Product__fig ia-Product__fig--m">
+                <img src="images/single-hidratante-acondicionador-m.png" alt="">
+              </figure>
+            </div>
+          </article>
+          <article class="ia-Product__item">
+            <div class="ia-Product__column">
+              <div class="ia-Product__desc">
+                <header class="ia-Product__header">
+                  <h1 class="ia-Product__category">Hidratante</h1>
+                  <h2 class="ia-Product__type ia-Product__type--large">2 en 1</h2>
+                </header>
+                <p class="ia-Product__text">Previene la resequedad del cabello, Folicuré® dos en uno fortalece** y revitaliza el cabello con su poder hidratante.</p>
+                <p class="ia-Product__text ia-Product__text--note">** Mayor resistencia al quiebre vs shampoo sin ingredientes acondicionadores.</p>
+              </div>
+            </div>
+            <div class="ia-Product__column">
+              <figure class="ia-Product__fig ia-Product__fig--d">
+                <img src="images/single-hidratante-2en1.png" alt="">
+              </figure>
+              <figure class="ia-Product__fig ia-Product__fig--m">
+                <img src="images/single-hidratante-2en1-m.png" alt="">
+              </figure>
+            </div>
+          </article>
 
-      <article class="ia-Brick ia-Brick--tall ia-Brick--original ia-Brick--t-b">
-        <a href="product-original.html" class="ia-BrickLink">
-          <span class="ia-BrickFig" style="background-image:url(images/bg-grid-original.jpg)"></span>
-
-          <span class="ia-BrickProduct">
-            <span class="ia-Product__header">
-              <h1 class="ia-Product__category ia-Product__category--large">Original</h1>
-              <h2 class="ia-Product__type">Shampoo</h2>
-            </span>
-            <span class="ia-Product__fig">
-              <img class="ia-Product__fig--d" src="images/single-original-shampoo.png" alt="">
-              <img class="ia-Product__fig--m" src="images/single-original-shampoo-m.png" alt="">
-            </span>
+        </div>
+        <div class="ia-Product__nav" id="product-nav">
+          <a href="#" class="ia-Product__nav__prev js-disabled">
+            <i class="fa fa-angle-left"></i>
+          </a>
+          <span class="ia-Product__nav__info">
+            <span class="ia-Product__nav__count"></span>
+            /
+            <span class="ia-Product__nav__total"></span>
           </span>
-
-        </a>
-      </article>
-
-      <article class="ia-Brick ia-Brick--normal ia-Brick--extra ia-Brick--b-t">
-        <a href="product-extra.html" class="ia-BrickLink">
-          <span class="ia-BrickFig" style="background-image:url(images/bg-grid-extra.jpg)"></span>
-
-          <span class="ia-BrickProduct">
-            <span class="ia-Product__header">
-              <h1 class="ia-Product__category ia-Product__category--large">Extra</h1>
-              <h2 class="ia-Product__type">Shampoo</h2>
-            </span>
-            <span class="ia-Product__fig">
-              <img class="ia-Product__fig--d" src="images/single-extra-shampoo.png" alt="">
-              <img class="ia-Product__fig--m" src="images/single-extra-shampoo-m.png" alt="">
-            </span>
-          </span>
-
-        </a>
-      </article>
-
-    </aside>
-    <aside class="ia-Column">
-
-      <article class="ia-Brick ia-Brick--normal ia-Brick--hidratante ia-Brick--t-b">
-        <a href="product-hidratante.html" class="ia-BrickLink">
-          <span class="ia-BrickFig" style="background-image:url(images/bg-grid-hidratante.jpg)"></span>
-
-          <span class="ia-BrickProduct">
-            <span class="ia-Product__header">
-              <h1 class="ia-Product__category ia-Product__category--large">Hidratante</h1>
-              <h2 class="ia-Product__type">Shampoo</h2>
-            </span>
-            <span class="ia-Product__fig">
-              <img class="ia-Product__fig--d" src="images/single-hidratante-shampoo.png" alt="">
-              <img class="ia-Product__fig--m" src="images/single-hidratante-shampoo-m.png" alt="">
-            </span>
-          </span>
-
-        </a>
-      </article>
-
-      <article class="ia-Brick ia-Brick--tall ia-Brick--control ia-Brick--b-t">
-        <a href="product-control.html" class="ia-BrickLink">
-          <span class="ia-BrickFig" style="background-image:url(images/bg-grid-control.jpg)"></span>
-
-          <span class="ia-BrickProduct">
-            <span class="ia-Product__header">
-              <h1 class="ia-Product__category ia-Product__category--large">Control caspa</h1>
-              <h2 class="ia-Product__type">Shampoo</h2>
-            </span>
-            <span class="ia-Product__fig">
-              <img class="ia-Product__fig--d" src="images/single-control-shampoo.png" alt="">
-              <img class="ia-Product__fig--m" src="images/single-control-shampoo-m.png" alt="">
-            </span>
-          </span>
-
-        </a>
-      </article>
-
-    </aside>
+          <a href="#" class="ia-Product__nav__next">
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ia-Thumbs" id="products-thumbs">
+        <header class="ia-Thumbs__header">
+          <a href="#" class="ia-Thumbs__trigger">Ver toda la línea</a>
+        </header>
+        <div class="ia-Thumbs__body">
+          <figure class="ia-Thumbs__item js-active-thumb">
+            <img src="images/single-hidratante-shampoo-m.png" class="ia-Thumbs__media" alt="">
+            <figcaption class="ia-Thumbs__caption">Shampoo</figcaption>
+          </figure>
+          <figure class="ia-Thumbs__item">
+            <img src="images/single-hidratante-acondicionador-m.png" class="ia-Thumbs__media" alt="">
+            <figcaption class="ia-Thumbs__caption">Acondicionador</figcaption>
+          </figure>
+          <figure class="ia-Thumbs__item">
+            <img src="images/single-hidratante-2en1-m.png" class="ia-Thumbs__media" alt="">
+            <figcaption class="ia-Thumbs__caption">Shampoo 2 en 1</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
   </main>
   <!-- // Main -->
 
@@ -201,8 +221,7 @@
           </div>
 
           <div class="ia-ExpertsForm__group ia-ExpertsForm__group--question">
-            <input type="text" placeholder="Escribe tu pregunta aquí... " name="question" required class="ia-ExpertsForm__input">
-            <label for="" class="ia-ExpertsForm__note">* Tiempo promedio de respuesta: 48 horas.</label>
+            <input type="text" placeholder="Escribe tu pregunta aquí... (Tiempo promedio de respuesta: 48 horas)" name="question" required class="ia-ExpertsForm__input">
           </div>
 
           <div class="ia-ExpertsForm__group ia-ExpertsForm__group--agree">
@@ -230,6 +249,7 @@
   <!-- External Resources -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 
   <!-- Main Scripts -->
   <script src="scripts/utils.js"></script>

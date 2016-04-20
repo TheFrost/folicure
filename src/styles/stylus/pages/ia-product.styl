@@ -7,7 +7,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     &__inner
       background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
       +above(768px)
-        background-linear-gradient(180deg, rgba(white,0.1), 45%, rgba(gradient,opacity-value), 55%)
+        background-linear-gradient(180deg, rgba(white,0.1), 45%, rgba(gradient,opacity-value), 100%)
     &__header
       &:after
         background-color header-thumbs
@@ -34,11 +34,35 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   position relative
   text-align center
   height 100%
-  background url('../images/bg-body-product.png') no-repeat top center c__gray--teta
+  background-color c__gray--teta
+  background-repeat no-repeat
+  background-position top center
   background-size 100%
   background-attachment fixed
   +above(768px)
     background-size auto
+    overflow hidden
+  &__return
+    fixed 59px 0 false false
+    z-index 100
+    display block
+    padding 8px 16px
+    text-transform uppercase
+    background-color c__gray
+    color white
+    transition all 0.33s easing( 'in-out-cubic' )
+    +above(768px)
+      right 50px
+      top 100px
+    +above(1024px)
+      right 100px
+    &:hover
+      background-color c__gray--delta
+    &:before
+      content '\f104'
+      font normal normal normal 14px/1 FontAwesome
+      font-size 16px
+      margin-right 8px
   &__inner
     clearfix()
     height 100%
@@ -48,7 +72,6 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     +above(768px)
       absolute 50% false false 0
       width 100%
-      height 100%
       overflow: hidden;
       transform translateY(-50%)
   &__column
@@ -92,7 +115,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   &__category,
   &__type
     margin 0
-    padding 6px 16px 0
+    padding 6px 16px 2px
     font-size 28px
     line-height 1
     letter-spacing 6px
@@ -103,16 +126,14 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     margin-bottom 4px
     font-family NexaLight
     color white
-    &--large
-      font-size 20px
-      +above(991px)
-        font-size 32px
+    font-size 20px
+    +above(991px)
+      font-size 32px
   &__type
     font-family NexaBold
-    &--large
-      font-size 12px
-      +above(991px)
-        font-size 20px
+    font-size 12px
+    +above(991px)
+      font-size 20px
   &__text
     margin-top 0
     margin-bottom 32px
@@ -121,7 +142,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     +above(768px)
       text-align left
     &--note
-      color c__gray--gama
+      color c__gray
   &__share
     /*display inline-block*/
     display none
@@ -166,7 +187,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     &__prev
       span(1/4)
       &:hover
-        background-color darken(c__gray, 10%)
+        background-color c__gray--delta
 
       &.js-disabled
         opacity 0.8
@@ -214,7 +235,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     color white
     background-color c__gray
     &:hover
-      background-color darken(c__gray, 10%)
+      background-color c__gray--delta
     &:after
       display block
       absolute 50% 23px false false
@@ -224,7 +245,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   &__body
     clearfix()
     background-color c__gray
-    border 1px solid darken(c__gray, 10%)
+    border 1px solid c__gray--delta
   &__item
     position relative
     float left
@@ -232,9 +253,9 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     padding 20px
     text-align center
     cursor pointer
-    border-left 1px solid darken(c__gray, 10%)
+    border-left 1px solid c__gray--delta
     &:hover
-      background-color darken(c__gray, 10%)
+      background-color c__gray--delta
     &:nth-child(1)
       border none
   &__media
@@ -256,10 +277,10 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
 /*Colors control*/
 .ia-Product
   &--extra
-    set-color-theme(c__extra--alpha, false, c__extra--alpha, c__extra, extra)
+    set-color-theme(c__extra--alpha, 0.7, c__extra--alpha, c__extra, extra)
   &--hidratante
-    set-color-theme(c__hidratante, 0.32, c__hidratante--alpha, c__hidratante, hidratante)
+    set-color-theme(c__hidratante, 0.3, c__hidratante--alpha, c__hidratante, hidratante)
   &--original
-    set-color-theme(c__original, 0.32, c__original--alpha, c__original, original)
+    set-color-theme(c__original, 0.3, c__original--alpha, c__original, original)
   &--control
-    set-color-theme(c__control, 0.32, false, c__control, false)
+    set-color-theme(c__control, 0.3, false, c__control, false)

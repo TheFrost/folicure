@@ -80,7 +80,8 @@
         autoHeight : true,
         items : 1,
         nav : false,
-        smartSpeed : 750
+        smartSpeed : 750,
+        mouseDrag : false
       });
     }
 
@@ -106,6 +107,14 @@
 
     var _toggleThumbs = function () {
       _thumbs.toggleClass('js-thumbs-active');
+
+      var _triggerTxt = _thumbs.hasClass('js-thumbs-active')
+        ? 'Ocultar línea'
+        : 'Ver toda la línea';
+
+      setTimeout(function () {
+        _thumbsTriger.text(_triggerTxt);
+      }, 750);
     }
 
     var _goToSlide = function (el) {
@@ -142,6 +151,7 @@
       _cache(carousel, nav, thumbs);
       _initSlider();
       _initThumbs();
+      _meterAction(0);
       _bindEvents();
     }
 

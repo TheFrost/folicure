@@ -8,7 +8,7 @@ set-color-theme-grid(base, gradient, opacity-value)
   .ia-BrickProduct
     background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
     +above(768px)
-      background-linear-gradient(180deg, rgba(white,0.1), 60%, rgba(gradient,opacity-value), 80%)
+      background-linear-gradient(180deg, rgba(white,0.1), 60%, rgba(gradient,opacity-value), 100%)
 
   .ia-Product
     &__header
@@ -70,12 +70,9 @@ set-color-theme-grid(base, gradient, opacity-value)
               margin-bottom 0
             +above(1024px)
               margin-bottom 0
-          &__category,
-          &__type
+          &__category
             +above(991px)
               font-size 28px
-            +above(1366px)
-              font-size 32px
           &__fig
             display block
             margin 0 auto
@@ -120,10 +117,10 @@ set-color-theme-grid(base, gradient, opacity-value)
 
       /*Color settings*/
       &--original
-        set-color-theme-grid(c__original, c__original, 0.32)
+        set-color-theme-grid(c__original, c__original, 0.3)
       &--extra
-        set-color-theme-grid(c__extra, c__extra--alpha, false)
+        set-color-theme-grid(c__extra, c__extra--alpha, 0.7)
       &--hidratante
-        set-color-theme-grid(c__hidratante, c__hidratante, 0.32)
+        set-color-theme-grid(c__hidratante, c__hidratante, 0.3)
       &--control
-        set-color-theme-grid(c__control, c__control, 0.32)
+        set-color-theme-grid(c__control, c__control, 0.3)

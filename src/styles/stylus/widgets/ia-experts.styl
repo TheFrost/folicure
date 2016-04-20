@@ -51,23 +51,21 @@
     width 100%
     max-width 1024px
     margin 0 auto
-    padding 0 16px 16px
-    +above(1024px)
-      padding 0 16px
+    padding 0 16px
   &Avatar
     position relative
     display none
-    margin-top -16px
+    margin-bottom -16px
     transform translateY(50%)
     transition transform 0.75s easing( "in-out-cubic" )
     +above(1024px)
       col(1/4)
       display block
     img
-      max-width 180px
       margin 0 auto
   &Form
     clearfix()
+    padding-bottom 16px
     +above(1024px)
       col(3/4)
     &__inputs

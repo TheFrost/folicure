@@ -186,11 +186,11 @@
           transform scale(1.1)
 
         &--facebook
-          margin-right 1em
-
           background url('../images/icon-facebook.svg') no-repeat center center
 
         &--twitter
+          margin-left 1em
+
           background url('../images/icon-twitter.svg') no-repeat center center
 
     &__policity
@@ -266,3 +266,11 @@
         float none
 
         font-size 10px
+
+
+/*Special Query Menu*/
+@media (min-width: 768px) and (max-height: 678px)
+  .ia-Header
+    &Menu
+      &Link
+        padding 0.5em
