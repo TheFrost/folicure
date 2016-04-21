@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'NexaBold';
   src: url("../fonts/nexa_bold-webfont.eot");
-  src: url("../fonts/nexa_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/nexa_bold-webfont.woff2") format("woff2"), url("../fonts/nexa_bold-webfont.woff") format("woff"), url("../fonts/nexa_bold-webfont.ttf") format("truetype"), url("../fonts/nexa_bold-webfont.svg#NexaBold") format("svg");
+  src: url("../fonts/nexa_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/nexa_bold-webfont.woff") format("woff"), url("../fonts/nexa_bold-webfont.ttf") format("truetype"), url("../fonts/nexa_bold-webfont.svg#NexaBold") format("svg");
 }
 @font-face {
   font-family: 'NexaLight';
   src: url("../fonts/nexa_light-webfont.eot");
-  src: url("../fonts/nexa_light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/nexa_light-webfont.woff2") format("woff2"), url("../fonts/nexa_light-webfont.woff") format("woff"), url("../fonts/nexa_light-webfont.ttf") format("truetype"), url("../fonts/nexa_light-webfont.svg#NexaLight") format("svg");
+  src: url("../fonts/nexa_light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/nexa_light-webfont.woff") format("woff"), url("../fonts/nexa_light-webfont.ttf") format("truetype"), url("../fonts/nexa_light-webfont.svg#NexaLight") format("svg");
 }
 .u-Container {
   *zoom: 1;
@@ -377,17 +377,17 @@
 .ia-Product {
   position: relative;
   text-align: center;
-  height: 100%;
   background-color: #eaeaea;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   background-size: 100%;
   background-attachment: fixed;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product {
     background-size: auto;
     overflow: hidden;
+    height: 100%;
   }
 }
 .ia-Product__return {
@@ -402,13 +402,13 @@
   color: #fff;
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__return {
-    right: 50px;
+    right: 32px;
     top: 100px;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
   .ia-Product__return {
     right: 100px;
   }
@@ -423,7 +423,6 @@
   margin-right: 8px;
 }
 .ia-Product__inner {
-  height: 100%;
   background-attachment: fixed;
 }
 .ia-Product__inner:before,
@@ -434,10 +433,15 @@
 .ia-Product__inner:after {
   clear: both;
 }
+@media only screen and (min-width: 991px) {
+  .ia-Product__inner {
+    height: 100%;
+  }
+}
 .ia-Product__carousel {
   position: relative;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__carousel {
     position: absolute;
     top: 50%;
@@ -449,7 +453,7 @@
     transform: translateY(-50%);
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__column {
     *zoom: 1;
     float: left;
@@ -482,7 +486,7 @@
 .ia-Product__item:after {
   clear: both;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__item {
     padding: 96px;
   }
@@ -493,9 +497,9 @@
   }
 }
 .ia-Product__fig {
-  margin-bottom: 64px;
+  margin-bottom: 96px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__fig {
     margin-bottom: 32px;
   }
@@ -506,7 +510,7 @@
 .ia-Product__fig--d {
   display: none;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__fig--d {
     display: inline-block;
   }
@@ -514,7 +518,7 @@
 .ia-Product__fig--m {
   display: inline-block;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__fig--m {
     display: none;
   }
@@ -522,7 +526,7 @@
 .ia-Product__desc {
   padding: 16px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__desc {
     padding-top: 108px;
   }
@@ -575,7 +579,7 @@
   font-size: 18px;
   color: #252525;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__text {
     text-align: left;
   }
@@ -617,7 +621,7 @@
   z-index: 100;
   width: 100%;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__nav {
     position: fixed;
     right: 0;
@@ -637,7 +641,7 @@
   text-align: center;
   background-color: #555;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__nav__next,
   .ia-Product__nav__prev,
   .ia-Product__nav__info {
@@ -694,14 +698,12 @@
 }
 .ia-Product__nav__next.js-disabled,
 .ia-Product__nav__prev.js-disabled {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
-  opacity: 0.8;
+  background-color: #777;
 }
 .ia-Product__nav__prev {
   border-right: 1px solid #999;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__nav__prev {
     border-right: none;
     border-bottom: 1px solid #999;
@@ -710,7 +712,7 @@
 .ia-Product__nav__next {
   border-left: 1px solid #999;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product__nav__next {
     border-left: none;
     border-top: 1px solid #999;
@@ -728,7 +730,7 @@
   transform: translateY(100%);
   transition: all 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Thumbs {
     display: block;
   }
@@ -830,7 +832,7 @@
   background-color: rgba(255,255,255,0.1);
   background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(255,241,199,0.7) 130%);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product--extra .ia-Product__inner {
     background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 45%,rgba(255,241,199,0.7) 100%);
     background-color: rgba(255,255,255,0.1);
@@ -862,7 +864,7 @@
   background-color: rgba(255,255,255,0.1);
   background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(22,129,210,0.3) 130%);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product--hidratante .ia-Product__inner {
     background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 45%,rgba(22,129,210,0.3) 100%);
     background-color: rgba(255,255,255,0.1);
@@ -894,7 +896,7 @@
   background-color: rgba(255,255,255,0.1);
   background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(0,72,144,0.3) 130%);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product--original .ia-Product__inner {
     background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 45%,rgba(0,72,144,0.3) 100%);
     background-color: rgba(255,255,255,0.1);
@@ -913,7 +915,7 @@
 .ia-Product--original .ia-Product__nav__next,
 .ia-Product--original .ia-Product__nav__prev,
 .ia-Product--original .ia-Product__nav__info {
-  color: #236ab1;
+  color: #4caef8;
 }
 .ia-Product--original .ia-Thumbs__item.js-active-thumb {
   background-color: #004890;
@@ -926,7 +928,7 @@
   background-color: rgba(255,255,255,0.1);
   background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(5,148,160,0.3) 130%);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 991px) {
   .ia-Product--control .ia-Product__inner {
     background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 45%,rgba(5,148,160,0.3) 100%);
     background-color: rgba(255,255,255,0.1);
@@ -952,6 +954,14 @@
 }
 .ia-Product--control .ia-Thumbs__trigger:after {
   content: url("../images/icon-bottle--false.svg");
+}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 @media only screen and (min-width: 1024px) {
   .ia-Content--product-grid .ia-Column {
@@ -1023,8 +1033,15 @@
   }
 }
 @media only screen and (min-width: 991px) {
-  .ia-Content--product-grid .ia-BrickProduct .ia-Product__category {
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__category,
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__type {
     font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__category,
+  .ia-Content--product-grid .ia-BrickProduct .ia-Product__type {
+    font-size: 32px;
   }
 }
 .ia-Content--product-grid .ia-BrickProduct .ia-Product__fig {
@@ -1119,15 +1136,15 @@
   background-color: #fff1c7;
 }
 .ia-Content--product-grid .ia-Brick--extra .ia-BrickProduct {
-  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(255,241,199,0.7) 130%);
+  background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 0,rgba(255,241,199,0.5) 130%);
   background-color: rgba(255,255,255,0.1);
-  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(255,241,199,0.7) 130%);
+  background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0,rgba(255,241,199,0.5) 130%);
 }
 @media only screen and (min-width: 768px) {
   .ia-Content--product-grid .ia-Brick--extra .ia-BrickProduct {
-    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 60%,rgba(255,241,199,0.7) 100%);
+    background-image: -o-linear-gradient(360deg,rgba(255,255,255,0.1) 60%,rgba(255,241,199,0.5) 100%);
     background-color: rgba(255,255,255,0.1);
-    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 60%,rgba(255,241,199,0.7) 100%);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 60%,rgba(255,241,199,0.5) 100%);
   }
 }
 .ia-Content--product-grid .ia-Brick--extra .ia-Product__header:after {

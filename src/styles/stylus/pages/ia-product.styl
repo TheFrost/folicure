@@ -6,7 +6,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   .ia-Product
     &__inner
       background-linear-gradient(180deg, rgba(white,0.1), 0, rgba(gradient,opacity-value), 130%)
-      +above(768px)
+      +above(991px)
         background-linear-gradient(180deg, rgba(white,0.1), 45%, rgba(gradient,opacity-value), 100%)
     &__header
       &:after
@@ -33,15 +33,15 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
 .ia-Product
   position relative
   text-align center
-  height 100%
   background-color c__gray--teta
   background-repeat no-repeat
-  background-position top center
+  background-position center center
   background-size 100%
   background-attachment fixed
-  +above(768px)
+  +above(991px)
     background-size auto
     overflow hidden
+    height 100%
   &__return
     fixed 59px 0 false false
     z-index 100
@@ -51,10 +51,10 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     background-color c__gray
     color white
     transition all 0.33s easing( 'in-out-cubic' )
-    +above(768px)
-      right 50px
+    +above(991px)
+      right 32px
       top 100px
-    +above(1024px)
+    +above(1025px)
       right 100px
     &:hover
       background-color c__gray--delta
@@ -65,17 +65,18 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
       margin-right 8px
   &__inner
     clearfix()
-    height 100%
     background-attachment fixed
+    +above(991px)
+      height 100%
   &__carousel
     position relative
-    +above(768px)
+    +above(991px)
       absolute 50% false false 0
       width 100%
       overflow: hidden;
       transform translateY(-50%)
   &__column
-    +above(768px)
+    +above(991px)
       span(1/2)
   &__item
     clearfix()
@@ -83,27 +84,27 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     padding 32px
     width 100%
     max-width 900px
-    +above(768px)
+    +above(991px)
       padding 96px
     +above(1400px)
       padding 32px
   &__fig
-    margin-bottom 64px
-    +above(768px)
+    margin-bottom 96px
+    +above(991px)
       margin-bottom 32px
     img
       max-width 100%
     &--d
       display none
-      +above(768px)
+      +above(991px)
         display inline-block
     &--m
       display inline-block
-      +above(768px)
+      +above(991px)
         display none
   &__desc
     padding 16px
-    +above(768px)
+    +above(991px)
       padding-top 108px
   &__header
     &:after
@@ -139,7 +140,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     margin-bottom 32px
     font-size 18px
     color c__black
-    +above(768px)
+    +above(991px)
       text-align left
     &--note
       color c__gray
@@ -162,7 +163,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
     fixed false 0 43px false
     z-index 100
     width 100%
-    +above(768px)
+    +above(991px)
       fixed false 0 50% false
       width auto
       transform translateY(50%)
@@ -174,7 +175,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
       line-height 40px
       text-align center
       background-color c__gray
-      +above(768px)
+      +above(991px)
         float none !important
         width 40px !important
     &__info
@@ -190,15 +191,15 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
         background-color c__gray--delta
 
       &.js-disabled
-        opacity 0.8
+        background-color lighten(c__gray, 20%)
     &__prev
       border-right 1px solid c__gray--gama
-      +above(768px)
+      +above(991px)
         border-right none
         border-bottom 1px solid c__gray--gama
     &__next
       border-left 1px solid c__gray--gama
-      +above(768px)
+      +above(991px)
         border-left none
         border-top 1px solid c__gray--gama
 
@@ -213,7 +214,7 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   max-height 200px
   transform translateY(100%)
   transition all 0.75s easing( 'in-out-cubic' )
-  +above(768px)
+  +above(991px)
     display block
   +above(991px)
     width calc(100% \- 150px)
@@ -281,6 +282,14 @@ set-color-theme(gradient, opacity-value, nav, header-thumbs, icon-modifier)
   &--hidratante
     set-color-theme(c__hidratante, 0.3, c__hidratante--alpha, c__hidratante, hidratante)
   &--original
-    set-color-theme(c__original, 0.3, c__original--alpha, c__original, original)
+    set-color-theme(c__original, 0.3, c__original--beta, c__original, original)
   &--control
     set-color-theme(c__control, 0.3, false, c__control, false)
+
+
+/*Fix chrome images problem with Owl carousel*/
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item
+  backface-visibility hidden
+  transform translate3d(0,0,0)

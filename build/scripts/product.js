@@ -67,6 +67,7 @@
       _thumbsTriger.on('click', function (evt) {
         evt.preventDefault();
         _toggleThumbs();
+        Search.validateActive();
       })
 
       _thumbsItems.on('click', function (evt) {
@@ -81,7 +82,8 @@
         items : 1,
         nav : false,
         smartSpeed : 750,
-        mouseDrag : false
+        mouseDrag : false,
+        lazyLoad : true
       });
     }
 

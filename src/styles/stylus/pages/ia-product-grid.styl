@@ -70,9 +70,12 @@ set-color-theme-grid(base, gradient, opacity-value)
               margin-bottom 0
             +above(1024px)
               margin-bottom 0
-          &__category
+          &__category,
+          &__type
             +above(991px)
               font-size 28px
+            +above(1366px)
+              font-size 32px
           &__fig
             display block
             margin 0 auto
@@ -119,7 +122,7 @@ set-color-theme-grid(base, gradient, opacity-value)
       &--original
         set-color-theme-grid(c__original, c__original, 0.3)
       &--extra
-        set-color-theme-grid(c__extra, c__extra--alpha, 0.7)
+        set-color-theme-grid(c__extra, c__extra--alpha, 0.5)
       &--hidratante
         set-color-theme-grid(c__hidratante, c__hidratante, 0.3)
       &--control
