@@ -1231,6 +1231,265 @@
   text-transform: uppercase;
   color: #fff;
 }
+.ia-Diagnostic__header {
+  margin-top: 16px;
+  padding: 16px 0 0;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.ia-Diagnostic__qst {
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ia-Diagnostic__progress {
+  position: relative;
+}
+.ia-Diagnostic__count {
+  position: absolute;
+  left: 9.09091%;
+  top: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e21e3c;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Diagnostic__bar {
+  position: relative;
+  padding-top: 20px;
+}
+.ia-Diagnostic__padding {
+  width: 9.09091%;
+  height: 5px;
+  background-color: #e21e3c;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Diagnostic__body {
+  padding: 32px 16px;
+  text-align: center;
+  background-color: #d8d8d8;
+}
+.ia-Diagnostic__options {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.ia-Diagnostic__options:before,
+.ia-Diagnostic__options:after {
+  content: " ";
+  display: table;
+}
+.ia-Diagnostic__options:after {
+  clear: both;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option {
+  height: auto !important;
+  border: none;
+  background-color: #000;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:after {
+  content: '\f00c';
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: block;
+  padding: 4px;
+  font: normal normal normal 14px/1 FontAwesome;
+  color: #fff;
+  border: 1px solid #fff;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option:after {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:hover img,
+.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option img {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  border: 2px solid #e21e3c;
+}
+.ia-Diagnostic__option {
+  position: relative;
+  margin-bottom: 32px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: 156px;
+  padding: 16px;
+  border: 2px solid transparent;
+}
+.ia-Diagnostic__option:before,
+.ia-Diagnostic__option:after {
+  content: " ";
+  display: table;
+}
+.ia-Diagnostic__option:after {
+  clear: both;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Diagnostic__option {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48%;
+    margin-left: 0%;
+    margin-right: 4%;
+  }
+  .ia-Diagnostic__option:before,
+  .ia-Diagnostic__option:after {
+    content: '';
+    display: table;
+  }
+  .ia-Diagnostic__option:after {
+    clear: both;
+  }
+  .ia-Diagnostic__option:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .ia-Diagnostic__option:nth-child(2n+1) {
+    clear: both;
+  }
+}
+.ia-Diagnostic__option.js-active-option {
+  background-color: #00458d;
+  color: #fff;
+}
+.ia-Diagnostic__option:hover {
+  border-color: rgba(0,69,141,0.5);
+}
+.ia-Diagnostic__option__img {
+  display: block;
+  max-width: 100%;
+  border: 2px solid transparent;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Diagnostic__option__inner {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  left: 16px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.ia-Diagnostic__option__letter,
+.ia-Diagnostic__option__copy {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Diagnostic__option__letter,
+  .ia-Diagnostic__option__copy {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+.ia-Diagnostic__option__letter {
+  font-family: NexaBold;
+  font-size: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Diagnostic__option__letter {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%;
+    left: 0;
+  }
+  .ia-Diagnostic__option__letter:before,
+  .ia-Diagnostic__option__letter:after {
+    content: '';
+    display: table;
+  }
+  .ia-Diagnostic__option__letter:after {
+    clear: both;
+  }
+  .ia-Diagnostic__option__letter:last-child {
+    margin-right: 0%;
+  }
+}
+.ia-Diagnostic__option__copy {
+  font-weight: 300;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Diagnostic__option__copy {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 74.25%;
+    margin-left: 0%;
+    margin-right: 3%;
+    right: 0;
+    text-align: left;
+  }
+  .ia-Diagnostic__option__copy:before,
+  .ia-Diagnostic__option__copy:after {
+    content: '';
+    display: table;
+  }
+  .ia-Diagnostic__option__copy:after {
+    clear: both;
+  }
+  .ia-Diagnostic__option__copy:last-child {
+    margin-right: 0%;
+  }
+}
+.ia-Diagnostic__ctrls {
+  margin-top: 32px;
+}
+.ia-Diagnostic__ctrl {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #e21e3c;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Diagnostic__ctrl:hover {
+  background-color: #b51730;
+}
+.ia-Diagnostic__ctrl--prev {
+  margin-right: 32px;
+}
+.ia-Diagnostic__ctrl.js-disabled {
+  background-color: #d8d8d8;
+  cursor: default;
+  pointer-events: none;
+}
+.ia-Diagnostic__ctrl.js-disabled:hover {
+  background-color: #d8d8d8;
+}
+#diagnostic-init {
+  display: none;
+}
+#diagnostic-general {
+  display: block;
+}
 .ia-Content {
   position: relative;
   padding-top: 59px;
@@ -1252,6 +1511,29 @@
     padding-top: 0;
     width: calc(100% - 150px);
   }
+}
+.ia-ContentHeader {
+  padding: 32px 16px;
+  text-align: center;
+}
+.ia-ContentHeader__title {
+  margin: 0;
+  font-family: Nexabold;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ia-ContentHeader__title:after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin: 16px auto;
+  background-color: #fff;
+}
+.ia-ContentHeader__txt {
+  display: block;
+  color: #999;
 }
 @media only screen and (min-width: 1024px) {
   .ia-Content--frontpage {
@@ -1279,28 +1561,10 @@
   background: url("../images/bg-blog-header.jpg") no-repeat center center;
   background-size: cover;
 }
-.ia-ContentHeader {
-  padding: 32px 16px;
-  text-align: center;
-}
-.ia-ContentHeader__title {
-  margin: 0;
-  font-family: Nexabold;
-  font-size: 22px;
-  text-transform: uppercase;
-  color: #fff;
-}
-.ia-ContentHeader__title:after {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 4px;
-  margin: 16px auto;
-  background-color: #fff;
-}
-.ia-ContentHeader__txt {
-  display: block;
-  color: #999;
+.ia-Content--diagnostic .ia-ContentHeader {
+  padding: 32px 0 0;
+  background: url("../images/diagnostic-banner.jpg") no-repeat center center;
+  background-size: cover;
 }
 .ia-Column {
   position: relative;

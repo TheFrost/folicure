@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html dir="ltr" lang="es-MX" class="no-js ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="es-MX" class="no-js ie ie9 lte9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="es-MX" class="no-js"><!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0" />
+
+  <title>Folicuré</title>
+
+  <!-- External resources -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,300' rel='stylesheet' type='text/css'>
+
+  <!-- Componets -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+
+  <!-- Search -->
+  <div class="ia-Search" id="search">
+    <form action="" class="ia-Search__form">
+      <input type="text" class="ia-Search__input" name="search" placeholder="Encuentra aquí todo sobre la caída del cabello" id="search-input">
+      <button type="button" class="ia-Search__submit" id="search-trigger">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+  </div>
+  <!-- // Search -->
+
+  <!-- Header -->
+  <header class="ia-Header" id="main-menu">
+    <header class="ia-HeaderHead" id="menu-head">
+      <a href="#" class="ia-HeaderAction" id="header-action">
+        <span class="ia-HeaderAction__line"></span>
+        <span class="ia-HeaderAction__line"></span>
+        <span class="ia-HeaderAction__line"></span>
+      </a>
+      <a href="index.html" class="ia-HeaderLogo">
+        <h1 class="ia-HeaderLogo__text">Folicuré</h1>
+      </a>
+      <a href="#" class="ia-Search__mobile" id="m-search-trigger">
+        <i class="fa fa-search"></i>
+      </a>
+    </header>
+    <ul class="ia-HeaderMenu u-ListNoStyle" id="menu-list">
+      <li class="ia-HeaderMenuItem">
+        <a href="product-grid.html" class="ia-HeaderMenuLink">
+          <figure class="ia-HeaderMenuLink__fig ia-HeaderMenuLink__fig--product"></figure>
+          <span class="ia-HeaderMenuLink__txt">Productos</span>
+          <hr class="ia-HeaderMenuLink__hr">
+        </a>
+      </li>
+      <li class="ia-HeaderMenuItem">
+        <a href="#" class="ia-HeaderMenuLink">
+          <figure class="ia-HeaderMenuLink__fig ia-HeaderMenuLink__fig--eye"></figure>
+          <span class="ia-HeaderMenuLink__txt">Diagnóstico</span>
+          <hr class="ia-HeaderMenuLink__hr">
+        </a>
+      </li>
+      <li class="ia-HeaderMenuItem">
+        <a href="blog.html" class="ia-HeaderMenuLink">
+          <figure class="ia-HeaderMenuLink__fig ia-HeaderMenuLink__fig--hair"></figure>
+          <span class="ia-HeaderMenuLink__txt">Caída del cabello</span>
+          <hr class="ia-HeaderMenuLink__hr">
+        </a>
+      </li>
+      <li class="ia-HeaderMenuItem">
+        <a href="#" class="ia-HeaderMenuLink">
+          <figure class="ia-HeaderMenuLink__fig ia-HeaderMenuLink__fig--money"></figure>
+          <span class="ia-HeaderMenuLink__txt">Promociones</span>
+        </a>
+      </li>
+    </ul>
+    <footer class="ia-HeaderFooter" id="menu-footer">
+      <div class="ia-HeaderFooterSocial">
+        <a href="#" class="ia-HeaderFooterSocial__link ia-HeaderFooterSocial__link--facebook"></a>
+        <!-- <a href="#" class="ia-HeaderFooterSocial__link ia-HeaderFooterSocial__link--twitter"></a> -->
+      </div>
+      <figure class="ia-HeaderFooter__logo ia-HeaderFooter__logo--m"></figure>
+      <a href="#" class="ia-HeaderFooter__policity">Política de privacidad</a>
+      <hr class="ia-HeaderFooter__hr">
+      <figure class="ia-HeaderFooter__logo"></figure>
+      <span class="ia-HeaderFooter__copyright">&copy;2016 Unilever Derechos Reservados</span>
+    </footer>
+  </header>
+  <!-- // Header -->
+
+  <!-- Main -->
+  <main class="ia-Content ia-Content--diagnostic">
+    <header class="ia-ContentHeader">
+      <h1 class="ia-ContentHeader__title">Diagnóstico</h1>
+      <span class="ia-ContentHeader__txt">Bienvenido. Responde las siguientes preguntas haciendo clic sobre la opción correcta y conoce más sobre el tema</span>
+
+      <!-- Diagnostic Header -->
+      <div class="ia-Diagnostic__header" id="diagnostic-header">
+        <p class="ia-Diagnostic__qst">¿Cúal es tu genero?</p>
+        <div class="ia-Diagnostic__progress">
+          <span class="ia-Diagnostic__count">1/11</span>
+          <div class="ia-Diagnostic__bar">
+            <div class="ia-Diagnostic__padding"></div>
+          </div>
+        </div>
+      </div>
+      <!-- // Diagnostic Header -->
+
+    </header>
+
+
+    <div class="ia-Diagnostic__body" id="diagnostic-body">
+
+      <!-- Diagnostic init options -->
+      <div class="ia-Diagnostic__options ia-Diagnostic__options--init" id="diagnostic-init">
+        <figure class="ia-Diagnostic__option">
+          <img src="images/diagnostic-option-man.jpg" alt="" class="ia-Diagnostic__option__img">
+        </figure>
+        <figure class="ia-Diagnostic__option">
+          <img src="images/diagnostic-option-woman.jpg" alt="" class="ia-Diagnostic__option__img">
+        </figure>
+      </div>
+      <!-- // Diagnostic init options -->
+
+      <!-- Diagnostic options -->
+      <div class="ia-Diagnostic__options" id="diagnostic-general">
+        <div class="ia-Diagnostic__option js-active-option">
+          <div class="ia-Diagnostic__option__inner">
+            <span class="ia-Diagnostic__option__letter" data-option="A">A .</span>
+            <p class="ia-Diagnostic__option__copy">Agua muy caliente.</p>
+          </div>
+        </div>
+        <div class="ia-Diagnostic__option">
+          <div class="ia-Diagnostic__option__inner">
+            <span class="ia-Diagnostic__option__letter" data-option="A">B .</span>
+            <p class="ia-Diagnostic__option__copy">Excesiva sudoración. Estrés</p>
+          </div>
+        </div>
+        <div class="ia-Diagnostic__option">
+          <div class="ia-Diagnostic__option__inner">
+            <span class="ia-Diagnostic__option__letter" data-option="A">C .</span>
+            <p class="ia-Diagnostic__option__copy">Cualquier tipo de geles moldeadores del cabello, lacas o procesos químicos, tinte para el cabello y/o calor.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Diagnostic options -->
+
+      <!-- Diagnostic controls -->
+      <div class="ia-Diagnostic__ctrls">
+        <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--prev js-disabled">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--next">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <!-- // Diagnostic controls -->
+
+    </div>
+
+
+  </main>
+  <!-- // Main -->
+
+  <!-- Experts Form -->
+  <div class="ia-Experts" id="experts">
+    <header class="ia-Experts__header" id="trigger-experts">
+      <span class="ia-Experts__cta">Pregúntale a los expertos</span>
+    </header>
+    <div class="ia-Experts__body">
+      <div class="ia-ExpertsAvatar">
+        <img src="images/avatar-expert.png" alt="" class="u-ImgResponsive">
+      </div>
+      <form action="" method="post" class="ia-ExpertsForm" id="experts-form">
+        <div class="ia-ExpertsForm__inputs">
+          <header class="ia-ExpertsForm__header">
+            <p class="ia-ExpertsForm__copy">Escribe tus datos para ponernos en contacto contigo y poder resolver tus preguntas:</p>
+          </header>
+
+          <div class="ia-ExpertsForm__group ia-ExpertsForm__group--name">
+            <input type="text" placeholder="Tu nombre" name="name" required class="ia-ExpertsForm__input">
+          </div>
+
+          <div class="ia-ExpertsForm__group ia-ExpertsForm__group--email">
+            <input type="text" placeholder="Tu correo electrónico" name="email" required class="ia-ExpertsForm__input">
+          </div>
+
+          <div class="ia-ExpertsForm__group ia-ExpertsForm__group--question">
+            <input type="text" placeholder="Escribe tu pregunta aquí... " name="question" required class="ia-ExpertsForm__input">
+            <label for="" class="ia-ExpertsForm__note">* Tiempo promedio de respuesta: 48 horas.</label>
+          </div>
+
+          <div class="ia-ExpertsForm__group ia-ExpertsForm__group--agree">
+            <input type="checkbox" name="agree" required class="ia-ExpertsForm__input">
+
+            <span class="ia-ExpertsForm__input__copy">Acepto la <a href="#">Política de Privacidad</a>.</span>
+
+          </div>
+        </div>
+        <div class="ia-ExpertsForm__submit">
+          <button type="submit" class="ia-ExpertsForm__submit__button">></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- // Experts Form -->
+
+  <!-- Overlay -->
+  <div class="ia-Overlay" id="content-overlay"></div>
+  <!-- // Overlay -->
+
+  <!-- Footer -->
+  <!-- // Footer -->
+
+  <!-- External Resources -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- Main Scripts -->
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/menu.js"></script>
+  <script src="scripts/experts.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/product.js"></script>
+  <script src="scripts/diagnostic.service.js"></script>
+  <script src="scripts/app.js"></script>
+
+</body>
+</html>

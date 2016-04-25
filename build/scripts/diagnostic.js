@@ -6,44 +6,37 @@
 
   var Diagnostic = (function () {
 
-
-
-
-    var _data = [
-      {
-        'texto' : 'texto de pregunta',
-        'opciones' : {
-          'a' : {
-            'copy' : 'copy de opcion',
-            'return' : 'copy de respuesta'
-          }
-        }
-      },
-      {
-        'texto' : 'texto de pregunta2',
-        'opciones' : {
-          'a' : {
-            'copy' : 'copy de opcion',
-            'return' : 'copy de respuesta'
-          }
-        }
-      },
-
-    ];
-
-    var getData = function () {
-
-      return _data;
+    /*Private*/
+    var _cache = function () {
 
     }
 
+    var _bindEvents = function () {
+
+    }
+
+    var _fetch = function () {
+
+    }
+
+    var _render = function () {
+
+    }
+
+
+    /*Public*/
+    var init = function () {
+
+    }
+
+
     /*Revealing*/
     return {
-      getData : getData
+      init : init
     }
 
   })();
 
-  window.Diagnostic = Diagnostic.getData();
+  window.Diagnostic = Diagnostic;
 
 })(jQuery || window.jQuery, window, document);
