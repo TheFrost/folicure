@@ -60,7 +60,7 @@
   height: 59px;
   text-align: center;
   background-color: #fff;
-  transition: all 0.75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.33s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 @media only screen and (min-width: 991px) {
   .ia-Header {
@@ -1245,10 +1245,14 @@
 }
 .ia-Diagnostic__progress {
   position: relative;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ia-Diagnostic__count {
   position: absolute;
-  left: 9.09091%;
+  left: 0;
   top: 0;
   font-size: 12px;
   font-weight: 700;
@@ -1263,7 +1267,6 @@
   padding-top: 20px;
 }
 .ia-Diagnostic__padding {
-  width: 9.09091%;
   height: 5px;
   background-color: #e21e3c;
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -1273,62 +1276,17 @@
   text-align: center;
   background-color: #d8d8d8;
 }
-.ia-Diagnostic__options {
-  max-width: 700px;
-  margin: 0 auto;
-}
-.ia-Diagnostic__options:before,
-.ia-Diagnostic__options:after {
-  content: " ";
-  display: table;
-}
-.ia-Diagnostic__options:after {
-  clear: both;
-}
-.ia-Diagnostic__options--init .ia-Diagnostic__option {
-  height: auto !important;
-  border: none;
-  background-color: #000;
-}
-.ia-Diagnostic__options--init .ia-Diagnostic__option:after {
-  content: '\f00c';
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 100;
-  display: block;
-  padding: 4px;
-  font: normal normal normal 14px/1 FontAwesome;
-  color: #fff;
-  border: 1px solid #fff;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option:after {
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
-  opacity: 1;
-}
-.ia-Diagnostic__options--init .ia-Diagnostic__option:hover img,
-.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option img {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-  border: 2px solid #e21e3c;
+@media only screen and (min-width: 768px) {
+  .ia-Diagnostic__body {
+    min-height: 650px !important;
+  }
 }
 .ia-Diagnostic__option {
   position: relative;
   margin-bottom: 32px;
-  background-color: #fff;
   color: #000;
   cursor: pointer;
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
-  height: 156px;
-  padding: 16px;
-  border: 2px solid transparent;
 }
 .ia-Diagnostic__option:before,
 .ia-Diagnostic__option:after {
@@ -1364,20 +1322,95 @@
     clear: both;
   }
 }
-.ia-Diagnostic__option.js-active-option {
-  background-color: #00458d;
+.ia-Diagnostic__options {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.ia-Diagnostic__options:before,
+.ia-Diagnostic__options:after {
+  content: " ";
+  display: table;
+}
+.ia-Diagnostic__options:after {
+  clear: both;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option {
+  background-color: #000;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48%;
+  margin-left: 0%;
+  margin-right: 4%;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:before,
+.ia-Diagnostic__options--init .ia-Diagnostic__option:after {
+  content: '';
+  display: table;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:after {
+  clear: both;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:nth-child(2n) {
+  margin-right: 0%;
+  float: right;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:nth-child(2n+1) {
+  clear: both;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:after {
+  content: '\f00c';
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  display: block;
+  padding: 4px;
+  font: normal normal normal 14px/1 FontAwesome;
   color: #fff;
+  border: 1px solid #fff;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.ia-Diagnostic__option:hover {
-  border-color: rgba(0,69,141,0.5);
-}
-.ia-Diagnostic__option__img {
+.ia-Diagnostic__options--init .ia-Diagnostic__option__img {
   display: block;
   max-width: 100%;
   border: 2px solid transparent;
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.ia-Diagnostic__option__inner {
+.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option:after {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
+.ia-Diagnostic__options--init .ia-Diagnostic__option:hover img,
+.ia-Diagnostic__options--init .ia-Diagnostic__option.js-active-option img {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  border: 2px solid #e21e3c;
+}
+.ia-Diagnostic__options--general {
+  display: none;
+}
+.ia-Diagnostic__options--general .ia-Diagnostic__option {
+  height: 156px;
+  padding: 16px;
+  border: 2px solid transparent;
+  background-color: #fff;
+}
+.ia-Diagnostic__options--general .ia-Diagnostic__option.js-active-option {
+  background-color: #00458d;
+  color: #fff;
+}
+.ia-Diagnostic__options--general .ia-Diagnostic__option:hover {
+  border-color: rgba(0,69,141,0.5);
+}
+.ia-Diagnostic__options--general .ia-Diagnostic__option__inner {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -1386,15 +1419,15 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.ia-Diagnostic__option__letter,
-.ia-Diagnostic__option__copy {
+.ia-Diagnostic__options--general .ia-Diagnostic__option__letter,
+.ia-Diagnostic__options--general .ia-Diagnostic__option__copy {
   position: relative;
   width: 100%;
   text-align: center;
 }
 @media only screen and (min-width: 768px) {
-  .ia-Diagnostic__option__letter,
-  .ia-Diagnostic__option__copy {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter,
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1402,12 +1435,12 @@
     transform: translateY(-50%);
   }
 }
-.ia-Diagnostic__option__letter {
+.ia-Diagnostic__options--general .ia-Diagnostic__option__letter {
   font-family: NexaBold;
   font-size: 24px;
 }
 @media only screen and (min-width: 768px) {
-  .ia-Diagnostic__option__letter {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter {
     *zoom: 1;
     float: left;
     clear: none;
@@ -1417,24 +1450,24 @@
     margin-right: 3%;
     left: 0;
   }
-  .ia-Diagnostic__option__letter:before,
-  .ia-Diagnostic__option__letter:after {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter:before,
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter:after {
     content: '';
     display: table;
   }
-  .ia-Diagnostic__option__letter:after {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter:after {
     clear: both;
   }
-  .ia-Diagnostic__option__letter:last-child {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__letter:last-child {
     margin-right: 0%;
   }
 }
-.ia-Diagnostic__option__copy {
+.ia-Diagnostic__options--general .ia-Diagnostic__option__copy {
   font-weight: 300;
   margin: 0;
 }
 @media only screen and (min-width: 768px) {
-  .ia-Diagnostic__option__copy {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy {
     *zoom: 1;
     float: left;
     clear: none;
@@ -1445,15 +1478,15 @@
     right: 0;
     text-align: left;
   }
-  .ia-Diagnostic__option__copy:before,
-  .ia-Diagnostic__option__copy:after {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy:before,
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy:after {
     content: '';
     display: table;
   }
-  .ia-Diagnostic__option__copy:after {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy:after {
     clear: both;
   }
-  .ia-Diagnostic__option__copy:last-child {
+  .ia-Diagnostic__options--general .ia-Diagnostic__option__copy:last-child {
     margin-right: 0%;
   }
 }
@@ -1483,12 +1516,6 @@
 }
 .ia-Diagnostic__ctrl.js-disabled:hover {
   background-color: #d8d8d8;
-}
-#diagnostic-init {
-  display: none;
-}
-#diagnostic-general {
-  display: block;
 }
 .ia-Content {
   position: relative;

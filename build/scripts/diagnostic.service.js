@@ -8,7 +8,9 @@
 
     var _data = [
         {
-          'init' : {
+          'id' : 0,
+          'question' : '¿Cúal es tu género?',
+          'options' : {
             'H' : {
               'copy' : 'En general, el cabello masculino requiere sobretodo de una higiene adecuada y frecuente con productos que lo fortalezcan y lo mantengan libre de impurezas y partículas contaminantes. Así al mismo tiempo que se mantiene nutrido, se estará previniendo su caída.'
             },
@@ -65,8 +67,6 @@
         }
     ];
 
-    console.log(_data);
-
     var getData = function () {
 
       return _data;
@@ -80,6 +80,6 @@
 
   })();
 
-  window.DiagnosticService = DiagnosticService.getData();
+  window.DiagnosticService = DiagnosticService;
 
 })(jQuery || window.jQuery, window, document);

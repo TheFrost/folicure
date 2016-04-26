@@ -38,4 +38,14 @@
     Product.init(carousel, nav, thumbs);
   }
 
+
+  // Diagnostic init
+  var diagnosticBody = jq('#diagnostic-body');
+
+  if (diagnosticBody.length) {
+    var diagnosticHeader = jq('#diagnostic-header');
+
+    Diagnostic.init(diagnosticHeader, diagnosticBody);
+  }
+
 })(jQuery || window.jQuery, window, document);

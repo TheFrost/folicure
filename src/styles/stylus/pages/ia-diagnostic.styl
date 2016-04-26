@@ -13,9 +13,11 @@
     color white
   &__progress
     position relative
+    opacity 0
+    transition all 0.33s easing( 'in-out-cubic' )
   &__count
     position absolute
-    left 9.09091%
+    left 0
     top 0
     font-size 12px
     font-weight 700
@@ -26,7 +28,6 @@
     position relative
     padding-top 20px
   &__padding
-    width 9.09091%
     height 5px
     background-color c__red
     transition all 0.33s easing( 'in-out-cubic' )
@@ -36,18 +37,31 @@
     padding 32px 16px
     text-align center
     background-color c__gray--beta
+    +above(768px)
+      min-height 650px !important
+
+
+  &__option
+    clearfix()
+    position relative
+    margin-bottom 32px
+    color black
+    cursor pointer
+    transition all 0.33s easing( 'in-out-cubic' )
+    +above(768px)
+      col(1/2, gutter: 4, cycle: 2)
 
   // Options options style
   &__options
     clearfix()
     max-width 700px
     margin 0 auto
+
     // Init option style
     &--init
       .ia-Diagnostic__option
-        height auto !important
-        border none
         background-color black
+        col(1/2, gutter: 4, cycle: 2)
         &:after
           content '\f00c'
           absolute false 16px 16px false
@@ -59,6 +73,11 @@
           border 1px solid white
           opacity 0
           transition all 0.33s easing( 'in-out-cubic' )
+        &__img
+          display block
+          max-width 100%
+          border 2px solid transparent
+          transition all 0.33s easing( 'in-out-cubic' )
         &.js-active-option
           &:after
             opacity 1
@@ -66,53 +85,46 @@
         &.js-active-option img
           opacity 0.8
           border 2px solid c__red
-  &__option
-    clearfix()
-    position relative
-    margin-bottom 32px
-    background-color white
-    color black
-    cursor pointer
-    transition all 0.33s easing( 'in-out-cubic' )
-    height 156px
-    padding 16px
-    border 2px solid transparent
-    +above(768px)
-      col(1/2, gutter: 4, cycle: 2)
-    &.js-active-option
-      background-color c__blue
-      color white
-    &:hover
-      border-color rgba(c__blue, 0.5)
-    &__img
-      display block
-      max-width 100%
-      border 2px solid transparent
-      transition all 0.33s easing( 'in-out-cubic' )
-    &__inner
-      absolute 50% 16px false 16px
-      transform translateY(-50%)
-    &__letter,
-    &__copy
-      position relative
-      width 100%
-      text-align center
-      +above(768px)
-        absolute 50% false false
-        transform translateY(-50%)
-    &__letter
-      font-family NexaBold
-      font-size 24px
-      +above(768px)
-        col(1/4)
-        left 0
-    &__copy
-      font-weight 300
-      margin 0
-      +above(768px)
-        col(3/4)
-        right 0
-        text-align left
+
+    // General Styles
+    &--general
+
+      display none
+
+      .ia-Diagnostic__option
+        height 156px
+        padding 16px
+        border 2px solid transparent
+        background-color white
+        &.js-active-option
+          background-color c__blue
+          color white
+        &:hover
+          border-color rgba(c__blue, 0.5)
+        &__inner
+          absolute 50% 16px false 16px
+          transform translateY(-50%)
+        &__letter,
+        &__copy
+          position relative
+          width 100%
+          text-align center
+          +above(768px)
+            absolute 50% false false
+            transform translateY(-50%)
+        &__letter
+          font-family NexaBold
+          font-size 24px
+          +above(768px)
+            col(1/4)
+            left 0
+        &__copy
+          font-weight 300
+          margin 0
+          +above(768px)
+            col(3/4)
+            right 0
+            text-align left
 
   // Controls style
   &__ctrls
@@ -136,9 +148,3 @@
       pointer-events none
       &:hover
         background-color c__gray--beta
-
-
-#diagnostic-init
-  display none
-#diagnostic-general
-  display block

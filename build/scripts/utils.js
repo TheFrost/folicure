@@ -13,7 +13,15 @@
     return {
 
       isMobile : function () {
-        return jq(window).innerWidth() <= 991;
+        return jq(window).innerWidth() < 991;
+      },
+
+      isTablet : function () {
+        return jq(window).innerWidth() >= 768 && jq(window).innerWidth() <= 991;
+      },
+
+      isSmartphone : function () {
+        return jq(window).innerWidth() < 768;
       },
 
       prefix : function () {

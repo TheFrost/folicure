@@ -91,14 +91,14 @@
   <!-- // Header -->
 
   <!-- Main -->
-  <main class="ia-Content ia-Content--diagnostic">
+  <main class="ia-Content ia-Content--diagnostic js-init-active">
     <header class="ia-ContentHeader">
       <h1 class="ia-ContentHeader__title">Diagnóstico</h1>
       <span class="ia-ContentHeader__txt">Bienvenido. Responde las siguientes preguntas haciendo clic sobre la opción correcta y conoce más sobre el tema</span>
 
       <!-- Diagnostic Header -->
       <div class="ia-Diagnostic__header" id="diagnostic-header">
-        <p class="ia-Diagnostic__qst">¿Cúal es tu genero?</p>
+        <p class="ia-Diagnostic__qst"></p>
         <div class="ia-Diagnostic__progress">
           <span class="ia-Diagnostic__count">1/11</span>
           <div class="ia-Diagnostic__bar">
@@ -125,7 +125,7 @@
       <!-- // Diagnostic init options -->
 
       <!-- Diagnostic options -->
-      <div class="ia-Diagnostic__options" id="diagnostic-general">
+      <div class="ia-Diagnostic__options ia-Diagnostic__options--general" id="diagnostic-general">
         <div class="ia-Diagnostic__option js-active-option">
           <div class="ia-Diagnostic__option__inner">
             <span class="ia-Diagnostic__option__letter" data-option="A">A .</span>
@@ -225,6 +225,7 @@
   <script src="scripts/search.js"></script>
   <script src="scripts/product.js"></script>
   <script src="scripts/diagnostic.service.js"></script>
+  <script src="scripts/diagnostic.js"></script>
   <script src="scripts/app.js"></script>
 
 </body>
