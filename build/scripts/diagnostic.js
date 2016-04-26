@@ -23,7 +23,7 @@
         _dgService,
         _dgProgressBar,
         _dgProgressInfo,
-        _dgOptions;
+        _dgGeneralOptions;
 
     var _cache = function (header, body) {
       _dgStateCount = null;
@@ -42,7 +42,7 @@
       _dgService = DiagnosticService.getData();
       _dgProgressBar = jq('.ia-Diagnostic__padding');
       _dgProgressInfo = jq('.ia-Diagnostic__count');
-      _dgOptions = _dgGeneral.find('.ia-Diagnostic__options');
+      _dgGeneralOptions = _dgGeneral.find('.ia-Diagnostic__options');
 
       console.log(_dgService[1].general[0]);
     }
@@ -100,7 +100,7 @@
         //
         // });
 
-        // _dgOptions.html(_blocks)
+        // _dgGeneralOptions.html(_blocks)
       }
 
     }
