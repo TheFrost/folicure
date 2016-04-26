@@ -114,49 +114,54 @@
     <div class="ia-Diagnostic__body" id="diagnostic-body">
 
       <!-- Diagnostic init options -->
-      <div class="ia-Diagnostic__options ia-Diagnostic__options--init" id="diagnostic-init">
-        <figure class="ia-Diagnostic__option">
-          <img src="images/diagnostic-option-man.jpg" alt="" class="ia-Diagnostic__option__img">
-        </figure>
-        <figure class="ia-Diagnostic__option">
-          <img src="images/diagnostic-option-woman.jpg" alt="" class="ia-Diagnostic__option__img">
-        </figure>
+      <div class="ia-Diagnostic__view ia-Diagnostic__view--init js-state-active" id="diagnostic-init">
+        <div class="ia-Diagnostic__options ia-Diagnostic__options--init">
+          <figure class="ia-Diagnostic__option" data-option="H">
+            <img src="images/diagnostic-option-man.jpg" alt="" class="ia-Diagnostic__option__img">
+          </figure>
+          <figure class="ia-Diagnostic__option" data-option="M">
+            <img src="images/diagnostic-option-woman.jpg" alt="" class="ia-Diagnostic__option__img">
+          </figure>
+        </div>
+        <a href="#" class="ia-Diagnostic__start js-disabled">Comenzar</a>
       </div>
       <!-- // Diagnostic init options -->
 
-      <!-- Diagnostic options -->
-      <div class="ia-Diagnostic__options ia-Diagnostic__options--general" id="diagnostic-general">
-        <div class="ia-Diagnostic__option js-active-option">
-          <div class="ia-Diagnostic__option__inner">
-            <span class="ia-Diagnostic__option__letter" data-option="A">A .</span>
-            <p class="ia-Diagnostic__option__copy">Agua muy caliente.</p>
+      <!-- Diagnostic General -->
+      <div class="ia-Diagnostic__view ia-Diagnostic__view--general" id="diagnostic-general">
+        <div class="ia-Diagnostic__options">
+          <div class="ia-Diagnostic__option">
+            <div class="ia-Diagnostic__option__inner">
+              <span class="ia-Diagnostic__option__letter" data-option="A">A .</span>
+              <p class="ia-Diagnostic__option__copy">Agua muy caliente.</p>
+            </div>
+          </div>
+          <div class="ia-Diagnostic__option">
+            <div class="ia-Diagnostic__option__inner">
+              <span class="ia-Diagnostic__option__letter" data-option="A">B .</span>
+              <p class="ia-Diagnostic__option__copy">Excesiva sudoración. Estrés</p>
+            </div>
+          </div>
+          <div class="ia-Diagnostic__option">
+            <div class="ia-Diagnostic__option__inner">
+              <span class="ia-Diagnostic__option__letter" data-option="A">C .</span>
+              <p class="ia-Diagnostic__option__copy">Cualquier tipo de geles moldeadores del cabello, lacas o procesos químicos, tinte para el cabello y/o calor.</p>
+            </div>
           </div>
         </div>
-        <div class="ia-Diagnostic__option">
-          <div class="ia-Diagnostic__option__inner">
-            <span class="ia-Diagnostic__option__letter" data-option="A">B .</span>
-            <p class="ia-Diagnostic__option__copy">Excesiva sudoración. Estrés</p>
-          </div>
+        <!-- Diagnostic controls -->
+        <div class="ia-Diagnostic__ctrls">
+          <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--prev js-disabled">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
         </div>
-        <div class="ia-Diagnostic__option">
-          <div class="ia-Diagnostic__option__inner">
-            <span class="ia-Diagnostic__option__letter" data-option="A">C .</span>
-            <p class="ia-Diagnostic__option__copy">Cualquier tipo de geles moldeadores del cabello, lacas o procesos químicos, tinte para el cabello y/o calor.</p>
-          </div>
-        </div>
+        <!-- // Diagnostic controls -->
+        <a href="#" class="ia-Diagnostic__reset">cambiar de género</a>
       </div>
-      <!-- // Diagnostic options -->
-
-      <!-- Diagnostic controls -->
-      <div class="ia-Diagnostic__ctrls">
-        <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--prev js-disabled">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="ia-Diagnostic__ctrl ia-Diagnostic__ctrl--next">
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-      </div>
-      <!-- // Diagnostic controls -->
+      <!-- // Diagnostic General -->
 
     </div>
 

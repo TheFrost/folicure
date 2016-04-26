@@ -1,3 +1,11 @@
+// Content wrapper Control
+.ia-Content
+  &--diagnostic
+    &.js-init-active
+      .ia-Diagnostic
+        &__progress
+          opacity 0
+
 .ia-Diagnostic
 
   // Header Style
@@ -13,7 +21,6 @@
     color white
   &__progress
     position relative
-    opacity 0
     transition all 0.33s easing( 'in-out-cubic' )
   &__count
     position absolute
@@ -37,6 +44,7 @@
     padding 32px 16px
     text-align center
     background-color c__gray--beta
+    transition background-image 0.33s easing( 'in-out-cubic' )
     +above(768px)
       min-height 650px !important
 
@@ -57,8 +65,56 @@
     max-width 700px
     margin 0 auto
 
+  // Controls style
+  &__start,
+  &__reset
+    display inline-block
+    margin-top 32px
+    padding 8px 32px
+    font-weight 700
+    text-transform uppercase
+    background-color c__red
+    color white
+    transition all 0.33s easing( 'in-out-cubic' )
+    &:hover
+      background-color darken(c__red, 10%)
+  &__start
+    &.js-disabled
+      background-color c__gray--gama
+      cursor default
+      pointer-events none
+  &__ctrls
+    margin-top 32px
+  &__ctrl
+    display inline-block
+    width 50px
+    height 50px
+    line-height 50px
+    background-color c__red
+    border-radius 50%
+    color white
+    transition all 0.33s easing( 'in-out-cubic' )
+    &:hover
+      background-color darken(c__red, 20%)
+    &--prev
+      margin-right 32px
+    &.js-disabled
+      background-color c__gray--beta
+      cursor default
+      pointer-events none
+      &:hover
+        background-color c__gray--beta
+
+  &__view
     // Init option style
+    &--init,
+    &--general
+      &.js-state-active
+        display block
     &--init
+
+      display none
+
       .ia-Diagnostic__option
         background-color black
         col(1/2, gutter: 4, cycle: 2)
@@ -125,26 +181,3 @@
             col(3/4)
             right 0
             text-align left
-
-  // Controls style
-  &__ctrls
-    margin-top 32px
-  &__ctrl
-    display inline-block
-    width 50px
-    height 50px
-    line-height 50px
-    background-color c__red
-    border-radius 50%
-    color white
-    transition all 0.33s easing( 'in-out-cubic' )
-    &:hover
-      background-color darken(c__red, 20%)
-    &--prev
-      margin-right 32px
-    &.js-disabled
-      background-color c__gray--beta
-      cursor default
-      pointer-events none
-      &:hover
-        background-color c__gray--beta

@@ -8,14 +8,16 @@
 
     var _data = [
         {
-          'id' : 0,
-          'question' : '¿Cúal es tu género?',
-          'options' : {
-            'H' : {
-              'copy' : 'En general, el cabello masculino requiere sobretodo de una higiene adecuada y frecuente con productos que lo fortalezcan y lo mantengan libre de impurezas y partículas contaminantes. Así al mismo tiempo que se mantiene nutrido, se estará previniendo su caída.'
-            },
-            'M' : {
-              'copy' : 'Dado que en la población femenina es frecuente el cabello largo, debes tener especial cuidado en eliminar el resto de agua después del baño delicadamente y con una toalla; evita sujetar tu cabello (trenzas, cola de caballo, etc.) cuando está húmedo, pues esto propicia el desarrollo hongos que luego se convierten en caspa, lo que debilita la raíz y favorece la caída de cabello. '
+          'init' : {
+            'id' : 0,
+            'question' : '¿Cúal es tu género?',
+            'options' : {
+              'H' : {
+                'copy' : 'En general, el cabello masculino requiere sobretodo de una higiene adecuada y frecuente con productos que lo fortalezcan y lo mantengan libre de impurezas y partículas contaminantes. Así al mismo tiempo que se mantiene nutrido, se estará previniendo su caída.'
+              },
+              'M' : {
+                'copy' : 'Dado que en la población femenina es frecuente el cabello largo, debes tener especial cuidado en eliminar el resto de agua después del baño delicadamente y con una toalla; evita sujetar tu cabello (trenzas, cola de caballo, etc.) cuando está húmedo, pues esto propicia el desarrollo hongos que luego se convierten en caspa, lo que debilita la raíz y favorece la caída de cabello. '
+              }
             }
           }
         },
@@ -23,7 +25,7 @@
           'general' : [
             {
               'id' : 0,
-              'copy' : 'Si eres mujer, ¿estás o crees que podrías estar embarazada?',
+              'question' : 'Si eres mujer, ¿estás o crees que podrías estar embarazada?',
               'options' : [
                 {
                   'letter' : 'A',
@@ -39,7 +41,7 @@
             },
             {
               'id' : 1,
-              'copy' : '¿Cuántos años tienes?',
+              'question' : '¿Cuántos años tienes?',
               'options' : [
                 {
                   'letter' : 'A',
