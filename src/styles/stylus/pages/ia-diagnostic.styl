@@ -29,7 +29,7 @@
     font-size 12px
     font-weight 700
     color c__red
-    transform translateX(-50%)
+    transform translateX(-120%)
     transition all 0.33s easing( 'in-out-cubic' )
   &__bar
     position relative
@@ -148,7 +148,7 @@
       display none
 
       .ia-Diagnostic__option
-        height 156px
+        min-height 156px
         padding 16px
         border 2px solid transparent
         background-color white
@@ -158,6 +158,7 @@
         &:hover
           border-color rgba(c__blue, 0.5)
         &__inner
+          clearfix()
           absolute 50% 16px false 16px
           transform translateY(-50%)
         &__letter,

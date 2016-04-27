@@ -1259,9 +1259,9 @@
   font-size: 12px;
   font-weight: 700;
   color: #e21e3c;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-120%);
+  -ms-transform: translateX(-120%);
+  transform: translateX(-120%);
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ia-Diagnostic__bar {
@@ -1455,7 +1455,7 @@
   display: none;
 }
 .ia-Diagnostic__view--general .ia-Diagnostic__option {
-  height: 156px;
+  min-height: 156px;
   padding: 16px;
   border: 2px solid transparent;
   background-color: #fff;
@@ -1475,6 +1475,14 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.ia-Diagnostic__view--general .ia-Diagnostic__option__inner:before,
+.ia-Diagnostic__view--general .ia-Diagnostic__option__inner:after {
+  content: " ";
+  display: table;
+}
+.ia-Diagnostic__view--general .ia-Diagnostic__option__inner:after {
+  clear: both;
 }
 .ia-Diagnostic__view--general .ia-Diagnostic__option__letter,
 .ia-Diagnostic__view--general .ia-Diagnostic__option__copy {
