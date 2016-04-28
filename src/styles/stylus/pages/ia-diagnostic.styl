@@ -1,3 +1,14 @@
+// Styles global section
+.js-hide
+  display none
+
+.js-bg-M
+  background url('../images/diagnostic-M.jpg') no-repeat center center
+  background-size cover
+.js-bg-H
+  background url('../images/diagnostic-H.jpg') no-repeat center center
+  background-size cover
+
 // Content wrapper Control
 .ia-Content
   &--diagnostic
@@ -14,6 +25,30 @@
     padding 16px 0 0
     text-align center
     background-color rgba(black,.5)
+    &.js-result-hidratante
+      .ia-Diagnostic
+        &__count
+          color c__hidratante
+        &__padding
+          background-color c__hidratante
+    &.js-result-original
+      .ia-Diagnostic
+        &__count
+          color c__original--beta
+        &__padding
+          background-color c__original
+    &.js-result-extra
+      .ia-Diagnostic
+        &__count
+          color c__extra
+        &__padding
+          background-color c__extra
+    &.js-result-control
+      .ia-Diagnostic
+        &__count
+          color c__control
+        &__padding
+          background-color c__control
   &__qst
     margin 0
     font-size 16px
@@ -31,6 +66,9 @@
     color c__red
     transform translateX(-120%)
     transition all 0.33s easing( 'in-out-cubic' )
+    &.js-finish
+      left 50% !important
+      transform translateX(-50%);
   &__bar
     position relative
     padding-top 20px
@@ -76,46 +114,62 @@
     transition all 0.33s easing( 'in-out-cubic' )
     &:hover
       background-color darken(c__red, 10%)
+  &__reset
+    width 100%
+    +above(768px)
+      width auto
   &__start
     &.js-disabled
       background-color c__gray--gama
       cursor default
       pointer-events none
-  &__ctrls
-    margin-top 32px
   &__ctrl
     display inline-block
-    width 50px
-    height 50px
-    line-height 50px
     background-color c__red
-    border-radius 50%
     color white
     transition all 0.33s easing( 'in-out-cubic' )
     &:hover
-      background-color darken(c__red, 20%)
-    &--prev
-      margin-right 32px
-    &.js-disabled
-      background-color c__gray--beta
-      cursor default
-      pointer-events none
-      &:hover
-        background-color c__gray--beta
+          background-color darken(c__red, 20%)
+  &__ctrls
+    margin-top 32px
+    &__nav
+      .ia-Diagnostic__ctrl
+        width 50px
+        height 50px
+        line-height 50px
+        border-radius 50%
+        &--prev
+          margin-right 32px
+        &.js-disabled
+          background-color c__gray--beta
+          cursor default
+          pointer-events none
+          &:hover
+            background-color c__gray--beta
+    &__last
+      .ia-Diagnostic__ctrl
+        width 100%
+        padding 8px 16px
+        font-weight 700
+        text-transform uppercase
+        &:nth-child(1)
+          margin-bottom 32px
+        +above(768px)
+          width 222px
+          &:nth-child(1)
+            margin-bottom 0
+            margin-right 32px
+
 
   &__view
     // Init option style
     &--init,
-    &--general
-
-      display none !important
-
+    &--general,
+    &--result
+      display none
       &.js-state-active
         display block
     &--init
-
-      display none
-
       .ia-Diagnostic__option
         background-color black
         col(1/2, gutter: 4, cycle: 2)
@@ -145,9 +199,6 @@
 
     // General Styles
     &--general
-
-      display none
-
       .ia-Diagnostic__option
         min-height 156px
         padding 16px
@@ -187,10 +238,45 @@
     // Result Styles
     &--result
       clearfix()
-      max-width 941px
       margin 0 auto
       +above(991px)
+        max-width 1280px
         text-align left
+      .ps-scrollbar-y-rail
+        opacity 1 !important
+      &.js-result-hidratante
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__hidratante
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__hidratante
+      &.js-result-original
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__original
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__original
+      &.js-result-extra
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__extra
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__extra
+      &.js-result-control
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__control
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__control
+
       .ia-Product__category
         margin-bottom 16px
         font-size 18px
@@ -198,19 +284,43 @@
       p
         margin-top 0
         margin-bottom 16px
-        font-size 14px
+        font-size 16px
+        text-align justify
       .ia-Diagnostic__result
-        &__column
-          padding 0 16px
-        &__column,
+        &__bottle
+          +above(768px)
+            span(5/12)
+        &__info
+          +above(768px)
+            span(6/12)
         &__bottle,
         &__info
-          +above(991px)
-            col(1/2)
+          +above(1280px)
+            span(1/2)
+            &:nth-child(1)
+              padding-right 16px
+            &:nth-child(2)
+              padding-left 16px
+
+        &__column
+          clearfix()
+          &:nth-child(1)
+            margin-bottom 32px
+            +above(768px)
+              margin-bottom 0
+          +above(1280px)
+            span(1/2)
+            &:nth-child(1)
+              padding-right 16px
+              padding-left 32px
+            &:nth-child(2)
+              padding-left 16px
+              padding-right 32px
         &__bottle
           img
             width 1000px
-        &__link
+        &__link,
+        &__reset
           display block
           padding 8px
           font-size 14px
@@ -218,9 +328,11 @@
           text-align center
           color white
           border-radius 30px
+        &__reset
+          margin-top 16px
+          background-color c__blue
         &__summary
           position relative
-          height 300px
-
-
-edit()
+          padding 16px
+          +above(1280px)
+            padding-right 32px

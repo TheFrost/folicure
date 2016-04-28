@@ -254,26 +254,37 @@
                 {
                   'letter' : 'A',
                   'copy' : 'Mucho antes de padecer una fuerte caída de cabello, te gustaría prevenirlo. Estás más preocupado por darle un sano volumen pero, sobretodo, moldearlo con facilidad y que el peinado te dure a lo largo del día.',
-                  'return' : 'Como todavía no tienes un indicio fuerte de pérdida de cabello, lo más recomendado para ti es utilizar cualquier producto Folicuré® Original que surge efecto desde la raíz, y con la que fortalecerás tu cabello. Además, vigorizarás el volumen y brillo natural de tu cabello, dándole un aspecto extremadamente sano; estarás previniendo una posible tendencia de caída de cabello si tienes antecedentes.'
+                  'return' : 'Como todavía no tienes un indicio fuerte de pérdida de cabello, lo más recomendado para ti es utilizar cualquier producto Folicuré® Original que surge efecto desde la raíz, y con la que fortalecerás tu cabello. Además, vigorizarás el volumen y brillo natural de tu cabello, dándole un aspecto extremadamente sano; estarás previniendo una posible tendencia de caída de cabello si tienes antecedentes.',
+                  'product' : 'Original',
+                  'class' : 'original'
                 },
                 {
                   'letter' : 'B',
                   'copy' : 'Tienes miedo de que tu cabello delgado tenga que ver algo con la caída del cabello; buscas una forma de fortalecer tu cabello.',
-                  'return' : 'Lo más probable, entre otros factores, es que tengas un cabello delgado y fino y éste tiende a ser quebradizo; de no tratarlo adecuadamente, puede ser un factor que propicie la caída del cabello ligeramente más rápido de lo normal. Muchos de los hombres con este tipo de cabello tienden a perderlo con mayor facilidad. Por eso, es recomendable que empieces a utilizar cualquier producto de Folicuré® Hidratante, así podrás mantener tu frágil cabello en buen estado. Con los ingredientes exclusivos de Folicuré® estarás previniendo o incluso revirtiendo los efectos de la caída del cabello.'
+                  'return' : 'Lo más probable, entre otros factores, es que tengas un cabello delgado y fino y éste tiende a ser quebradizo; de no tratarlo adecuadamente, puede ser un factor que propicie la caída del cabello ligeramente más rápido de lo normal. Muchas de las personas con este tipo de cabello tienden a perderlo con mayor facilidad. Por eso, es recomendable que empieces a utilizar cualquier producto de Folicuré® Hidratante, así podrás mantener tu frágil cabello en buen estado. Con los ingredientes exclusivos de Folicuré® estarás previniendo o incluso revirtiendo los efectos de la caída del cabello.',
+                  'product' : 'Hidratante',
+                  'class' : 'hidratante'
                 },
                 {
                   'letter' : 'C',
                   'copy' : 'Estás preocupado porque, además de la caída del cabello, crees que puedas estar padeciendo de algún problema de caspa.',
-                  'return' : 'Ciertos aspectos de tu estilo de vida están ocasionándote problemas de caspa y, aunque creas que por el momento esa una prioridad, algunos dermatólogos sugieren que también la caspa puede ser un factor que fomente la caída del cabello. Cualquier producto Folicuré® Control de Caspa te ayudará a solucionar los problemas con todo y sus molestos síntomas; al mismo tiempo, estarás nutriendo a tu cabello con los ingredientes  exclusivos de Folicuré®, con los que podrás prevenir la caída a tiempo.'
+                  'return' : 'Ciertos aspectos de tu estilo de vida están ocasionándote problemas de caspa y, aunque creas que por el momento esa no es una prioridad, algunos dermatólogos sugieren que también la caspa puede ser un factor que fomente la caída del cabello. Cualquier producto Folicuré® Control de Caspa te ayudará a solucionar los problemas con todo y sus molestos síntomas; al mismo tiempo, estarás nutriendo a tu cabello con los ingredientes  exclusivos de Folicuré®, con los que podrás prevenir la caída a tiempo.',
+                  'product' : 'Control Caspa',
+                  'class' : 'control'
                 },
                 {
                   'letter' : 'D',
                   'copy' : 'Definitivamente, sientes que estás a contra reloj en la caída del cabello para no quedarte calvo.',
-                  'return' : 'Quizás te encuentres en un punto de caída del cabello progresiva, la línea Extra, en la que cada integrante además de contar con los nutrientes exclusivos de Folicuré® como los Folisacáridos y el Pantenol, está adicionado con Fintantriol y Queratina que dejan tu cabello manejable y sedoso. Cabello fuerte y brillante.'
+                  'return' : 'Quizás te encuentres en un punto de caída del cabello progresiva, la línea Extra, en la que cada integrante además de contar con los nutrientes exclusivos de Folicuré® como los Folisacáridos y el Pantenol, está adicionado con Fintantriol y Queratina que dejan tu cabello manejable y sedoso. Cabello fuerte y brillante.',
+                  'product' : 'Extra',
+                  'class' : 'extra'
                 }
               ]
             }
           ]
+        },
+        {
+          'copy' : 'Tus respuestas arrojaron los siguientes resultados'
         }
     ];
 

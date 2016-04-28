@@ -31,7 +31,20 @@
         _dgQuestionStart,
         _activeOptionData,
         _activeOptions,
-        _dgView;
+        _dgView,
+        _dgSummary,
+        _dgNav,
+        _dgNavFinish,
+        _dgPrevFinish,
+        _dgFinish,
+        _dgResults,
+        _dgViews,
+        _dgResultDesc,
+        _dgResultProductTitle,
+        _dgResultBottle,
+        _dgResultLink,
+        _dgResultReset,
+        _dgMenuAction;
 
     var _cache = function (header, body) {
       _dgStateCount = 0;
@@ -42,6 +55,7 @@
       _sectionHeader = jq('.ia-ContentHeader');
       _dgInit = jq('#diagnostic-init');
       _dgGeneral = jq('#diagnostic-general');
+      _dgResults = jq('#diagnostic-result');
       _dgStart = jq('.ia-Diagnostic__start');
       _dgSession = JSON.parse(sessionStorage.getItem('diagnostic')) || {};
       _dgContainer = jq('.ia-Content--diagnostic');
@@ -53,6 +67,18 @@
       _dgGeneralOptions = _dgGeneral.find('.ia-Diagnostic__options');
       _dgNext = jq('.ia-Diagnostic__ctrl--next');
       _dgPrev = jq('.ia-Diagnostic__ctrl--prev');
+      _dgSummary = jq('.ia-Diagnostic__result__summary');
+      _dgNav = jq('.ia-Diagnostic__ctrls__nav');
+      _dgNavFinish = jq('.ia-Diagnostic__ctrls__last');
+      _dgPrevFinish = jq('.ia-Diagnostic__ctrl--prev-finish');
+      _dgFinish = jq('.ia-Diagnostic__ctrl--finish');
+      _dgViews = jq('.ia-Diagnostic__view'),
+      _dgResultDesc = jq('.ia-Diagnostic__result__desc');
+      _dgResultProductTitle = _dgResults.find('.ia-Product__category');
+      _dgResultBottle = jq('.ia-Diagnostic__result__bottle img');
+      _dgResultLink = jq('.ia-Diagnostic__result__link');
+      _dgResultReset = jq('.ia-Diagnostic__result__reset');
+      _dgMenuAction = jq('#main-menu');
     }
 
     var _bindEvents = function () {
@@ -72,6 +98,7 @@
         var el = jq(this);
         _optionSelected(el);
         _activeStart();
+        _bodyBg(el);
       });
 
       _dgStart.on('click', function () {
@@ -91,50 +118,163 @@
         evt.preventDefault();
         _prevAction();
       });
+
+      _dgPrevFinish.on('click', function (evt) {
+        evt.preventDefault();
+        _prevAction();
+      });
+
+      _dgFinish.on('click', function (evt) {
+        evt.preventDefault();
+        _nextAction();
+        _dgStateCount = 2;
+        _dgInit.hide();
+        _dgGeneral.hide();
+        _dgResults.addClass('js-state-active');
+        sessionStorage.setItem('state', 2);
+        _render();
+      });
+
+      _dgResultReset.on('click', function () {
+        _resetAction();
+      });
+
+      _dgMenuAction.on('click', function () {
+        _resetAction();
+      });
     }
 
     var _render = function () {
 
-      if (_dgStateCount === 0) {
-        _dgQuestion.text(_dgService[0].init.question);
-      } else {
-
-        _lengthQuestions = _dgService[1].general.length - _dgQuestionStart;
-
-        var _currentQuestion = _dgQuestionStart === 0
-              ? _dgQuestionCount + 1
-              : _dgQuestionCount,
-            _porcent = (100 / _lengthQuestions) * _currentQuestion + '%',
-            _options = _dgService[1].general[_dgQuestionCount].options,
-            _blocks = '';
-
-        _dgQuestion.text(_dgService[1].general[_dgQuestionCount].question);
-
-        _dgProgressBar.css({'width': _porcent});
-
-        _dgProgressInfo
-          .text(_currentQuestion + '/' + _lengthQuestions)
-          .css({'left' : _porcent});
-
-        for (var i = 0; i < _options.length; i++) {
-          _blocks += '<div class="ia-Diagnostic__option" data-option="' + _options[i].letter + '"><div class="ia-Diagnostic__option__inner"><span class="ia-Diagnostic__option__letter" data-option="A">' + _options[i].letter + ' .</span><p class="ia-Diagnostic__option__copy">' + _options[i].copy + '</p></div></div>'
-        }
-
-        _dgGeneralOptions.html(_blocks)
-
-        _renderOptions();
+      switch(_dgStateCount) {
+        case 0 :
+          _renderControlInit();
+          break;
+        case 1 :
+          _renderControlQuestions();
+          break;
+        case 2 :
+          _renderControlResult();
+          break;
       }
 
       _dgOptions = jq('.ia-Diagnostic__option');
 
       _resetOptions();
 
-      _validateControls();
-
       _bodyRender();
 
       _activeOptionData = null;
 
+    }
+
+    var _renderControlResult = function () {
+
+      var _session = JSON.parse(sessionStorage.getItem('diagnostic')),
+          _length = _dgService[1].general.length,
+          _genere = '<p>' + _dgService[0].init.options[_session['init']].copy + '</p>',
+          _results = _genere,
+          _header = _dgService[2].copy,
+          _session = JSON.parse(sessionStorage.getItem('diagnostic')),
+          _genere = _session['init'],
+          _desc,
+          _product,
+          _class,
+          _urlImg,
+          _urlLink;
+
+
+      for (var i = 0; i < _length; i++) {
+        if (_session[String(i)]) {
+
+          var _response = _session[String(i)];
+
+          for (var x = 0; x < _dgService[1].general[i].options.length; x++) {
+
+            if (_dgService[1].general[i].options[x].letter === _response) {
+
+              if (_dgService[1].general[i].options[x].return) {
+
+                if (i === _length - 1) {
+
+                  _desc = _dgService[1].general[i].options[x].return;
+                  _product = _dgService[1].general[i].options[x].product;
+                  _class = _dgService[1].general[i].options[x].class;
+
+                } else {
+
+                  _results += '<p>' + _dgService[1].general[i].options[x].return + '</p>';
+
+                }
+
+              }
+
+            }
+
+          }
+        }
+      }
+
+      _urlImg = 'images/single-' + _class + '-shampoo.png';
+      _urlLink = 'product-' + _class + '.html'
+
+      _dgResultBottle.attr('src', _urlImg);
+
+      _dgResultLink.attr('href', _urlLink);
+
+      _dgHeader.addClass('js-result-' + _class);
+
+      _dgQuestion.text(_header);
+
+      _dgProgressInfo.text('COMPLETADO').addClass('js-finish');
+
+      _dgResults.addClass('js-result-' + _class);
+
+      _dgResultProductTitle.text(_product);
+
+      _dgResultDesc.html(_desc);
+
+      _dgSummary.html(_results);
+
+      _dgSummary.removeClass('js-bg-M');
+      _dgSummary.removeClass('js-bg-H');
+      _dgSummary.addClass('js-bg-' + _genere);
+
+      _dgBody.removeClass('js-bg-' + _genere);
+
+    }
+
+    var _renderControlInit = function () {
+      _dgQuestion.text(_dgService[0].init.question);
+    }
+
+    var _renderControlQuestions = function () {
+      _lengthQuestions = _dgService[1].general.length - _dgQuestionStart;
+
+      var _currentQuestion = _dgQuestionStart === 0
+            ? _dgQuestionCount + 1
+            : _dgQuestionCount,
+          _porcent = (100 / _lengthQuestions) * _currentQuestion + '%',
+          _options = _dgService[1].general[_dgQuestionCount].options,
+          _blocks = '';
+
+      _dgQuestion.text(_dgService[1].general[_dgQuestionCount].question);
+
+      _dgProgressBar.css({'width': _porcent});
+
+      _dgProgressInfo
+        .text(_currentQuestion + '/' + _lengthQuestions)
+        .css({'left' : _porcent});
+
+      for (var i = 0; i < _options.length; i++) {
+        _blocks += '<div class="ia-Diagnostic__option" data-option="' + _options[i].letter + '"><div class="ia-Diagnostic__option__inner"><span class="ia-Diagnostic__option__letter" data-option="A">' + _options[i].letter + ' .</span><p class="ia-Diagnostic__option__copy">' + _options[i].copy + '</p></div></div>'
+      }
+
+      _dgGeneralOptions.html(_blocks)
+
+      _renderOptions();
+
+      _validateControls();
     }
 
     var _renderOptions = function () {
@@ -166,10 +306,12 @@
         : _lengthQuestions;
 
       if (_dgQuestionCount < _setLength) {
+
         _dgQuestionCount++;
         _render();
         _selectedCache();
       }
+
       _manageStorage('add');
 
     }
@@ -198,7 +340,6 @@
     var _sessionControlAdd = function (action) {
 
       if (action === 'next') {
-        console.log(_dgQuestionCount);
         _dgSession[String(_dgQuestionCount)] = _activeOptionData;
 
       } else {
@@ -226,6 +367,14 @@
         _dgPrev.removeClass('js-disabled')
       }
 
+      if (_dgQuestionCount === 9) {
+        _dgNav.hide();
+        _dgNavFinish.show();
+      } else {
+        _dgNav.show();
+        _dgNavFinish.hide();
+      }
+
     }
 
     var _resetOptions = function () {
@@ -238,10 +387,10 @@
     }
 
     var _resetAction = function () {
-      _toggleStates();
       _toggleContainer();
       _manageStorage('kill');
       _dgStateCount = 0;
+      _toggleStates();
       _disableStart();
       _resetProgress();
       _render();
@@ -252,12 +401,9 @@
     var _startAction = function () {
       _dgSession['init'] = _activeOptionData;
       _toggleContainer();
-      _toggleStates();
-
       _validateGenere(_activeOptionData);
-
+      _toggleStates();
       _dgQuestionCount = _dgQuestionStart;
-
       _manageStorage('add');
       _render();
     }
@@ -274,10 +420,12 @@
         switch(action) {
           case 'add' :
             sessionStorage.setItem('diagnostic', JSON.stringify(_dgSession));
-            sessionStorage.setItem('state', _dgQuestionCount);
+            sessionStorage.setItem('question', _dgQuestionCount);
+            sessionStorage.setItem('state', _dgStateCount);
             break;
           case 'kill' :
             sessionStorage.removeItem('diagnostic');
+            sessionStorage.removeItem('question');
             sessionStorage.removeItem('state');
             break;
         }
@@ -287,18 +435,26 @@
     }
 
     var _initRender = function () {
-      var _session = sessionStorage.getItem('state');
+      var _session = sessionStorage.getItem('question');
       var _selections = JSON.parse(sessionStorage.getItem('diagnostic'));
+      _dgStateCount = sessionStorage.getItem('state')
+        ? JSON.parse(sessionStorage.getItem('state'))
+        : 0;
 
-      if (_session) {
-        _dgQuestionCount = parseInt(_session);
-        _toggleContainer();
-        _toggleStates();
-        _validateGenere(_selections.init);
+      if (_dgStateCount) {
 
-        setTimeout(function () {
-          _selectedCache();
-        }, 100);
+          _dgQuestionCount = parseInt(_session);
+          _toggleContainer();
+          _toggleStates();
+
+          if (!(_dgStateCount === 2)) {
+            _validateGenere(_selections.init);
+          }
+
+          setTimeout(function () {
+            _selectedCache();
+          }, 100);
+
       }
     }
 
@@ -307,8 +463,18 @@
     }
 
     var _toggleStates = function () {
-      _dgInit.toggleClass('js-state-active');
-      _dgGeneral.toggleClass('js-state-active');
+      _dgViews.removeClass('js-state-active');
+      switch(_dgStateCount) {
+        case 0 :
+          _dgInit.addClass('js-state-active');
+          break;
+        case 1 :
+          _dgGeneral.addClass('js-state-active');
+          break;
+        case 2 :
+          _dgResults.addClass('js-state-active');
+          break;
+      }
     }
 
     var _activeStart = function () {
@@ -326,10 +492,22 @@
     }
 
     var _bodyRender = function () {
-      var _dgView = _dgStateCount === 0
-            ? jq('#diagnostic-init')
-            : jq('#diagnostic-general'),
-          _contentCurrentHeight = _dgView.innerHeight() + 64;
+      var _dgView,
+          _contentCurrentHeight;
+
+      switch(_dgStateCount) {
+        case 0:
+          _dgView = jq('#diagnostic-init');
+          break;
+        case 1:
+          _dgView = jq('#diagnostic-general');
+          break;
+        case 2:
+          _dgView = jq('#diagnostic-result');
+          break;
+      }
+
+      _contentCurrentHeight = _dgView.innerHeight() + 64;
 
       _dgBody.removeAttr('style');
 
@@ -345,14 +523,45 @@
           _dgBody.css({'min-height' : _contentCurrentHeight});
         }
 
+
+        _summaryRender(_bodyHeight);
+
+
       } else {
         _dgBody.removeAttr('style');
       }
     }
 
+    var _summaryRender = function (bodyH) {
+
+        if (_window.innerWidth() >= 1280) {
+          _dgSummary.perfectScrollbar();
+          _dgSummary.css({'height':bodyH - 64});
+        } else {
+          _dgSummary.perfectScrollbar('destroy');
+          _dgSummary.removeAttr('style');
+        }
+    }
+
+    var _bodyBg = function (el) {
+      console.log(el.data('option'));
+
+      _dgBody.css({
+        'background' : 'url(images/diagnostic-' + el.data('option') + '.jpg) no-repeat center center',
+        'background-size' : 'cover'
+      });
+    }
+
+    var _bodyBg = function (el) {
+      console.log(el.data('option'));
+      _dgBody.removeClass('js-bg-M');
+      _dgBody.removeClass('js-bg-H');
+      _dgBody.addClass('js-bg-' + el.data('option'));
+    }
+
     /*Public*/
     var init = function (header, body) {
-      _cache(header, body)
+      _cache(header, body);
       _initRender();
       _render();
       _bindEvents();
