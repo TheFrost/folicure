@@ -1554,6 +1554,10 @@
     margin-right: 0%;
   }
 }
+.ia-Diagnostic__view--result {
+  max-width: 941px;
+  margin: 0 auto;
+}
 .ia-Diagnostic__view--result:before,
 .ia-Diagnostic__view--result:after {
   content: " ";
@@ -1563,7 +1567,27 @@
   clear: both;
 }
 @media only screen and (min-width: 991px) {
-  .ia-Diagnostic__view--result .ia-Diagnostic__result__column {
+  .ia-Diagnostic__view--result {
+    text-align: left;
+  }
+}
+.ia-Diagnostic__view--result .ia-Product__category {
+  margin-bottom: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+.ia-Diagnostic__view--result p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.ia-Diagnostic__view--result .ia-Diagnostic__result__column {
+  padding: 0 16px;
+}
+@media only screen and (min-width: 991px) {
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__info {
     *zoom: 1;
     float: left;
     clear: none;
@@ -1573,19 +1597,43 @@
     margin-right: 3%;
   }
   .ia-Diagnostic__view--result .ia-Diagnostic__result__column:before,
-  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after {
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle:before,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__info:before,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle:after,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__info:after {
     content: '';
     display: table;
   }
-  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after {
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle:after,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__info:after {
     clear: both;
   }
-  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:last-child {
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:last-child,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle:last-child,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__info:last-child {
     margin-right: 0%;
   }
 }
 .ia-Diagnostic__view--result .ia-Diagnostic__result__bottle img {
   width: 1000px;
+}
+.ia-Diagnostic__view--result .ia-Diagnostic__result__link {
+  display: block;
+  padding: 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  border-radius: 30px;
+}
+.ia-Diagnostic__view--result .ia-Diagnostic__result__summary {
+  position: relative;
+  height: 300px;
+}
+* {
+  background: rgba(0,0,0,0.05);
 }
 .ia-Content {
   position: relative;

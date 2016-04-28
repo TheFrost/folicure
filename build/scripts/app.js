@@ -48,4 +48,9 @@
     Diagnostic.init(diagnosticHeader, diagnosticBody);
   }
 
+
+  console.log(jq('.ia-Diagnostic__summary'));
+  jq('.ia-Diagnostic__result__summary').perfectScrollbar();
+
+
 })(jQuery || window.jQuery, window, document);

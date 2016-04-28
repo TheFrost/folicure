@@ -187,10 +187,40 @@
     // Result Styles
     &--result
       clearfix()
+      max-width 941px
+      margin 0 auto
+      +above(991px)
+        text-align left
+      .ia-Product__category
+        margin-bottom 16px
+        font-size 18px
+        text-align center
+      p
+        margin-top 0
+        margin-bottom 16px
+        font-size 14px
       .ia-Diagnostic__result
         &__column
+          padding 0 16px
+        &__column,
+        &__bottle,
+        &__info
           +above(991px)
             col(1/2)
         &__bottle
           img
             width 1000px
+        &__link
+          display block
+          padding 8px
+          font-size 14px
+          text-transform uppercase
+          text-align center
+          color white
+          border-radius 30px
+        &__summary
+          position relative
+          height 300px
+
+
+edit()
