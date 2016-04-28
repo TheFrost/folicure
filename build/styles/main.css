@@ -1279,17 +1279,12 @@
   background-color: #d8d8d8;
   transition: background-image 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-@media only screen and (min-width: 768px) {
-  .ia-Diagnostic__body {
-    min-height: 650px !important;
-  }
-}
 .ia-Diagnostic__option {
   position: relative;
   margin-bottom: 32px;
   color: #000;
   cursor: pointer;
-  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ia-Diagnostic__option:before,
 .ia-Diagnostic__option:after {
@@ -1383,6 +1378,10 @@
 }
 .ia-Diagnostic__ctrl.js-disabled:hover {
   background-color: #d8d8d8;
+}
+.ia-Diagnostic__view--init,
+.ia-Diagnostic__view--general {
+  display: none !important;
 }
 .ia-Diagnostic__view--init.js-state-active,
 .ia-Diagnostic__view--general.js-state-active {
@@ -1555,6 +1554,39 @@
     margin-right: 0%;
   }
 }
+.ia-Diagnostic__view--result:before,
+.ia-Diagnostic__view--result:after {
+  content: " ";
+  display: table;
+}
+.ia-Diagnostic__view--result:after {
+  clear: both;
+}
+@media only screen and (min-width: 991px) {
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:before,
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after {
+    content: '';
+    display: table;
+  }
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:after {
+    clear: both;
+  }
+  .ia-Diagnostic__view--result .ia-Diagnostic__result__column:last-child {
+    margin-right: 0%;
+  }
+}
+.ia-Diagnostic__view--result .ia-Diagnostic__result__bottle img {
+  width: 1000px;
+}
 .ia-Content {
   position: relative;
   padding-top: 59px;
@@ -1578,7 +1610,7 @@
   }
 }
 .ia-ContentHeader {
-  padding: 32px 16px;
+  padding: 32px 0;
   text-align: center;
 }
 .ia-ContentHeader__title {
@@ -1598,6 +1630,7 @@
 }
 .ia-ContentHeader__txt {
   display: block;
+  padding: 0 16px;
   color: #999;
 }
 @media only screen and (min-width: 1024px) {

@@ -30,10 +30,11 @@
         _lengthQuestions,
         _dgQuestionStart,
         _activeOptionData,
-        _activeOptions;
+        _activeOptions,
+        _dgView;
 
     var _cache = function (header, body) {
-      _dgStateCount = null;
+      _dgStateCount = 0;
       _dgHeader = header;
       _dgBody = body;
       _window = jq(window);
@@ -94,7 +95,7 @@
 
     var _render = function () {
 
-      if (_dgStateCount === null) {
+      if (_dgStateCount === 0) {
         _dgQuestion.text(_dgService[0].init.question);
       } else {
 
@@ -126,16 +127,24 @@
 
       _dgOptions = jq('.ia-Diagnostic__option');
 
-
-
       _resetOptions();
 
       _validateControls();
 
+      _bodyRender();
+
+      _activeOptionData = null;
+
     }
 
     var _renderOptions = function () {
-      var _elements = _dgGeneral.find('.ia-Diagnostic__option .ia-Diagnostic__option__copy');
+      var _elements = _dgGeneral.find('.ia-Diagnostic__option .ia-Diagnostic__option__copy'),
+          _size = Utils.isSmartphone()
+            ? 100
+            : 156,
+          _extra = Utils.isSmartphone()
+            ? 94
+            : 64;
 
       _elements = jq.map(_elements, function (val) {
         return jq(val).innerHeight();
@@ -143,26 +152,34 @@
         return a < b;
       });
 
-      if (_elements[0] > 156) {
-        _dgGeneral.find('.ia-Diagnostic__option').css({'height':_elements[0] + 64});
+      if (_elements[0] > _size) {
+        _dgGeneral.find('.ia-Diagnostic__option').css({'height':_elements[0] + _extra});
       }
     }
 
     var _nextAction = function () {
 
-      if (_dgQuestionCount <= _lengthQuestions - 1) {
-        _sessionControlAdd('next');
+      _sessionControlAdd('next');
+
+      var _setLength = _dgQuestionStart === 0
+        ? _lengthQuestions - 1
+        : _lengthQuestions;
+
+      if (_dgQuestionCount < _setLength) {
+        _dgQuestionCount++;
         _render();
-
         _selectedCache();
-
       }
+      _manageStorage('add');
+
     }
 
     var _prevAction = function () {
       _sessionControlAdd('prev');
+      _dgQuestionCount--;
       _render();
       _selectedCache();
+      _manageStorage('add');
     }
 
     var _selectedCache = function () {
@@ -179,11 +196,18 @@
     }
 
     var _sessionControlAdd = function (action) {
-      _dgSession[String(_dgQuestionCount)] = _activeOptionData;
-      _dgQuestionCount = action === 'next'
-        ? _dgQuestionCount + 1
-        : _dgQuestionCount - 1;
-      _manageStorage('add');
+
+      if (action === 'next') {
+        console.log(_dgQuestionCount);
+        _dgSession[String(_dgQuestionCount)] = _activeOptionData;
+
+      } else {
+
+        if (_activeOptionData !== null) {
+          _dgSession[String(_dgQuestionCount)] = _activeOptionData;
+        }
+
+      }
     }
 
     var _validateControls = function () {
@@ -217,7 +241,7 @@
       _toggleStates();
       _toggleContainer();
       _manageStorage('kill');
-      _dgStateCount = null;
+      _dgStateCount = 0;
       _disableStart();
       _resetProgress();
       _render();
@@ -302,13 +326,25 @@
     }
 
     var _bodyRender = function () {
+      var _dgView = _dgStateCount === 0
+            ? jq('#diagnostic-init')
+            : jq('#diagnostic-general'),
+          _contentCurrentHeight = _dgView.innerHeight() + 64;
+
+      _dgBody.removeAttr('style');
+
       if (!Utils.isSmartphone()) {
         var _fixedHeight = !Utils.isMobile()
           ? 44
           : 102;
-        var _bodyHeight = _window.innerHeight() - (_sectionHeader.innerHeight() + _fixedHeight)
+        var _bodyHeight = _window.innerHeight() - (_sectionHeader.innerHeight() + _fixedHeight);
 
-        _dgBody.css({'min-height':_bodyHeight});
+        if (_contentCurrentHeight < _bodyHeight) {
+          _dgBody.css({'height' : _bodyHeight});
+        } else {
+          _dgBody.css({'min-height' : _contentCurrentHeight});
+        }
+
       } else {
         _dgBody.removeAttr('style');
       }
@@ -318,7 +354,6 @@
     var init = function (header, body) {
       _cache(header, body)
       _initRender();
-      _bodyRender();
       _render();
       _bindEvents();
     }

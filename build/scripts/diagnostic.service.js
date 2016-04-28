@@ -29,12 +29,12 @@
               'options' : [
                 {
                   'letter' : 'A',
-                  'copy' : 'Si',
+                  'copy' : 'Sí.',
                   'return' : 'Como parte del proceso hormonal que se manifiesta durante el embarazo, los ciclos del folículo piloso sufren ciertas alteraciones, por lo que es relativamente común que el crecimiento se detenga. Semanas después del parto, el cabello retoma su ciclo normal de crecimiento. '
                 },
                 {
                   'letter' : 'B',
-                  'copy' : 'No',
+                  'copy' : 'No.',
                   'return' : false
                 }
               ]
@@ -45,22 +45,22 @@
               'options' : [
                 {
                   'letter' : 'A',
-                  'copy' : 'Menos de 20',
+                  'copy' : 'Menos de 20.',
                   'return' : false
                 },
                 {
                   'letter' : 'B',
-                  'copy' : 'De 20 a 30',
+                  'copy' : 'De 20 a 30.',
                   'return' : 'Estás a un muy buen momento de hacer pequeños cambios en tu estilo de vida ya que de convertirlos en hábitos, evitarás que el cabello sufra alteraciones después de los 30. Empieza con balancear tu dieta y hacer ejercicio de tres a cinco veces por semana.'
                 },
                 {
                   'letter' : 'C',
-                  'copy' : 'De 30 a 40',
+                  'copy' : 'De 30 a 40.',
                   'return' : false
                 },
                 {
                   'letter' : 'D',
-                  'copy' : 'De 40 en adelante',
+                  'copy' : 'De 40 en adelante.',
                   'return' : false
                 }
               ]
@@ -71,22 +71,22 @@
               'options' : [
                 {
                   'letter' : 'A',
-                  'copy' : 'Abundante y espeso, aunque te cuesta trabajo moldearlo',
+                  'copy' : 'Abundante y espeso, aunque te cuesta trabajo moldearlo.',
                   'return' : 'No cepilles muy fuerte tu cabello, utiliza accesorios de cerdas muy suaves y procura peinarlo cuando esté seco, no mojado, ya que esto facilita que el cabello delgado se quiebre. <br> Evita todo lo posible el uso de secadores de cabello; si no tienes opción, utiliza las temperaturas más bajas.'
                 },
                 {
                   'letter' : 'B',
-                  'copy' : 'Abundante pero escurridizo, los peinados se te vienen abajo a las pocas horas y pareciera que en realidad tienes poco cabello',
+                  'copy' : 'Abundante pero escurridizo, los peinados se te vienen abajo a las pocas horas y pareciera que en realidad tienes poco cabello.',
                   'return' : 'No cepilles muy fuerte tu cabello, utiliza accesorios de cerdas muy suaves y procura peinarlo cuando esté seco, no mojado, ya que esto facilita que el cabello delgado se quiebre. <br> Evita todo lo posible el uso de secadores de cabello; si no tienes opción, utiliza las temperaturas más bajas.'
                 },
                 {
                   'letter' : 'C',
-                  'copy' : 'Cualquiera de las dos anteriores pero la caída del cabello cada vez es más notoria a simple vista',
+                  'copy' : 'Cualquiera de las dos anteriores pero la caída del cabello cada vez es más notoria a simple vista.',
                   'return' : 'No cepilles muy fuerte tu cabello, utiliza accesorios de cerdas muy suaves y procura peinarlo cuando esté seco, no mojado, ya que esto facilita que el cabello delgado se quiebre. <br> Evita todo lo posible el uso de secadores de cabello; si no tienes opción, utiliza las temperaturas más bajas.'
                 },
                 {
                   'letter' : 'D',
-                  'copy' : 'Cuando pasas la mano por tu cabello, sientes las yemas de tus dedos como grasosos',
+                  'copy' : 'Cuando pasas la mano por tu cabello, sientes las yemas de tus dedos como grasosos.',
                   'return' : 'No cepilles muy fuerte tu cabello, utiliza accesorios de cerdas muy suaves y procura peinarlo cuando esté seco, no mojado, ya que esto facilita que el cabello delgado se quiebre. <br> Evita todo lo posible el uso de secadores de cabello; si no tienes opción, utiliza las temperaturas más bajas.'
                 }
               ]
@@ -123,22 +123,22 @@
               'options' : [
                 {
                   'letter' : 'A',
-                  'copy' : '1 o 2 ',
+                  'copy' : '1 o 2.',
                   'return' : 'Te recomendamos lavar tu cabello con más frecuencia. No lavarlo diario, provocará que los residuos que en él se albergan, sobretodo aquellos que se obtienen por factores externos, permanezcan en tu cabello, perjudicándolo con el paso del tiempo y favoreciendo su caída. '
                 },
                 {
                   'letter' : 'B',
-                  'copy' : '3 a 5',
+                  'copy' : '3 a 5.',
                   'return' : 'Recomendación: con un poco de fuerza de voluntad podrías esforzarte un poco más para lavarte el cabello prácticamente diario. '
                 },
                 {
                   'letter' : 'C',
-                  'copy' : '5 a 7',
+                  'copy' : '5 a 7.',
                   'return' : 'Es hora de que elijas muy bien los productos con los que lavas tu cabello. Presta mucha atención a los agentes con los que están hechos, ya que algunos dañan sobretodo el cuero cabelludo, irritándolo casi siempre y provocando la caída del cabello; asegúrate que contengan los nutrientes básicos como una buena gama de vitaminas B, además de nutrientes como el Pantenol, que le darán a tu cabello brillo natural y lo fortalecerán para evitar futuras caídas. '
                 },
                 {
                   'letter' : 'D',
-                  'copy' : 'Más de 7',
+                  'copy' : 'Más de 7.',
                   'return' : 'Es hora de que elijas muy bien los productos con los que lavas tu cabello. Presta mucha atención a los agentes con los que están hechos, ya que algunos dañan sobretodo el cuero cabelludo, irritándolo casi siempre y provocando la caída del cabello; asegúrate que contengan los nutrientes básicos como una buena gama de vitaminas B, además de nutrientes como el Pantenol, que le darán a tu cabello brillo natural y lo fortalecerán para evitar futuras caídas. '
                 }
               ]

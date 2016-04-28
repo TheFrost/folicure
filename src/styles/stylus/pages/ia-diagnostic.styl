@@ -45,8 +45,6 @@
     text-align center
     background-color c__gray--beta
     transition background-image 0.33s easing( 'in-out-cubic' )
-    +above(768px)
-      min-height 650px !important
 
 
   &__option
@@ -55,7 +53,7 @@
     margin-bottom 32px
     color black
     cursor pointer
-    transition all 0.33s easing( 'in-out-cubic' )
+    transition background-color 0.33s easing( 'in-out-cubic' )
     +above(768px)
       col(1/2, gutter: 4, cycle: 2)
 
@@ -109,6 +107,9 @@
     // Init option style
     &--init,
     &--general
+
+      display none !important
+
       &.js-state-active
         display block
     &--init
@@ -182,3 +183,14 @@
             col(3/4)
             right 0
             text-align left
+
+    // Result Styles
+    &--result
+      clearfix()
+      .ia-Diagnostic__result
+        &__column
+          +above(991px)
+            col(1/2)
+        &__bottle
+          img
+            width 1000px
