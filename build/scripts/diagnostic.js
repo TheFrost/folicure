@@ -162,7 +162,9 @@
 
       _resetOptions();
 
-      _bodyRender();
+      setTimeout(function () {
+        _bodyRender();
+      }, 500);
 
       _activeOptionData = null;
 
@@ -520,7 +522,7 @@
         if (_contentCurrentHeight < _bodyHeight) {
           _dgBody.css({'height' : _bodyHeight});
         } else {
-          _dgBody.css({'min-height' : _contentCurrentHeight});
+          _dgBody.css({'max-height' : _contentCurrentHeight});
         }
 
 
