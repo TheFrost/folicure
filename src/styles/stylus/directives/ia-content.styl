@@ -5,6 +5,9 @@
   padding-bottom 43px
   min-height 0
   background-color black
+  +above(1024px)
+    min-height 1200px
+    height 100%
 
   +above(991px)
     float right
@@ -13,6 +16,7 @@
     width calc(100% \- 150px)
 
   &Header
+    position relative
     padding 32px 0
     text-align center
     &__title
@@ -34,33 +38,7 @@
       padding 0 16px
       color c__gray--gama
 
-
-  &--frontpage
+  &Body
+    clearfix()
     +above(1024px)
-      min-height 1200px
       height 100%
-
-  &--product-grid
-    +above(1024px)
-      min-height 1200px
-      height 100%
-
-    .ia-ContentHeader
-      background url('../images/bg-product-header.jpg') no-repeat center center
-      background-size cover
-
-  &--product
-    +above(768px)
-      min-height 600px
-      height 100%
-
-  &--blog
-    .ia-ContentHeader
-      background url('../images/bg-blog-header.jpg') no-repeat center center
-      background-size cover
-
-  &--diagnostic
-    .ia-ContentHeader
-      padding 32px 0 0
-      background url('../images/diagnostic-banner.jpg') no-repeat center center
-      background-size cover

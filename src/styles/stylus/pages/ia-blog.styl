@@ -1,15 +1,20 @@
 /*brick settings in blog view*/
 .ia-Content
   &--blog
+    +above(1024px)
+      height 100%
+    .ia-ContentHeader
+      background url('../images/bg-blog-header.jpg') no-repeat center center
+      background-size cover
+    .ia-ContentBody
+      +above(1024px)
+        height calc(100% \- 221px)
     .ia-Brick
-      &--normal
-        height 521px
-      &--tall
-        height 637px
       &--normal,
       &--tall
-        +below(480px)
-          height 480px
+        height 480px
+        +above(480px)
+          height 600px
       &Link
         height 100%
       &Fig
@@ -23,3 +28,38 @@
           letter-spacing 1px
           text-transform uppercase
           color white
+
+
+/*blog blocks styles*/
+.ia-Blog
+  &__footer
+    clearfix()
+    display block
+    padding 16px 0
+    text-align center
+  &__pager
+    display table
+    margin 0 auto
+    &__item
+      display table-cell
+      padding-left 16px
+      &:nth-child(1)
+        padding-left 0
+      &.active
+        a
+          background-color c__red
+          color white
+          pointer-events none
+          cursor default
+      a
+        display inline-block
+        width 40px
+        height 40px
+        text-align center
+        line-height 40px
+        background-color c__blue
+        border-radius 50%
+        color white
+        transition all 0.33s easing( 'in-out-cubic' )
+        &:hover
+          background-color darken(c__blue, 10%)

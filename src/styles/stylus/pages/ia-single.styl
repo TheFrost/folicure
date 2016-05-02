@@ -1,0 +1,127 @@
+/*single settings layout*/
+.ia-Content
+  &--single
+    min-height 0 !important
+    height auto !important
+    background-color c__gray--teta !important
+    .ia-Content
+      &Header
+        height 149px
+        background url('../images/bg-blog-header.jpg') no-repeat center center
+        background-size cover
+
+
+/*Single styles*/
+.ia-Single
+  position relative
+  max-width 800px
+  margin-top -50px
+  margin-left 16px
+  margin-right 16px
+  padding 16px
+  background-color c__gray--beta
+  +above(832px)
+    margin-left auto
+    margin-right auto
+    padding 32px
+
+  /*Controls*/
+  &__home
+    position absolute
+    bottom 16px
+    right 16px
+    display block
+    width 34px
+    height 34px
+    line-height 34px
+    text-align center
+    color white
+    border 1px solid white
+  &__ctrl
+    position fixed
+    top calc(50% \- 43px)
+    transform translateY(-50%)
+    &--next
+      right 0
+      &:hover
+        .ia-Single__ctrl__title
+          transform translateX(-100%)
+      .ia-Single__ctrl__title
+        left 0
+    &--prev
+      left 150px
+      &:hover
+        .ia-Single__ctrl__title
+          transform translateX(100%)
+      .ia-Single__ctrl__title
+        right 0
+    &__link
+      position relative
+      z-index 11
+      display block
+      padding 40px 16px
+      font-size 24px
+      background-color c__gray
+      color white
+      transition all 0.33s easing( 'in-out-cubic' )
+      &:hover
+        background-color darken(c__gray, 10%)
+    &__title
+      position absolute
+      top 0
+      width 200px
+      height 100%
+      z-index 10
+      transition all 0.33s easing( 'in-out-cubic' )
+      background-color c__gray
+      &:hover
+        background-color darken(c__gray, 10%)
+      h1
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        width 100%
+        padding 16px
+        margin 0
+        font-size 16px
+      a
+        display block
+        color white
+
+  /*Content*/
+  &__title
+    margin 0
+    font-size 32px
+    font-family NexaBold
+    letter-spacing 1px
+    text-align center
+    text-transform uppercase
+    +above(1024px)
+      font-size 40px
+    &:after
+      content ''
+      display block
+      width 100px
+      height 5px
+      margin 32px auto
+      background-color black
+  h2
+    margin 0
+    margin-bottom 16px
+    font-size 20px
+  h3
+    font-size 16px
+    margin 0
+  p
+    margin-top 0
+    margin-bottom 32px
+    font-weight 300
+    font-size 16px
+  blockquote
+    padding 0
+    margin 32px 0
+    font-size 32px
+    font-style italic
+    color c__blue
+  img
+    margin 32px 0
