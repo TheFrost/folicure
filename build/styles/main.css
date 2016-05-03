@@ -1901,7 +1901,7 @@
 }
 .ia-Single {
   position: relative;
-  max-width: 800px;
+  max-width: 738px;
   margin-top: -50px;
   margin-left: 16px;
   margin-right: 16px;
@@ -2077,11 +2077,16 @@
 }
 .ia-Single__title {
   margin: 0;
-  font-size: 32px;
+  font-size: 20px;
   font-family: NexaBold;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Single__title {
+    font-size: 32px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .ia-Single__title {
@@ -2099,7 +2104,12 @@
 .ia-Single__content h2 {
   margin: 0;
   margin-bottom: 16px;
-  font-size: 20px;
+  font-size: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Single__content h2 {
+    font-size: 20px;
+  }
 }
 .ia-Single__content h3 {
   font-size: 16px;
@@ -2114,9 +2124,14 @@
 .ia-Single__content blockquote {
   padding: 0;
   margin: 32px 0;
-  font-size: 32px;
+  font-size: 20px;
   font-style: italic;
   color: #00458d;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Single__content blockquote {
+    font-size: 32px;
+  }
 }
 .ia-Single__content img {
   margin: 32px 0;

@@ -14,7 +14,7 @@
 /*Single styles*/
 .ia-Single
   position relative
-  max-width 800px
+  max-width 738px
   margin-top -50px
   margin-left 16px
   margin-right 16px
@@ -131,11 +131,13 @@
   /*Content*/
   &__title
     margin 0
-    font-size 32px
+    font-size 20px
     font-family NexaBold
     letter-spacing 1px
     text-align center
     text-transform uppercase
+    +above(768px)
+      font-size 32px
     +above(1024px)
       font-size 40px
     &:after
@@ -149,7 +151,9 @@
     h2
       margin 0
       margin-bottom 16px
-      font-size 20px
+      font-size 18px
+      +above(768px)
+        font-size 20px
     h3
       font-size 16px
       margin 0
@@ -161,9 +165,11 @@
     blockquote
       padding 0
       margin 32px 0
-      font-size 32px
+      font-size 20px
       font-style italic
       color c__blue
+      +above(768px)
+        font-size 32px
     img
       margin 32px 0
 
