@@ -49,4 +49,11 @@
   }
 
 
+  // Share init
+  var triggerShare = jq('.ia-Single__share');
+
+  if (triggerShare.length) {
+    Share.init(triggerShare);
+  }
+
 })(jQuery || window.jQuery, window, document);

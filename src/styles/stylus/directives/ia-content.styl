@@ -5,9 +5,6 @@
   padding-bottom 43px
   min-height 0
   background-color black
-  +above(1024px)
-    min-height 1200px
-    height 100%
 
   +above(991px)
     float right
@@ -41,4 +38,11 @@
   &Body
     clearfix()
     +above(1024px)
+      height 100%
+
+  &--frontpage,
+  &--grid,
+  &--product-grid
+    +above(1024px)
+      min-height 1200px
       height 100%

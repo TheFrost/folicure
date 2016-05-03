@@ -24,6 +24,10 @@
         return jq(window).innerWidth() < 768;
       },
 
+      format: function(url, fragment) {
+        return url.replace(/{(\d+)}/g, fragment);
+      },
+
       prefix : function () {
         var styles = window.getComputedStyle(document.documentElement, ''),
           pre = (Array.prototype.slice
