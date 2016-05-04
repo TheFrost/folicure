@@ -2136,6 +2136,18 @@
 .ia-Single__content img {
   margin: 32px 0;
 }
+.ia-Single__content em {
+  color: #999;
+}
+.ia-Single__content a {
+  word-wrap: break-word;
+  color: #999;
+  text-decoration: underline;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Single__content a:hover {
+  color: #00458d;
+}
 .ia-Single__footer {
   padding: 32px 0;
   text-align: center;
@@ -2171,6 +2183,15 @@
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ia-Content--promos {
+  min-height: 480px !important;
+  height: 100%;
+}
+.ia-Promos {
+  background: url("../images/feed-bg-promo.jpg") no-repeat 97% 0;
+  background-size: cover;
+  height: 100%;
 }
 .ia-Content {
   position: relative;
@@ -2928,6 +2949,7 @@ body {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 html:before,
 body:before,
@@ -2939,12 +2961,6 @@ body:after {
 html:after,
 body:after {
   clear: both;
-}
-@media only screen and (min-width: 768px) {
-  html,
-  body {
-    height: 100%;
-  }
 }
 * {
   box-sizing: border-box;
