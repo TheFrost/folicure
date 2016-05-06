@@ -2137,13 +2137,12 @@
   margin: 32px 0;
 }
 .ia-Single__content em {
-  color: #999;
+  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ia-Single__content a {
   word-wrap: break-word;
-  color: #999;
   text-decoration: underline;
-  transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: #555;
 }
 .ia-Single__content a:hover {
   color: #00458d;
