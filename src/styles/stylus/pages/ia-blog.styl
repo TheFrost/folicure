@@ -37,34 +37,66 @@
     display block
     padding 16px 0
     text-align center
-  &__pager
-    display table
-    margin 0 auto
-    &__item
-      display table-cell
-      padding-left 16px
-      &.disabled
-        a
-          opacity 0.6
-          cursor default
-          pointer-events none
-      &:nth-child(1)
-        padding-left 0
-      &.active
-        a
-          background-color c__red
-          color white
-          pointer-events none
-          cursor default
+    &__ctrl
+      display inline-block
+      width 150px
+      +above(768px)
+        width 200px
       a
-        display inline-block
-        width 40px
-        height 40px
+        display block
+        padding 8px
         text-align center
-        line-height 40px
-        background-color c__blue
-        border-radius 50%
         color white
+        background-color c__gray
         transition all 0.33s easing( 'in-out-cubic' )
         &:hover
-          background-color darken(c__blue, 10%)
+          background-color darken(c__gray, 10%);
+        &.disabled
+          pointer-events none
+          cursor default
+          background-color lighten(c__gray, 20%)
+      &--next
+        a
+          &:after
+            content '\f105'
+            font normal normal normal 14px/1 FontAwesome
+            margin-left 8px
+      &--prev
+        a
+          &:before
+            content '\f104'
+            font normal normal normal 14px/1 FontAwesome
+            margin-right 8px
+
+
+  // &__pager
+  //   display table
+  //   margin 0 auto
+  //   &__item
+  //     display table-cell
+  //     padding-left 16px
+  //     &.disabled
+  //       a
+  //         opacity 0.6
+  //         cursor default
+  //         pointer-events none
+  //     &:nth-child(1)
+  //       padding-left 0
+  //     &.active
+  //       a
+  //         background-color c__red
+  //         color white
+  //         pointer-events none
+  //         cursor default
+  //     a
+  //       display inline-block
+  //       width 40px
+  //       height 40px
+  //       text-align center
+  //       line-height 40px
+  //       background-color c__blue
+  //       border-radius 50%
+  //       color white
+  //       transition all 0.33s easing( 'in-out-cubic' )
+  //       &:hover
+  //         background-color darken(c__blue, 10%)

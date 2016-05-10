@@ -1257,43 +1257,40 @@
 .ia-Blog__footer:after {
   clear: both;
 }
-.ia-Blog__pager {
-  display: table;
-  margin: 0 auto;
-}
-.ia-Blog__pager__item {
-  display: table-cell;
-  padding-left: 16px;
-}
-.ia-Blog__pager__item.disabled a {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-  opacity: 0.6;
-  cursor: default;
-  pointer-events: none;
-}
-.ia-Blog__pager__item:nth-child(1) {
-  padding-left: 0;
-}
-.ia-Blog__pager__item.active a {
-  background-color: #e21e3c;
-  color: #fff;
-  pointer-events: none;
-  cursor: default;
-}
-.ia-Blog__pager__item a {
+.ia-Blog__footer__ctrl {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 150px;
+}
+@media only screen and (min-width: 768px) {
+  .ia-Blog__footer__ctrl {
+    width: 200px;
+  }
+}
+.ia-Blog__footer__ctrl a {
+  display: block;
+  padding: 8px;
   text-align: center;
-  line-height: 40px;
-  background-color: #00458d;
-  border-radius: 50%;
   color: #fff;
+  background-color: #555;
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.ia-Blog__pager__item a:hover {
-  background-color: #003e7f;
+.ia-Blog__footer__ctrl a:hover {
+  background-color: #4d4d4d;
+}
+.ia-Blog__footer__ctrl a.disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: #777;
+}
+.ia-Blog__footer__ctrl--next a:after {
+  content: '\f105';
+  font: normal normal normal 14px/1 FontAwesome;
+  margin-left: 8px;
+}
+.ia-Blog__footer__ctrl--prev a:before {
+  content: '\f104';
+  font: normal normal normal 14px/1 FontAwesome;
+  margin-right: 8px;
 }
 .js-hide {
   display: none;
@@ -2101,27 +2098,27 @@
   margin: 32px auto;
   background-color: #000;
 }
-.ia-Single__content h2 {
+.ia-Single__content > h2 {
   margin: 0;
   margin-bottom: 16px;
   font-size: 18px;
 }
 @media only screen and (min-width: 768px) {
-  .ia-Single__content h2 {
+  .ia-Single__content > h2 {
     font-size: 20px;
   }
 }
-.ia-Single__content h3 {
+.ia-Single__content > h3 {
   font-size: 16px;
   margin: 0;
 }
-.ia-Single__content p {
+.ia-Single__content > p {
   margin-top: 0;
   margin-bottom: 32px;
   font-weight: 300;
   font-size: 16px;
 }
-.ia-Single__content blockquote {
+.ia-Single__content > blockquote {
   padding: 0;
   margin: 32px 0;
   font-size: 20px;
@@ -2129,14 +2126,14 @@
   color: #00458d;
 }
 @media only screen and (min-width: 768px) {
-  .ia-Single__content blockquote {
+  .ia-Single__content > blockquote {
     font-size: 32px;
   }
 }
-.ia-Single__content img {
+.ia-Single__content > img {
   margin: 32px 0;
 }
-.ia-Single__content em {
+.ia-Single__content > em {
   transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ia-Single__content a {
