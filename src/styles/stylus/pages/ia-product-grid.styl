@@ -35,7 +35,7 @@ set-color-theme-grid(base, gradient, opacity-value)
     .ia-ContentBody
       +above(1024px)
         height calc(100% \- 149px)
-        
+
     .ia-Column
       &:nth-child(1)
         .ia-Brick
@@ -59,7 +59,8 @@ set-color-theme-grid(base, gradient, opacity-value)
 
 /*Product grid*/
 .ia-Content
-  &--product-grid
+  &--product-grid,
+  &--search
     .ia-Brick
       &Product
         absolute 0
@@ -82,9 +83,9 @@ set-color-theme-grid(base, gradient, opacity-value)
           &__category,
           &__type
             +above(991px)
-              font-size 28px
+              font-size 14px
             +above(1366px)
-              font-size 32px
+              font-size 20px
           &__fig
             display block
             margin 0 auto
