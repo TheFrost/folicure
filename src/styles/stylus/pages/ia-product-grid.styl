@@ -18,6 +18,8 @@ set-color-theme-grid(base, gradient, opacity-value)
       background-color base
     &__type
       color base
+    &__tag
+      color base
 
 
 
@@ -62,24 +64,34 @@ set-color-theme-grid(base, gradient, opacity-value)
   &--product-grid,
   &--search
     .ia-Brick
+      &Link
+        +below(1024px)
+          height 600px
       &Product
         absolute 0
         display block
         text-align center
         padding 32px
         .ia-Product
-          &__header,
+          &__desc,
           &__fig
             +above(1024px)
               position absolute
-          &__header
+          &__desc
             display inline-block
+            padding-top 0
+            max-width: 280px
             margin-bottom 32px
-            top 50%
+            top 25%
             &:after
               margin-bottom 0
             +above(1024px)
               margin-bottom 0
+          &__text
+            margin-bottom 0
+            text-align center
+          &__tag
+            font-weight 700
           &__category,
           &__type
             +above(991px)
@@ -108,7 +120,7 @@ set-color-theme-grid(base, gradient, opacity-value)
       &--t-b
         .ia-BrickProduct
           .ia-Product
-            &__header
+            &__desc
               right 35%
               +above(1280px)
                 right 45%
@@ -119,7 +131,7 @@ set-color-theme-grid(base, gradient, opacity-value)
       &--b-t
         .ia-BrickProduct
           .ia-Product
-            &__header
+            &__desc
               left 45%
               +above(1280px)
                 left 45%
